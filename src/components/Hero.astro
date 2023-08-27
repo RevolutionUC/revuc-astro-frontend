@@ -1,0 +1,13 @@
+---
+interface Props {
+    siteState: string;
+}
+
+const { siteState } = Astro.props;
+---
+
+<section id="hero" class="h-screen bg-black flex flex-col justify-center items-center space-y-4">
+    <img src="/revuc_long_white.png" alt="RevolutionUC stylized text" class="max-w-[50vw]" />
+    <p class="text-white text-lg">Thank you all for participating in this year's RevolutionUC!</p>
+    <button class="bg-blue-300 p-6 rounded-lg text-4xl hover:bg-blue-400 transition-colors tracking-widest">View Submissions</button>
+</section>
