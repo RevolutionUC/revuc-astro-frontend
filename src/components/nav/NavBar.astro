@@ -1,0 +1,35 @@
+---
+interface Props {
+    current: string;
+}
+
+const { current } = Astro.props;
+const navLinks = {
+    Home: "/",
+    About: "/about",
+    Schedule: "/schedule",
+    Sponsors: "/sponsors",
+    FAQ: "/faq"
+}
+---
+
+<nav class="fixed w-full">
+    <ul class="flex flex-row justify-center space-x-16 text-white text-lg p-8 max-md:hidden">
+        {
+            /* map over the navLinks object and create a link for each key */
+            Object.keys(navLinks).map((key) => {
+                const link = navLinks[key as keyof typeof navLinks]; /* to make typescript happy */
+                return (
+                    <li>
+                        {
+                            /* if the current page is the same as the link, add the active class */
+                            current == key.toLowerCase() ?
+                            <a class="p-0.5 after:block after:w-full after:h-1 after:bg-white" href={link}>{key}</a> :
+                            <a class="p-0.5 after:block after:w-full after:h-1 after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left opacity-75 hover:opacity-100" href={link}>{key}</a>
+                        }
+                    </li>
+                )
+            })
+        }
+    </ul>
+</nav>
