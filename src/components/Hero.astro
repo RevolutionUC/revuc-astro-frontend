@@ -6,8 +6,9 @@ interface Props {
 const { siteState } = Astro.props;
 ---
 
+<!--- Post-register site -->
 <section id="hero" class="h-screen bg-black flex flex-col justify-center items-center space-y-4">
-    <img src="/revuc_long_white.png" alt="RevolutionUC stylized text" class="max-w-[50vw]" />
-    <p class="text-white text-lg">Thank you all for participating in this year's RevolutionUC!</p>
-    <button class="bg-blue-300 p-6 rounded-lg text-4xl hover:bg-blue-400 transition-colors tracking-widest">View Submissions</button>
+    <img src="/revuc_long_white.png" alt="RevolutionUC stylized text" class="w-[50vw] max-md:w-[70vw]" />
+    <p class="text-white text-center text-2xl w-[50vw] max-lg:text-xl max-md:text-lg pb-6">Thank you all for participating in this year's RevolutionUC!</p>
+    <button class="bg-blue-300 p-6 rounded-lg text-4xl max-lg:text-2xl max-lg:p-4 hover:bg-blue-400 transition-colors tracking-widest">View Submissions</button>
 </section>

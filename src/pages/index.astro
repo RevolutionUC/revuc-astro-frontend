@@ -2,11 +2,13 @@
 import HTMLWrapper from '../layouts/HTMLWrapper.astro';
 import ResponsiveNav from '../components/ResponsiveNav.astro';
 import Hero from '../components/Hero.astro';
+import Description from '../components/Description.astro';
 ---
 
 <HTMLWrapper title="Home">
 	<ResponsiveNav current="home" />
 	<main>
 		<Hero siteState="pre-registration" />
+		<Description />
 	</main>
 </HTMLWrapper>

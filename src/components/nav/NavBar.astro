@@ -14,7 +14,7 @@ const navLinks = {
 ---
 
 <nav class="fixed w-full">
-    <ul class="flex flex-row justify-center space-x-16 text-white text-lg p-8 max-md:hidden">
+    <ul class="flex flex-row justify-center space-x-16 text-white text-lg p-6 max-md:hidden bg-black">
         {
             /* map over the navLinks object and create a link for each key */
             Object.keys(navLinks).map((key) => {
@@ -24,8 +24,8 @@ const navLinks = {
                         {
                             /* if the current page is the same as the link, add the active class */
                             current == key.toLowerCase() ?
-                            <a class="p-0.5 after:block after:w-full after:h-1 after:bg-white" href={link}>{key}</a> :
-                            <a class="p-0.5 after:block after:w-full after:h-1 after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left opacity-75 hover:opacity-100" href={link}>{key}</a>
+                            <a class="after:block after:w-full after:h-0.5 after:bg-white" href={link}>{key}</a> :
+                            <a class="after:block after:w-full after:h-0.5 after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left opacity-75 hover:opacity-100" href={link}>{key}</a>
                         }
                     </li>
                 )
