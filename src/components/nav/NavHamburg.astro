@@ -16,7 +16,7 @@ const navLinks = {
 <!-- Hamburger style navbar for mobile devices -->
 <nav id="navbar" class="fixed right-0 flex flex-col items-end md:hidden">
     <input id="burger-checkbox" type="checkbox" name="" class="hidden" />
-    <div id="hamburger-lines" class="h-6 w-8 flex flex-col justify-between cursor-pointer absolute top-12 right-8">
+    <div id="hamburger-lines" class="h-6 w-8 flex flex-col justify-between cursor-pointer absolute top-12 right-8 z-50">
         <span id="hamburger-line-1" class="block h-1 w-full rounded-lg bg-white transition-transform"></span>
         <span id="hamburger-line-2" class="block h-1 w-full rounded-lg bg-white transition-transform"></span>
         <span id="hamburger-line-3" class="block h-1 w-full rounded-lg bg-white transition-transform"></span>
@@ -42,9 +42,6 @@ const navLinks = {
 </nav>
 
 <style>
-    #hamburger-lines {
-        z-index: 2; /* not sure why but adding z-2 to the tailwind class does not work */
-    }
     input[type="checkbox"]:checked ~ #hamburger-lines #hamburger-line-1 {
         transform: rotate(41deg);
         background-color: black;
