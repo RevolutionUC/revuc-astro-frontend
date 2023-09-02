@@ -66,9 +66,9 @@ const pastHacks = {
                 const dataArr = pastHacks[key as keyof typeof pastHacks];
                 return (
                     <div class="w-32 group ml-6 mr-6">
-                        <a class="" href={dataArr[3]} target="_blank" rel="noopener">
+                        <a href={dataArr[3]} target="_blank" rel="noopener">
                             <img src={dataArr[1]} alt={dataArr[2]} class="group-hover:brightness-75 transition-all" />
-                            <div class="relative text-center tracking-wider font-bold w-full bottom-2/4 invisible pointer-events-none group-hover:visible text-white">{dataArr[0]}</div>
+                            <div class="relative text-center tracking-wider font-bold w-full bottom-2/4 opacity-0 pointer-events-none group-hover:opacity-100 text-white transition-opacity">{dataArr[0]}</div>
                         </a>
                     </div>
                 )
