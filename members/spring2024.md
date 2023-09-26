@@ -6,3 +6,5 @@ Chau Nguyen
 Karthikeya Rachamolla
 
 Tanishq Jadhav
+
+Krish Kalathiya
