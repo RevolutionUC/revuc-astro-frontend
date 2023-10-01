@@ -1,5 +1,5 @@
 let particles = [];
-const num = 5000;
+const num = 8000;
 
 const noiseScale = 0.02;
 
