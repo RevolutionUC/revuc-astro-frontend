@@ -1,0 +1,143 @@
+---
+layout: default
+title: Sponsors
+permalink: /sponsors/
+subtitle: "A special thanks to the organizations that make RevolutionUC possible"
+image: "https://assets.revolutionuc.com/website-images/2023/photos/2x/sponsors.png"
+useContainer: false
+description: Sponsoring organizations for RevolutionUC — Hackathon at the University of Cincinnati from February 20-21, 2021
+---
+
+<section class="container container--sponsor section">
+  <div class="sponsor-list">
+    <div class="flex sponsor-ultimate-tier">
+      {% for sponsor in site.data.sponsors.diamond %}
+        <div class="sponsor-image">
+          <a href="{{ sponsor.link }}" target="_blank noopenner">
+            <img
+              id="{{sponsor.name | slugify}}-image"
+              class="sponsor-diamond"
+              src="{{ sponsor.image }}"
+              alt="{{ sponsor.name }} logo" />
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="flex sponsor-high-tier">
+      {% for sponsor in site.data.sponsors.platinum %}
+        <div class="sponsor-image">
+          <a href="{{ sponsor.link }}" target="_blank noopenner">
+            <img
+              id="{{sponsor.name | slugify}}-image"
+              class="sponsor-platinum"
+              src="{{ sponsor.image }}"
+              alt="{{ sponsor.name }} logo" />
+          </a>
+        </div>
+      {% endfor %}
+      
+      {% for sponsor in site.data.sponsors.gold %}
+        <div class="sponsor-image">
+          <a href="{{ sponsor.link }}" target="_blank noopenner">
+            <img
+              id="{{sponsor.name | slugify}}-image"
+              class="sponsor-gold"
+              src="{{ sponsor.image }}"
+              alt="{{ sponsor.name }} logo" />
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="flex sponsor-medium-tier">
+      {% for sponsor in site.data.sponsors.silver %}
+        <div class="sponsor-image">
+          <a href="{{ sponsor.link }}" target="_blank noopenner">
+            <img
+              id="{{sponsor.name | slugify}}-image"
+              class="sponsor-silver"
+              src="{{ sponsor.image }}"
+              alt="{{ sponsor.name }} logo" />
+          </a>
+        </div>
+      {% endfor %}
+      </div>
+
+    <div class="flex">
+      {% for sponsor in site.data.sponsors.money %}
+        <div class="sponsor-image">
+          <a href="{{ sponsor.link }}" target="_blank noopenner">
+            <img
+              id="{{sponsor.name | slugify}}-image"
+              class="sponsor-money"
+              src="{{ sponsor.image }}"
+              alt="{{ sponsor.name }} logo" />
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="flex">
+      {% for sponsor in site.data.sponsors.prize %}
+        <div class="sponsor-image">
+          <a href="{{ sponsor.link }}" target="_blank noopenner">
+            <img
+              id="{{sponsor.name | slugify}}-image"
+              class="sponsor-prize"
+              src="{{ sponsor.image }}"
+              alt="{{ sponsor.name }} logo" />
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="partner-list">
+    {% if site.data.partners %}
+      <h2 class="text-center">Partners</h1>
+    {% endif %}
+
+    <div class="container flex">
+      {% for sponsor in site.data.partners %}
+        <div class="sponsor-image">
+          <a href="{{ sponsor.link }}" target="_blank noopener">
+            <img
+              id="{{ sponsor.name | slugify }}-image"
+              class="sponsor-partner"
+              src="{{ sponsor.image }}"
+              alt="{{ sponsor.name }} logo" />
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="container">
+    <h1 class="text-center">Organized By</h1>
+  </div>
+
+  <div class="flex">
+    <div class="sponsor-image">
+      <a href="https://acmatuc.org/" target="_blank">
+        <picture>
+          <source
+            class="sponsor-image--acm@uc"
+            srcset=""
+            type="image/webp" />
+          <img
+            class="acm-logo"
+            src="/img/sponsors/acmatuc.svg"
+            alt="ACM@UC logo" />
+        </picture>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="background-color-light">
+  <div class="container call-to-action">
+    <p class="lead">Interested in sponsoring RevolutionUC? It's a great way to connect with talented and motivated students! Send us an email at
+      <a href="mailto:sponsor@revolutionuc.com">sponsor@revolutionuc.com</a>
+      for information.</p>
+  </div>
+</section>
