@@ -1,0 +1,23 @@
+---
+interface ScheduleItem {
+    time: string;
+    event: string;
+    location: string;
+}
+
+const { schedule, label } = Astro.props;
+---
+
+<div class="w-[760px] max-md:w-11/12">
+  <h2 class="text-xl font-bold mb-4">{label}</h2>
+
+  <table class="w-full mb-8">
+    {schedule.map((item: ScheduleItem) => (
+        <tr class="border-b border-zinc-600">
+            <td class="text-left py-2.5">{item.time}</td>
+            <td class="text-left py-2.5">{item.event}</td>
+            <td class="text-right py-2.5">{item.location}</td>
+        </tr>
+    ))}
+  </table>
+</div>
