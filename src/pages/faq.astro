@@ -21,7 +21,7 @@ import Footer from "../components/Footer.astro";
                 </small>
             </p>
             
-            <script>
+            <script defer>
                 const btnExpand = document.querySelector('a.expand-all');
                 btnExpand?.addEventListener('click', () => {
                     document.querySelectorAll('details').forEach(detail => {
