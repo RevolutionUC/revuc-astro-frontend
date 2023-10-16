@@ -2,12 +2,13 @@
 import ResponsiveNav from "../components/ResponsiveNav.astro";
 import HTMLWrapper from "../layouts/HTMLWrapper.astro";
 import faqData from '../data/faqData.json';
+import Footer from "../components/Footer.astro";
 ---
 
 <HTMLWrapper title="FAQ">
     <ResponsiveNav current="faq" />
     <div class="flex justify-center h-full">
-        <div class="xl:w-2/5 lg:w-3/5 w-full mx-8">
+        <div class="xl:w-2/5 lg:w-3/5 w-full m-8 mt-16">
             <img
                 src="https://assets.revolutionuc.com/website-images/2023/photos/4x/faq.png"
                 alt="faq image"
@@ -47,4 +48,5 @@ import faqData from '../data/faqData.json';
             </div>
         </div>
     </div>
+    <Footer />
 </HTMLWrapper>
