@@ -7,20 +7,8 @@ const { siteState } = Astro.props;
 ---
 
 <!--- Post-register site -->
-<section id="hero" class="h-screen  flex flex-col justify-center items-center space-y-4">
+<section id="hero" class="h-screen flex flex-col justify-center items-center space-y-4 bg-black">
     <img src="/revuc_long_white.png" alt="RevolutionUC stylized text" class="w-[50vw] max-md:w-[70vw]" />
     <p class="text-white text-center text-2xl w-[50vw] max-lg:text-xl max-md:text-lg pb-6">Thank you all for participating in this year's RevolutionUC!</p>
     <button class="bg-blue-300 p-6 rounded-lg text-4xl max-lg:text-2xl max-lg:p-4 hover:bg-blue-400 transition-colors tracking-widest">View Submissions</button>
-    <script is:inline src="/p5.min.js"></script>
-    <script is:inline src="/flowfield.js"></script>
 </section>
-
-<style is:global>
-    #defaultCanvas0 {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        opacity: 30;
-    }
-</style>
