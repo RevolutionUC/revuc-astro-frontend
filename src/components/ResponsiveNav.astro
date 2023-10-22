@@ -5,11 +5,10 @@ import NavHamburg from "./nav/NavHamburg.astro";
 interface Props {
     current: string;
 }
-
 const { current } = Astro.props;
 ---
 
 <header class="h-0">
     <NavHamburg current={current} />
-	<!-- <NavBar current={current} /> -->
+	<NavBar current={current} />
 </header>
