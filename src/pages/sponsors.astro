@@ -1,9 +1,130 @@
 ---
 import ResponsiveNav from "../components/ResponsiveNav.astro";
 import HTMLWrapper from "../layouts/HTMLWrapper.astro";
+import Footer from "../components/Footer.astro"
 ---
 
 <HTMLWrapper title="Sponsors">
     <ResponsiveNav current="sponsors" />
     <p>Sponsors</p>
+    <section class="container container--sponsor section mt-24">
+        <div class="sponsor-list">
+          <div class="flex sponsor-ultimate-tier">
+              <div class="sponsor-image">
+                <a href="{{ sponsor.link }}" target="_blank noopenner">
+                  <img
+                    id="{{sponsor.name | slugify}}-image"
+                    class="sponsor-diamond"
+                    src="{{ sponsor.image }}"
+                    alt="{{ sponsor.name }} logo" />
+                </a>
+              </div>
+          </div>
+      
+          <div class="flex sponsor-high-tier">
+              <div class="sponsor-image">
+                <a href="{{ sponsor.link }}" target="_blank noopenner">
+                  <img
+                    id="{{sponsor.name | slugify}}-image"
+                    class="sponsor-platinum"
+                    src="{{ sponsor.image }}"
+                    alt="{{ sponsor.name }} logo" />
+                </a>
+              </div>
+            
+              <div class="sponsor-image">
+                <a href="{{ sponsor.link }}" target="_blank noopenner">
+                  <img
+                    id="{{sponsor.name | slugify}}-image"
+                    class="sponsor-gold"
+                    src="{{ sponsor.image }}"
+                    alt="{{ sponsor.name }} logo" />
+                </a>
+              </div>
+
+          </div>
+          <div class="flex sponsor-medium-tier">
+
+              <div class="sponsor-image">
+                <a href="{{ sponsor.link }}" target="_blank noopenner">
+                  <img
+                    id="{{sponsor.name | slugify}}-image"
+                    class="sponsor-silver"
+                    src="{{ sponsor.image }}"
+                    alt="{{ sponsor.name }} logo" />
+                </a>
+              </div>
+            </div>
+      
+          <div class="flex">
+              <div class="sponsor-image">
+                <a href="{{ sponsor.link }}" target="_blank noopenner">
+                  <img
+                    id="{{sponsor.name | slugify}}-image"
+                    class="sponsor-money"
+                    src="{{ sponsor.image }}"
+                    alt="{{ sponsor.name }} logo" />
+                </a>
+              </div>
+          </div>
+      
+          <div class="flex">
+              <div class="sponsor-image">
+                <a href="{{ sponsor.link }}" target="_blank noopenner">
+                  <img
+                    id="{{sponsor.name | slugify}}-image"
+                    class="sponsor-prize"
+                    src="{{ sponsor.image }}"
+                    alt="{{ sponsor.name }} logo" />
+                </a>
+              </div>
+          </div>
+        </div>
+      
+        <div class="partner-list">
+            <h2 class="text-center">Partners</h1>
+      
+          <div class="container flex">
+              <div class="sponsor-image">
+                <a href="{{ sponsor.link }}" target="_blank noopener">
+                  <img
+                    id="{{ sponsor.name | slugify }}-image"
+                    class="sponsor-partner"
+                    src="{{ sponsor.image }}"
+                    alt="{{ sponsor.name }} logo" />
+                </a>
+              </div>
+          </div>
+        </div>
+      
+        <div class="container">
+          <h1 class="text-center">Organized By</h1>
+        </div>
+      
+        <div class="flex">
+          <div class="sponsor-image">
+            <a href="https://acmatuc.org/" target="_blank">
+              <picture>
+                <source
+                  class="sponsor-image--acm@uc"
+                  srcset=""
+                  type="image/webp" />
+                <img
+                  class="acm-logo"
+                  src="/img/sponsors/acmatuc.svg"
+                  alt="ACM@UC logo" />
+              </picture>
+            </a>
+          </div>
+        </div>
+      </section>
+      
+      <section class="background-color-light">
+        <div class="container call-to-action">
+          <p class="lead">Interested in sponsoring RevolutionUC? It's a great way to connect with talented and motivated students! Send us an email at
+            <a href="mailto:sponsor@revolutionuc.com">sponsor@revolutionuc.com</a>
+            for information.</p>
+        </div>
+      </section>
+      <Footer />
 </HTMLWrapper>
