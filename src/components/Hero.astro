@@ -4,14 +4,13 @@ interface Props {
 }
 
 const { siteState } = Astro.props; // for updating content depending on the stage of the hackathon
-const heroTitle = "REVOLUTION";
 ---
 
 <!--- Post-register site -->
 <section id="hero" class="h-screen flex flex-col justify-center items-center space-y-2 bg-black font-mono">
     <!-- <img src="/revuc_long_white.png" alt="RevolutionUC stylized text" class="w-[50vw] max-md:w-[70vw]" /> -->
-    <h1 id="hero-title" data-title={heroTitle} class="text-white text-[10rem] max-lg:text-[7rem] max-md:text-[5rem]">
-        {heroTitle}
+    <h1 id="hero-title" class="text-white text-[10rem] max-lg:text-[7rem] max-md:text-[5rem]">
+        REVOLUTION
     </h1>
     <p id="hero-date" class="text-white text-center text-2xl w-[50vw] max-lg:text-xl max-md:text-lg pb-8">
         Feb. XX - Feb. XX
