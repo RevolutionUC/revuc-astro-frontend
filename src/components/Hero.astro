@@ -3,12 +3,46 @@ interface Props {
     siteState: string;
 }
 
-const { siteState } = Astro.props;
+const { siteState } = Astro.props; // for updating content depending on the stage of the hackathon
+const heroTitle = "REVOLUTION";
 ---
 
 <!--- Post-register site -->
-<section id="hero" class="h-screen flex flex-col justify-center items-center space-y-4 bg-black">
-    <img src="/revuc_long_white.png" alt="RevolutionUC stylized text" class="w-[50vw] max-md:w-[70vw]" />
-    <p class="text-white text-center text-2xl w-[50vw] max-lg:text-xl max-md:text-lg pb-6">Thank you all for participating in this year's RevolutionUC!</p>
-    <button class="bg-blue-300 p-6 rounded-lg text-4xl max-lg:text-2xl max-lg:p-4 hover:bg-blue-400 transition-colors tracking-widest">View Submissions</button>
+<section id="hero" class="h-screen flex flex-col justify-center items-center space-y-2 bg-black font-mono">
+    <!-- <img src="/revuc_long_white.png" alt="RevolutionUC stylized text" class="w-[50vw] max-md:w-[70vw]" /> -->
+    <h1 id="hero-title" data-title={heroTitle} class="text-white text-[10rem] max-lg:text-[7rem] max-md:text-[5rem]">
+        {heroTitle}
+    </h1>
+    <p id="hero-date" class="text-white text-center text-2xl w-[50vw] max-lg:text-xl max-md:text-lg pb-8">
+        Feb. XX - Feb. XX
+    </p>
+    <button id="hero-button" class="bg-blue-300 p-6 rounded-lg text-4xl max-lg:text-2xl max-lg:p-4 hover:bg-blue-400 transition-colors">
+        Join The Revolution!
+    </button>
 </section>
+
+<script defer>
+    const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*";
+    const titleText = document.querySelector("#hero-title").innerText;
+    const dateText = document.querySelector("#hero-date").innerText;
+    function randomizeChars(event, orgText) {
+        let iter = 0;
+
+        const interval = setInterval(() => {
+            event.target.innerText = event.target.innerText.split("").map((letter, index) => {
+                if (index < iter) {
+                    return orgText[index];
+                }
+                return alphabet[Math.floor(Math.random() * 33)];
+            }).join("");
+
+            if (iter >= orgText.length) {
+                clearInterval(interval);
+            }
+
+            iter += 1 / 5;
+        }, 30);
+    }
+    document.querySelector("#hero-title").onmouseover = event => randomizeChars(event, titleText);
+    document.querySelector("#hero-date").onmouseover = event => randomizeChars(event, dateText);
+</script>
