@@ -16,27 +16,25 @@ import Footer from "../components/Footer.astro";
     </div>
 
     <section class="container container--sponsor section mt-24">
-        <div class="sponsor-list">
+        <div class="sponsor-list ml-52">
 
-            <h6> Ultimate Tier</h6>
-            <div class="flex sponsor-ultimate-tier">
+            <div class="flex flex-row justify-center items-center">
                 <a href="https://www.revolutionuc.com" target="_blank noopenner">
                     <img
                       id="{{sponsor.name | slugify}}-image"
                       class="sponsor-diamond"
-                      src="{{ sponsor.image }}"
+                      src=""
                       alt="Diamond Tier logo" />
                 </a>
             </div>
 
-            <h6>High Tier</h6>
-            <div class="flex sponsor-high-tier">
+            <div class="flex flex-row justify-center items-center">
                 <div class="sponsor-image">
                     <a href="{{ sponsor.link }}" target="_blank noopenner">
                         <img
                             id="{{sponsor.name | slugify}}-image"
                             class="sponsor-platinum"
-                            src="{{ sponsor.image }}"
+                            src=""
                             alt="Platinum Tier logo" />
                     </a>
                   </div>
@@ -46,99 +44,96 @@ import Footer from "../components/Footer.astro";
                         <img
                             id="{{sponsor.name | slugify}}-image"
                             class="sponsor-gold"
-                            src="{{ sponsor.image }}"
+                            src=""
                             alt="Gold Tier logo" />
                     </a>
                 </div>
             </div>
 
-            <h6>Medium Tier</h6>
-            <div class="flex sponsor-medium-tier">
+            <div class="flex flex-row justify-center items-center">
 
                 <div class="sponsor-image">
                     <a href="{{ sponsor.link }}" target="_blank noopenner">
                         <img
                             id="{{sponsor.name | slugify}}-image"
                             class="sponsor-silver"
-                            src="{{ sponsor.image }}"
+                            src=""
                             alt="Silver Tier logo" />
                     </a>
                 </div>
             </div>
 
-            <h6>Low Tier</h6>
-            <div class="flex">
+            <div class="flex flex-row justify-center items-center">
                 <div class="sponsor-image">
                      <a href="{{ sponsor.link }}" target="_blank noopenner">
                         <img
                             id="{{sponsor.name | slugify}}-image"
                             class="sponsor-money"
-                            src="{{ sponsor.image }}"
+                            src=""
                             alt="Money Tier logo" />
                         </a>
                 </div>
-            </div>
-
-            <div class="flex">
+                
                 <div class="sponsor-image">
                     <a href="{{ sponsor.link }}" target="_blank noopenner">
                         <img
                             id="{{sponsor.name | slugify}}-image"
                             class="sponsor-prize"
-                            src="{{ sponsor.image }}"
+                            src=""
                             alt="Prize Tier logo" />
                     </a>
                 </div>
             </div>
         </div>
-      
-        <div class="partner-list">
-            <h2 class="text-xl text-center"> Partners </h2>
+
+        <div class="partner-list ml-48">
+            <h2 class="text-xl text-center mt-8 font-bold"> Partners </h2>
         
-            <div class="container flex">
+            <div class="flex flex-row justify-center items-center">
                 <div class="sponsor-image">
                   <a href="{{ sponsor.link }}" target="_blank noopener">
                     <img
                       id="{{ sponsor.name | slugify }}-image"
                       class="sponsor-partner"
-                      src="{{ sponsor.image }}"
+                      src=""
                       alt="Partner logo" />
                   </a>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <h2 class="text-xl text-center"> Organized By </h2>
-        </div>
-      
-        <div class="flex">
-            <div class="sponsor-image">
-                <a href="https://acmatuc.org/" target="_blank">
-                    <picture>
-                        <source
-                            class="sponsor-image--acm@uc"
-                            srcset=""
-                            type="image/webp" />
-                        <img
-                        class="acm-logo"
-                        src="/img/sponsors/acmatuc.svg"
-                        alt="ACM@UC logo" />
-                    </picture>
-                </a>
+        
+        <div class="ml-48">
+            <h2 class="text-xl text-center mt-8 font-semi-bold"> Organized By </h2>
+  
+            <div class="flex flex-row justify-center items-center">
+                <div class="sponsor-image">
+                    <a href="https://acmatuc.org/" target="_blank">
+                        <picture>
+                            <source
+                                class="sponsor-image--acm@uc"
+                                srcset=""
+                                type="image/webp" />
+                            <img
+                            class="acm-logo"
+                            src="/img/sponsors/acmatuc.svg"
+                            alt="ACM@UC logo" />
+                        </picture>
+                    </a>
+                </div>
             </div>
         </div>
+
     </section>
     </div>
 
         <section>
-            <div class="container call-to-action pb-20">
-                <p class="lead">Interested in sponsoring RevolutionUC? It's a great way to connect with talented and motivated students!
+            <div class="pb-20 mt-8">
+                <p class="ml-32">Interested in sponsoring RevolutionUC? It's a great way to connect with talented and motivated students!
                                 Send us an email at
-                                <u><a href="mailto:sponsor@revolutionuc.com" class="">sponsor@revolutionuc.com</a></u>  
+                                <u><a href="mailto:sponsor@revolutionuc.com" class=" text-blue-400">sponsor@revolutionuc.com</a></u>  
                                 for information.
                 </p>
             </div>
         </section>
-        
     <Footer />
 </HTMLWrapper>
