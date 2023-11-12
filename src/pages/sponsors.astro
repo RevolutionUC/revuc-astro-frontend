@@ -15,36 +15,33 @@ import Footer from "../components/Footer.astro";
             <h1 class="text-3xl font-extrabold">Sponsors</h1>
     </div>
 
-    <section class="mt-24">
-        <div class="sponsor-list flex flex-col flex-wrap">
+    <section class="mt-6">
+        <div class="sponsor-list flex flex-col flex-wrap justify-center items-center">
 
-            <div class="flex flex-row justify-center items-center">
+            <div class="">
                 <a href="https://www.revolutionuc.com" target="_blank noopenner">
                     <img
-                      id="{{sponsor.name | slugify}}-image"
-                      class="sponsor-diamond"
-                      src=""
+                      class="sponsor-diamond w-56"
+                      src="../public/sample_image.jpg"
                       alt="Diamond Tier logo" />
                 </a>
             </div>
 
             <div class="flex flex-row justify-center items-center">
                 <div class="sponsor-image">
-                    <a href="{{ sponsor.link }}" target="_blank noopenner">
+                    <a href="" target="_blank noopenner">
                         <img
-                            id="{{sponsor.name | slugify}}-image"
-                            class="sponsor-platinum"
-                            src=""
+                            class="sponsor-platinum w-48"
+                            src="../public/sample_image.jpg"
                             alt="Platinum Tier logo" />
                     </a>
                   </div>
 
                 <div class="sponsor-image">
-                    <a href="{{ sponsor.link }}" target="_blank noopenner">
+                    <a href="" target="_blank noopenner">
                         <img
-                            id="{{sponsor.name | slugify}}-image"
-                            class="sponsor-gold"
-                            src=""
+                            class="sponsor-gold w-48"
+                            src="../public/sample_image.jpg"
                             alt="Gold Tier logo" />
                     </a>
                 </div>
@@ -53,11 +50,10 @@ import Footer from "../components/Footer.astro";
             <div class="flex flex-row justify-center items-center">
 
                 <div class="sponsor-image">
-                    <a href="{{ sponsor.link }}" target="_blank noopenner">
+                    <a href="" target="_blank noopenner">
                         <img
-                            id="{{sponsor.name | slugify}}-image"
-                            class="sponsor-silver"
-                            src=""
+                            class="sponsor-silver w-36"
+                            src="../public/sample_image.jpg"
                             alt="Silver Tier logo" />
                     </a>
                 </div>
@@ -65,21 +61,19 @@ import Footer from "../components/Footer.astro";
 
             <div class="flex flex-row justify-center items-center">
                 <div class="sponsor-image">
-                     <a href="{{ sponsor.link }}" target="_blank noopenner">
+                     <a href="" target="_blank noopenner">
                         <img
-                            id="{{sponsor.name | slugify}}-image"
-                            class="sponsor-money"
-                            src=""
+                            class="sponsor-money w-36"
+                            src="../public/sample_image.jpg"
                             alt="Money Tier logo" />
                         </a>
                 </div>
                 
                 <div class="sponsor-image">
-                    <a href="{{ sponsor.link }}" target="_blank noopenner">
+                    <a href="" target="_blank noopenner">
                         <img
-                            id="{{sponsor.name | slugify}}-image"
-                            class="sponsor-prize"
-                            src=""
+                            class="sponsor-prize w-36"
+                            src="../public/sample_image.jpg"
                             alt="Prize Tier logo" />
                     </a>
                 </div>
@@ -87,15 +81,14 @@ import Footer from "../components/Footer.astro";
         </div>
 
         <div>
-            <h2 class="text-xl text-center mt-8 font-bold"> Partners </h2>
+            <h2 class="text-xl text-center mt-4 font-bold"> Partners </h2>
         
             <div class="flex flex-row justify-center items-center">
-                <div class="sponsor-image">
-                  <a href="{{ sponsor.link }}" target="_blank noopener">
+                <div>
+                  <a href="" target="_blank noopener">
                     <img
-                      id="{{ sponsor.name | slugify }}-image"
-                      class="sponsor-partner"
-                      src=""
+                      class="sponsor-partner w-32"
+                      src="../public/sample_image.jpg"
                       alt="Partner logo" />
                   </a>
                 </div>
@@ -103,23 +96,14 @@ import Footer from "../components/Footer.astro";
         </div>
         
         <div>
-            <h2 class="text-xl text-center mt-8 font-bold"> Organized By </h2>
-  
-            <div class="flex flex-row justify-center items-center">
-                <div class="sponsor-image">
-                    <a href="https://acmatuc.org/" target="_blank">
-                        <picture>
-                            <source
-                                class="sponsor-image--acm@uc"
-                                srcset=""
-                                type="image/webp" />
-                            <img
-                            class="acm-logo"
-                            src="/img/sponsors/acmatuc.svg"
-                            alt="ACM@UC logo" />
-                        </picture>
-                    </a>
-                </div>
+            <h2 class="text-xl text-center mt-4 font-bold"> Organized By </h2>
+            <div class="flex flex-row justify-center item">
+                <a href="https://acmatuc.org/" target="_blank">
+                    <img
+                    class="acm-logo w-32"
+                    src="../public/sample_image.jpg"
+                    alt="ACM@UC logo" />
+                </a>
             </div>
         </div>
 
@@ -127,8 +111,8 @@ import Footer from "../components/Footer.astro";
     </div>
 
         <section>
-            <div class="pb-20 mt-8">
-                <p class="ml-32">Interested in sponsoring RevolutionUC? It's a great way to connect with talented and motivated students!
+            <div class="flex flex-col justify-center items-center mb-10 mt-6">
+                <p class="">Interested in sponsoring RevolutionUC? It's a great way to connect with talented and motivated students!
                                 Send us an email at
                                 <u><a href="mailto:sponsor@revolutionuc.com" class=" text-blue-400">sponsor@revolutionuc.com</a></u>  
                                 for information.
