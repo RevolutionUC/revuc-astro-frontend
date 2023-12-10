@@ -1,9 +1,132 @@
 ---
 import ResponsiveNav from "../components/ResponsiveNav.astro";
 import HTMLWrapper from "../layouts/HTMLWrapper.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <HTMLWrapper title="Sponsors">
     <ResponsiveNav current="sponsors" />
-    <p>Sponsors</p>
+    <div class="flex flex-col justify-center items-center mt-24">
+        <img 
+            src="https://assets.revolutionuc.com/website-images/2023/photos/2x/sponsors.png" 
+            alt="RevolutionUC's Schedule" 
+            class="w-[760px] max-md:w-11/12 h-[500px] max-md:h-[300px] object-cover pb-8"
+            loading="eager"/>
+            <h1 class="text-3xl font-extrabold">Sponsors</h1>
+    </div>
+
+    <section class="mt-6">
+        <div class="sponsor-list flex flex-col flex-wrap justify-center items-center">
+            <!-- TODO:
+                This is fine for now, but I want this to be dynamically rendered
+                Specifically, I want a json file in the /data folder
+                I want you to load the images as well as the corresponding website for sponsors
+                based solely on that json.
+            -->
+            <div class="">
+                <a href="https://www.revolutionuc.com" target="_blank noopenner">
+                    <img
+                      class="sponsor-diamond w-56"
+                      src="/sample_image.jpg"
+                      alt="Diamond Tier logo" />
+                </a>
+            </div>
+
+            <div class="flex flex-row justify-center items-center">
+                <div class="sponsor-image">
+                    <a href="" target="_blank noopenner">
+                        <img
+                            class="sponsor-platinum w-48"
+                            src="/sample_image.jpg"
+                            alt="Platinum Tier logo" />
+                    </a>
+                  </div>
+
+                <div class="sponsor-image">
+                    <a href="" target="_blank noopenner">
+                        <img
+                            class="sponsor-gold w-48"
+                            src="/sample_image.jpg"
+                            alt="Gold Tier logo" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-row justify-center items-center">
+
+                <div class="sponsor-image">
+                    <a href="" target="_blank noopenner">
+                        <img
+                            class="sponsor-silver w-36"
+                            src="/sample_image.jpg"
+                            alt="Silver Tier logo" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-row justify-center items-center">
+                <div class="sponsor-image">
+                     <a href="" target="_blank noopenner">
+                        <img
+                            class="sponsor-money w-36"
+                            src="/sample_image.jpg"
+                            alt="Money Tier logo" />
+                        </a>
+                </div>
+                
+                <div class="sponsor-image">
+                    <a href="" target="_blank noopenner">
+                        <img
+                            class="sponsor-prize w-36"
+                            src="/sample_image.jpg"
+                            alt="Prize Tier logo" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h2 class="text-xl text-center mt-4 font-bold"> Partners </h2>
+            <div class="flex flex-row justify-center items-center">
+                <div>
+                  <a href="" target="_blank noopener">
+                    <img
+                      class="sponsor-partner w-32"
+                      src="/sample_image.jpg"
+                      alt="Partner logo" />
+                  </a>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <h2 class="text-xl text-center mt-4 font-bold"> Organized By </h2>
+            <div class="flex flex-row justify-center item">
+                <a href="https://acmatuc.org/" target="_blank">
+                    <img
+                    class="acm-logo w-32"
+                    src="/sample_image.jpg"
+                    alt="ACM@UC logo" />
+                </a>
+            </div>
+        </div>
+
+    </section>
+    </div>
+
+        <section>
+            <div class="flex flex-col justify-center items-center mb-10 mt-6">
+                <p class="m-8">
+                    Interested in sponsoring RevolutionUC? It's a great way to connect with talented and motivated students!
+                    Send us an email at
+                    <u>
+                        <a href="mailto:sponsor@revolutionuc.com" class="text-blue-400">
+                            sponsor@revolutionuc.com
+                        </a>
+                    </u>  
+                    for information.
+                </p>
+            </div>
+        </section>
+    <Footer />
 </HTMLWrapper>
