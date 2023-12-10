@@ -17,7 +17,12 @@ import Footer from "../components/Footer.astro";
 
     <section class="mt-6">
         <div class="sponsor-list flex flex-col flex-wrap justify-center items-center">
-
+            <!-- TODO:
+                This is fine for now, but I want this to be dynamically rendered
+                Specifically, I want a json file in the /data folder
+                I want you to load the images as well as the corresponding website for sponsors
+                based solely on that json.
+            -->
             <div class="">
                 <a href="https://www.revolutionuc.com" target="_blank noopenner">
                     <img
@@ -82,7 +87,6 @@ import Footer from "../components/Footer.astro";
 
         <div>
             <h2 class="text-xl text-center mt-4 font-bold"> Partners </h2>
-        
             <div class="flex flex-row justify-center items-center">
                 <div>
                   <a href="" target="_blank noopener">
@@ -115,7 +119,11 @@ import Footer from "../components/Footer.astro";
                 <p class="m-8">
                     Interested in sponsoring RevolutionUC? It's a great way to connect with talented and motivated students!
                     Send us an email at
-                    <u><a href="mailto:sponsor@revolutionuc.com" class=" text-blue-400">sponsor@revolutionuc.com</a></u>  
+                    <u>
+                        <a href="mailto:sponsor@revolutionuc.com" class="text-blue-400">
+                            sponsor@revolutionuc.com
+                        </a>
+                    </u>  
                     for information.
                 </p>
             </div>
