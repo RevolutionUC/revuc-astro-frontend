@@ -1,0 +1,54 @@
+---
+import ResponsiveNav from "../components/ResponsiveNav.astro";
+import HTMLWrapper from "../layouts/HTMLWrapper.astro";
+import Footer from '../components/Footer.astro';
+---
+
+<HTMLWrapper title="Register">
+    <ResponsiveNav current="schedule" />
+    <main class="mt-24">
+        <div class="flex flex-col items-center">
+            <h1 class="text-3xl font-bold justify-self-start">Register</h1>
+            <div>
+                <form>              
+                  <div>
+                    <label for="firstName" id="firstName-label">First Name*</label>
+                    <input name="firstName" id="firstName" type="text" placeholder="Bob" required />
+                  </div>
+                  <div>
+                    <label for="lastName" id="lastName-label">Last Name* </label>
+                    <input name="lastName" id="lastName" type="text" placeholder="Evans" required />
+                  </div>
+                  <div>
+                    <label for="email" id="email-label">Email* </label>
+                    <input name="email" id="email" type="email" placeholder="Email" required />
+                  </div>
+                  <div>
+                    <label for="email" id="confirmEmail-label">Confirm Email* </label>
+                    <input name="confirmEmail" id="confirmEmail" type="email" placeholder="Confirm Email" required />
+                  </div>
+
+                  <div>
+                    <label for="school" id="school-label">School*</label>
+              
+                    <div>
+                      <input class="hide" type="text" placeholder="Enter your school" />
+              
+                      <div>
+                        <input name="school" id="school" list="school-list" placeholder="Search your school" required />
+                        <datalist id="school-list"></datalist>
+                        <div id="school-dropdown-btn" class="dropdown-btn">&#9660;</div>
+                      </div>
+              
+                      <div class="form-block__input">
+                        <input name="schoolOther" id="schoolOther" type="checkbox" class="button" data-toggle="true" />
+                        <label for="schoolOther"><small>I can't find my school</small></label>
+                      </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>      
+    </main>
+    <Footer />
+</HTMLWrapper>
