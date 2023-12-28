@@ -38,7 +38,6 @@ const navLinks = {
     // change the nav bar to black when the user scrolls down
     const nav = document.querySelector("#nav-bar");
     window.addEventListener("scroll", () => {
-        console.log(window.scrollY);
         if (window.scrollY > window.innerHeight - 30) {
             nav.style.backgroundColor = "black";
         } else {
