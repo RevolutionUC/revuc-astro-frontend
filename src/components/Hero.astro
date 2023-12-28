@@ -14,11 +14,11 @@ const { siteState } = Astro.props; // for updating content depending on the stag
 </section>
 --->
 
-<div id="hero" class="h-screen flex justify-center items-center space-y-4 overflow-hidden">
+<div id="hero" class="h-screen w-full flex justify-center items-center space-y-4 overflow-hidden">
     <div id="inner-wrapper">
         <div id="landscape"></div>
     </div>
-    <div class="z-10 absolute flex justify-around items-center space-x-52 w-4/5">
+    <div class="z-10 absolute flex justify-around items-center space-x-52 w-[80vw]">
         <div class="flex flex-col space-y-2">
             <p class="glitch text-white text-6xl relative">
                 <span aria-hidden="true">RevolutionUC</span>
@@ -28,7 +28,7 @@ const { siteState } = Astro.props; // for updating content depending on the stag
             <p class="glitch text-white text-2xl">April 9-11, 2021</p>
         </div>
         <img id="logo" src="/favicon.png" alt="RevolutionUC 2024 logo" class="xl:w-72 lg:w-60 md:w-50 w-[20vw]" />
-    </div
+    </div>
 </div>
 
 <style is:inline>

@@ -13,7 +13,7 @@ const navLinks = {
 }
 ---
 
-<nav class="fixed w-full z-50 top-0">
+<nav id="nav-bar" class="fixed w-full z-50 top-0 transition-colors duration-300">
     <ul class="flex flex-row justify-center space-x-16 text-white text-xl p-8 pb-6 max-md:hidden bg-transparent">
         {
             /* map over the navLinks object and create a link for each key */
@@ -33,3 +33,16 @@ const navLinks = {
         }
     </ul>
 </nav>
+
+<script defer>
+    // change the nav bar to black when the user scrolls down
+    const nav = document.querySelector("#nav-bar");
+    window.addEventListener("scroll", () => {
+        console.log(window.scrollY);
+        if (window.scrollY > window.innerHeight - 30) {
+            nav.style.backgroundColor = "black";
+        } else {
+            nav.style.backgroundColor = "transparent";
+        }
+    });
+</script>

@@ -12,8 +12,8 @@ const navLinks = {
 }
 ---
 
-<nav class="z-30 w-full fixed top-0 md:hidden">
-    <div class="flex flex-row-reverse bg-black p-6">
+<nav id="nav-hamburg" class="z-30 w-full fixed top-0 md:hidden">
+    <div class="flex flex-row-reverse bg-transparent p-6">
         <svg id="hamburger" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 cursor-pointer mr-4 z-50">
             <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
             <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
@@ -44,6 +44,7 @@ const navLinks = {
     let isOpen = false;
     const hamburg = document.querySelector("#hamburger");
     const panel = document.querySelector("#hamburger-panel");
+    const nav = document.querySelector("#nav-hamburg");
     const hamburgPaths = document.querySelectorAll("#hamburger path");
     if (isOpen) {
         panel.style.transform = "scaleY(1)";
@@ -60,6 +61,15 @@ const navLinks = {
         } else {
             panel.style.transform = "scaleY(0)";
             hamburgPaths.forEach((path) => path.style.stroke = "#FFFFFF");
+        }
+    });
+    
+    window.addEventListener("scroll", () => {
+        console.log(window.scrollY);
+        if (window.scrollY > window.innerHeight - 30) {
+            nav.style.backgroundColor = "black";
+        } else {
+            nav.style.backgroundColor = "transparent";
         }
     });
 </script>
