@@ -23,8 +23,10 @@ let smTextGlitch = "Revolt".toUpperCase();
   <div id="inner-wrapper" class="h-[115vh]">
     <div id="landscape-base"></div>
   </div>
-  <div class="z-10 absolute flex justify-center items-center w-[80vw]">
-    <div class="grid grid-cols-12 gap-2 w-4/5 max-lg:hidden desktop font-mono">
+  <div
+    class="z-10 absolute flex justify-center items-center w-[80vw] font-mono"
+  >
+    <div class="grid grid-cols-12 gap-2 w-4/5 max-lg:hidden desktop">
       {
         [...lgText].map((letter) => {
           if (letter === " ") return <div />;
@@ -81,10 +83,10 @@ let smTextGlitch = "Revolt".toUpperCase();
           else
             return (
               <div
-                class="text-white text-5xl font-extrabold flex justify-center items-center h-14 border"
+                class="text-5xl font-extrabold flex justify-center items-center h-14 border"
                 data-text={letter}
               >
-                {letter}
+                <span class="text-white">{letter}</span>
               </div>
             );
         })
@@ -95,7 +97,7 @@ let smTextGlitch = "Revolt".toUpperCase();
           else
             return (
               <div
-                class="text-white text-5xl font-extrabold flex justify-center items-center h-14 border"
+                class="text-5xl font-extrabold flex justify-center items-center h-14 border"
                 data-text={letter}
               >
                 <span class="text-white">{letter}</span>
@@ -115,8 +117,9 @@ let smTextGlitch = "Revolt".toUpperCase();
       </div>
       <div class="col-span-8 h-14"></div>
       <button
-        class="col-start-3 col-span-4 text-white text-5xl h-14 tracking-widest font-extrabold border-2 flex justify-center items-center"
-        >Register</button
+        id="register-button-mobile"
+        class="col-start-2 col-span-6 text-white text-5xl h-14 tracking-widest font-extrabold border-2 flex justify-center items-center"
+        >REGISTER</button
       >
     </div>
   </div>
@@ -153,7 +156,7 @@ let smTextGlitch = "Revolt".toUpperCase();
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+{}|:<>?~`1234567890-=[]\\;',./";
   function glitchText(el, inpIters) {
     let iters = 0;
-    let targetIters = inpIters || Math.floor(Math.random() * 60);
+    let targetIters = inpIters || Math.floor(Math.random() * 40 + 20);
     if (el.innerText.length === 1) {
       const interval = setInterval(() => {
         el.innerText = alphabet[Math.floor(Math.random() * alphabet.length)];
@@ -162,7 +165,7 @@ let smTextGlitch = "Revolt".toUpperCase();
           clearInterval(interval);
           el.innerText = el.parentElement.getAttribute("data-text");
         }
-      }, 30);
+      }, 40);
     } else {
       const originalText = el.innerText;
       const interval = setInterval(() => {
@@ -175,7 +178,7 @@ let smTextGlitch = "Revolt".toUpperCase();
             return alphabet[Math.floor(Math.random() * alphabet.length)];
           })
           .join("");
-        iters += 1 / 3;
+        iters += 1 / 4;
         if (iters > el.innerText.length) {
           clearInterval(interval);
           el.innerText = originalText;
@@ -197,22 +200,26 @@ let smTextGlitch = "Revolt".toUpperCase();
         glitchText(event.target, 20);
       };
     });
+    const button = document.getElementById("register-button");
+    glitchText(button);
+
+    // glitch button on hover
+    button.onmouseover = (event) => {
+      glitchText(event.target, 20);
+    };
   } else {
     const mobileText = document.querySelectorAll(
       ".mobile > [data-text] > span"
     );
     mobileText.forEach((el) => {
-      // print out text
-      const text = el.getAttribute("data-text");
+      glitchText(el);
+      el.onmouseover = (event) => {
+        glitchText(event.target, 20);
+      };
     });
+    const button = document.getElementById("register-button-mobile");
+    glitchText(button);
   }
 
   // glitch button
-  const button = document.getElementById("register-button");
-  glitchText(button);
-
-  // glitch button on hover
-  button.onmouseover = (event) => {
-    glitchText(event.target, 20);
-  };
 </script>
