@@ -1,77 +1,218 @@
 ---
 interface Props {
-    siteState: string;
+  siteState: string;
 }
 
 const { siteState } = Astro.props; // for updating content depending on the stage of the hackathon
-let lgText = " Would you  like to join the        Revolution".toUpperCase();
-let smText = "Join our revolt".toUpperCase();
+let lgText = " Would you  like to join the        ".toUpperCase();
+let lgTextGlitch = "Revolution".toUpperCase();
+let smText = "Join our ".toUpperCase();
+let smTextGlitch = "Revolt".toUpperCase();
 ---
 
-<!--- Post-register site -->
-<!--- <section id="hero" class="h-screen flex flex-col justify-center items-center space-y-4 bg-black">
+<!--- Post-register site --><!--- <section id="hero" class="h-screen flex flex-col justify-center items-center space-y-4 bg-black">
     <img src="/revuc_long_white.png" alt="RevolutionUC stylized text" class="w-[50vw] max-md:w-[70vw]" />
     <p class="text-white text-center text-2xl w-[50vw] max-lg:text-xl max-md:text-lg pb-6">Thank you all for participating in this year's RevolutionUC!</p>
     <button class="bg-blue-300 p-6 rounded-lg text-4xl max-lg:text-2xl max-lg:p-4 hover:bg-blue-400 transition-colors tracking-widest">View Submissions</button>
 </section>
 --->
-
-<div id="hero" class="h-[115vh] w-full flex justify-center items-center space-y-4">
-    <div id="inner-wrapper" class="h-[115vh]">
-        <div id="landscape-base"></div>
+<div
+  id="hero"
+  class="h-[115vh] w-full flex justify-center items-center space-y-4"
+>
+  <div id="inner-wrapper" class="h-[115vh]">
+    <div id="landscape-base"></div>
+  </div>
+  <div class="z-10 absolute flex justify-center items-center w-[80vw]">
+    <div class="grid grid-cols-12 gap-2 w-4/5 max-lg:hidden desktop font-mono">
+      {
+        [...lgText].map((letter) => {
+          if (letter === " ") return <div />;
+          else
+            return (
+              <div
+                class="text-[3vw] font-extrabold flex justify-center items-center border shadow-2xl"
+                data-text={letter}
+              >
+                <span class="text-white">{letter}</span>
+              </div>
+            );
+        })
+      }
+      {
+        [...lgTextGlitch].map((letter) => {
+          if (letter === " ") return <div />;
+          else
+            return (
+              <div
+                class="text-[3vw] font-extrabold flex justify-center items-center border shadow-2xl"
+                data-text={letter}
+              >
+                <span class="text-white">{letter}</span>
+              </div>
+            );
+        })
+      }
+      <div class="flex justify-center items-center">
+        <img
+          id="logo"
+          src="/favicon.png"
+          alt="RevolutionUC 2024 logo"
+          class="w-[4.5vw] h-[4.5vw]"
+        />
+      </div>
+      <div
+        class="text-white text-[3vw] font-extrabold border-2 flex justify-center items-center shadow-2xl"
+      >
+        ?
+      </div>
+      <div class="col-span-12 h-[4.5vw]"></div>
+      <button
+        id="register-button"
+        class="col-start-5 col-span-4 text-white text-[3vw] tracking-widest font-extrabold border-2 flex justify-center items-center shadow-2xl transition-all"
+      >
+        REGISTER
+      </button>
     </div>
-    <div class="z-10 absolute flex justify-center items-center w-[80vw]">
-        <div class="grid grid-cols-12 gap-2 w-4/5 max-lg:hidden">
-            {
-                [...lgText].map((letter) => {
-                    if (letter === " ") return (<div></div>)
-                    else return (<div class="text-white text-[3vw] font-extrabold flex justify-center items-center border">{letter}</div>)
-                })
-            }
-            <div class="flex justify-center items-center">
-                <img id="logo" src="/favicon.png" alt="RevolutionUC 2024 logo" class="w-[4.5vw] h-[4.5vw]" />
-            </div>
-            <div class="text-white text-[3vw] font-extrabold border-2 flex justify-center items-center">?</div>
-            <div class="col-span-12 h-[4.5vw]"></div>
-            <button class="col-start-5 col-span-4 text-white text-[3vw] tracking-widest font-extrabold border-2 flex justify-center items-center">Register</button>
-        </div>
-        <div class="grid grid-cols-8 gap-2 w-fit lg:hidden">
-            {
-                [...smText].map((letter) => {
-                    if (letter === " ") return (<div></div>)
-                    else return (<div class="text-white text-5xl font-extrabold flex justify-center items-center h-14 border">{letter}</div>)
-                })
-            }
-            <div class="flex justify-center items-center">
-                <img id="logo" src="/favicon.png" alt="RevolutionUC 2024 logo" class="h-14" />
-            </div>
-            <button class="col-start-3 col-span-4 text-white text-5xl h-14 tracking-widest font-extrabold border-2 flex justify-center items-center">Register</button>
-        </div>
+    <div class="grid grid-cols-8 gap-2 w-fit lg:hidden mobile">
+      {
+        [...smText].map((letter) => {
+          if (letter === " ") return <div />;
+          else
+            return (
+              <div
+                class="text-white text-5xl font-extrabold flex justify-center items-center h-14 border"
+                data-text={letter}
+              >
+                {letter}
+              </div>
+            );
+        })
+      }
+      {
+        [...smTextGlitch].map((letter) => {
+          if (letter === " ") return <div />;
+          else
+            return (
+              <div
+                class="text-white text-5xl font-extrabold flex justify-center items-center h-14 border"
+                data-text={letter}
+              >
+                <span class="text-white">{letter}</span>
+              </div>
+            );
+        })
+      }
+      <div class="flex justify-center items-center glitch layers">
+        <span
+          ><img
+            id="logo"
+            src="/favicon.png"
+            alt="RevolutionUC 2024 logo"
+            class="h-14"
+          /></span
+        >
+      </div>
+      <div class="col-span-8 h-14"></div>
+      <button
+        class="col-start-3 col-span-4 text-white text-5xl h-14 tracking-widest font-extrabold border-2 flex justify-center items-center"
+        >Register</button
+      >
     </div>
+  </div>
 </div>
 
-
 <style is:inline>
-    #hero {
-        -webkit-font-smoothing: antialiased;
-        background: linear-gradient(#d80368 -12%, #f75c03 100%);
-        height: 130%;
-    }
-    #inner-wrapper {
-        width: 100%;
-        margin: 0 auto;
-        perspective: 180px;
-        perspective-origin: 50% 55%;
-        overflow: hidden;
-    }
-    #landscape-base {
-        position: absolute;
-        width: 200%;
-        left: -50%;
-        height: 130%;
-        bottom: -30%;
-        background-image: linear-gradient(to bottom, #d80368 2px, transparent 2px), linear-gradient(to right, #d80368 2px, transparent 2px);
-        background-size: 50px 50px, 80px 80px;
-        background-position: -50px -1px, -1px -1px;
-    }
+  #hero {
+    -webkit-font-smoothing: antialiased;
+    background: linear-gradient(#d80368 -12%, #f75c03 100%);
+    height: 130%;
+  }
+  #inner-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    perspective: 180px;
+    perspective-origin: 50% 55%;
+    overflow: hidden;
+  }
+  #landscape-base {
+    position: absolute;
+    width: 200%;
+    left: -50%;
+    height: 130%;
+    bottom: -30%;
+    background-image: linear-gradient(to bottom, #d80368 2px, transparent 2px),
+      linear-gradient(to right, #d80368 2px, transparent 2px);
+    background-size: 50px 50px, 80px 80px;
+    background-position: -50px -1px, -1px -1px;
+  }
 </style>
+
+<script defer>
+  const alphabet =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+{}|:<>?~`1234567890-=[]\\;',./";
+  function glitchText(el, inpIters) {
+    let iters = 0;
+    let targetIters = inpIters || Math.floor(Math.random() * 60);
+    if (el.innerText.length === 1) {
+      const interval = setInterval(() => {
+        el.innerText = alphabet[Math.floor(Math.random() * alphabet.length)];
+        iters++;
+        if (iters > targetIters) {
+          clearInterval(interval);
+          el.innerText = el.parentElement.getAttribute("data-text");
+        }
+      }, 30);
+    } else {
+      const originalText = el.innerText;
+      const interval = setInterval(() => {
+        el.innerText = el.innerText
+          .split("")
+          .map((_, index) => {
+            if (index < iters) {
+              return originalText[index];
+            }
+            return alphabet[Math.floor(Math.random() * alphabet.length)];
+          })
+          .join("");
+        iters += 1 / 3;
+        if (iters > el.innerText.length) {
+          clearInterval(interval);
+          el.innerText = originalText;
+        }
+      }, 30);
+    }
+  }
+  // check if screen is desktop or mobile
+  const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
+
+  // get all the text elements
+  if (isDesktop) {
+    const desktopText = document.querySelectorAll(
+      ".desktop > [data-text] > span"
+    );
+    desktopText.forEach((el) => {
+      glitchText(el);
+      el.onmouseover = (event) => {
+        glitchText(event.target, 20);
+      };
+    });
+  } else {
+    const mobileText = document.querySelectorAll(
+      ".mobile > [data-text] > span"
+    );
+    mobileText.forEach((el) => {
+      // print out text
+      const text = el.getAttribute("data-text");
+    });
+  }
+
+  // glitch button
+  const button = document.getElementById("register-button");
+  glitchText(button);
+
+  // glitch button on hover
+  button.onmouseover = (event) => {
+    glitchText(event.target, 20);
+  };
+</script>
