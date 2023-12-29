@@ -72,9 +72,9 @@ let smTextGlitch = "Revolt".toUpperCase();
       <div class="col-span-12 h-[4.5vw]"></div>
       <button
         id="register-button"
-        class="col-start-5 col-span-4 text-white text-[3vw] tracking-widest font-extrabold border-2 flex justify-center items-center shadow-2xl transition-all"
+        class="col-start-5 col-span-4 text-white text-[3vw] tracking-widest font-extrabold border-2 flex justify-center items-center shadow-2xl transition-all hover:scale-[1.02] hover:backdrop-blur-[2px] active:shadow-lg"
       >
-        REGISTER
+        <span class="text-white">REGISTER</span>
       </button>
     </div>
     <div class="grid grid-cols-8 gap-2 w-fit lg:hidden mobile">
@@ -149,6 +149,15 @@ let smTextGlitch = "Revolt".toUpperCase();
       linear-gradient(to right, #d80368 2px, transparent 2px);
     background-size: 50px 50px, 80px 80px;
     background-position: -50px -1px, -1px -1px;
+    animation: moveUp 3s linear infinite;
+  }
+  @keyframes moveUp {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-50px);
+    }
   }
 </style>
 
@@ -217,5 +226,4 @@ let smTextGlitch = "Revolt".toUpperCase();
     glitchText(button);
   }
 
-  // glitch button
 </script>
