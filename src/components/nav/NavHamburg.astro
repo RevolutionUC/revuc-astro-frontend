@@ -77,7 +77,7 @@ const navLinks = {
   </ul>
 </nav>
 
-<script defer>
+<script defer define:vars={{ current }}>
   let isOpen = false;
   const hamburg = document.querySelector("#hamburger");
   const panel = document.querySelector("#hamburger-panel");
@@ -101,11 +101,15 @@ const navLinks = {
     }
   });
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > window.innerHeight - 30) {
-      navHam.style.backgroundColor = "black";
-    } else {
-      navHam.style.backgroundColor = "transparent";
-    }
-  });
+  if (current !== "home") {
+    navHam.style.backgroundColor = "black";
+  } else {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > window.innerHeight - 30) {
+        navHam.style.backgroundColor = "black";
+      } else {
+        navHam.style.backgroundColor = "transparent";
+      }
+    });
+  }
 </script>
