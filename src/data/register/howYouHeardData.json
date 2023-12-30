@@ -1,0 +1,38 @@
+[
+    {
+        "id": "howYouHeard-searchEngine",
+        "option": "Search Engine"
+    },
+    {
+        "id": "howYouHeard-RevolutionUCWebsite",
+        "option": "RevolutionUC Website"
+    },
+    {
+        "id": "howYouHeard-Facebook",
+        "option": "Facebook"
+    },
+    {
+        "id": "howYouHeard-Twitter",
+        "option": "Twitter"
+    },
+    {
+        "id": "howYouHeard-Instagram",
+        "option": "Instagram"
+    },
+    {
+        "id": "howYouHeard-LinkedIn",
+        "option": "LinkedIn"
+    },
+    {
+        "id": "howYouHeard-Email",
+        "option": "Email"
+    },
+    {
+        "id": "howYouHeard-WordOfMouth",
+        "option": "Word of Mouth"
+    },
+    {
+        "id": "howYouHeard-Other",
+        "option": "Other"
+    }
+]

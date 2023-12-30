@@ -7,27 +7,21 @@ import scheduleData from "../data/scheduleData.json";
 ---
 
 <HTMLWrapper title="Schedule">
-  <ResponsiveNav current="schedule" />
-  <main class="mt-24">
-    <div class="flex flex-col justify-center items-center">
-      <img
-        src="https://assets.revolutionuc.com/website-images/2023/photos/2x/schedule.png"
-        alt="RevolutionUC's Schedule"
-        class="w-[760px] max-md:w-11/12 h-[500px] max-md:h-[300px] object-cover pb-8"
-        decoding="async"
-        loading="eager"
-      />
-      <h1 class="text-3xl font-bold">Schedule</h1>
-      <ScheduleTable
-        schedule={scheduleData.scheduleDayOne}
-        label="February 25th"
-      />
-      <ScheduleTable
-        schedule={scheduleData.scheduleDayTwo}
-        label="February 26th"
-      />
-      <p class="pb-8">Register for RevolutionUC to receive updates!</p>
-    </div>
-  </main>
-  <Footer />
+    <ResponsiveNav current="schedule" />
+    <main class="mt-24 flex justify-center">
+        <div class="flex flex-col justify-center items-center">
+            <img 
+                src="https://assets.revolutionuc.com/website-images/2023/photos/2x/schedule.png" 
+                alt="RevolutionUC's Schedule" 
+                class="w-[760px] max-md:w-11/12 h-[500px] max-md:h-[300px] object-cover pb-8"
+                decoding="async"
+                loading="eager"
+            />  
+            <h1 class="text-3xl font-bold">Schedule</h1>
+            <ScheduleTable schedule={scheduleData.scheduleDayOne} label="February 25th" />
+            <ScheduleTable schedule={scheduleData.scheduleDayTwo} label="February 26th" />
+            <p class="pb-8">Register for RevolutionUC to receive updates!</p>
+        </div>      
+    </main>
+    <Footer />
 </HTMLWrapper>
