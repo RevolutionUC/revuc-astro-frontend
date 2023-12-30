@@ -33,7 +33,7 @@ let smTextGlitch = "Revolt".toUpperCase();
           else
             return (
               <div
-                class="text-[3vw] font-extrabold flex justify-center items-center border shadow-2xl"
+                class="text-[3vw] font-extrabold flex justify-center items-center border shadow-2xl backdrop-blur-sm"
                 data-text={letter}
               >
                 <span class="text-white">{letter}</span>
@@ -47,7 +47,7 @@ let smTextGlitch = "Revolt".toUpperCase();
           else
             return (
               <div
-                class="text-[3vw] font-extrabold flex justify-center items-center border shadow-2xl"
+                class="text-[3vw] font-extrabold flex justify-center items-center border shadow-2xl backdrop-blur-sm"
                 data-text={letter}
               >
                 <span class="text-white">{letter}</span>
@@ -55,8 +55,8 @@ let smTextGlitch = "Revolt".toUpperCase();
             );
         })
       }
-      <div class="flex justify-center items-center glitch layers">
-        <span
+      <div class="flex justify-center items-center">
+        <span class="absolute"
           ><img
             id="logo"
             src="/favicon.png"
@@ -66,7 +66,7 @@ let smTextGlitch = "Revolt".toUpperCase();
         >
       </div>
       <div
-        class="text-white text-[3vw] font-extrabold border-2 flex justify-center items-center shadow-2xl"
+        class="text-white text-[3vw] font-extrabold border-2 flex justify-center items-center shadow-2xl backdrop-blur-sm"
         data-text="?"
       >
         <span class="text-white">?</span>
@@ -74,7 +74,7 @@ let smTextGlitch = "Revolt".toUpperCase();
       <div class="col-span-12 h-[4.5vw]"></div>
       <button
         id="register-button"
-        class="col-start-5 col-span-4 text-white text-[3vw] tracking-widest font-extrabold border-2 flex justify-center items-center shadow-2xl transition-all hover:scale-[1.02] hover:backdrop-blur-[2px] active:shadow-lg"
+        class="col-start-5 col-span-4 text-white text-[3vw] tracking-widest font-extrabold border-2 flex justify-center items-center shadow-2xl backdrop-blur-sm transition-all active:scale-[0.98] hover:scale-[1.02] hover:backdrop-blur-[6px] active:shadow-lg"
       >
         <span class="text-white">REGISTER</span>
       </button>
@@ -228,4 +228,27 @@ let smTextGlitch = "Revolt".toUpperCase();
     glitchText(button);
   }
 
+  // also glitch on resize
+  window.addEventListener("resize", () => {
+    const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
+    if (isDesktop) {
+      const desktopText = document.querySelectorAll(
+        ".desktop > [data-text] > span"
+      );
+      desktopText.forEach((el) => {
+        el.onmouseover = (event) => {
+          glitchText(event.target, 20);
+        };
+      });
+    } else {
+      const mobileText = document.querySelectorAll(
+        ".mobile > [data-text] > span"
+      );
+      mobileText.forEach((el) => {
+        el.onmouseover = (event) => {
+          glitchText(event.target, 20);
+        };
+      });
+    }
+  });
 </script>

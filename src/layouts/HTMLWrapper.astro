@@ -17,9 +17,58 @@ const { title } = Astro.props;
       rel="stylesheet"
     />
     <title>{title}</title>
+    <script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script is:inline src="/scripts/mgGlitch.min.js"></script>
   </head>
   <body>
     <slot />
+    <script defer>
+      $("#landscape-base").mgGlitch({
+        // set 'true' to stop the plugin
+        destroy: false,
+
+        // set 'false' to stop glitching
+        glitch: true,
+
+        // set 'false' to stop scaling
+        scale: true,
+
+        // set 'false' to stop glitch blending
+        blend: true,
+
+        // CSS blend-mode property
+        // normal
+        // multiply
+        // screen
+        // overlay
+        // darken
+        // lighten
+        // color-dodge
+        // color-burn
+        // difference
+        // exclusion
+        // hue
+        // saturation
+        // color
+        // luminosity
+        blendModeType: "hue",
+
+        // set min time for glitch 1 elem
+        glitch1TimeMin: 600,
+
+        // set max time for glitch 1 elem
+        glitch1TimeMax: 900,
+
+        // set min time for glitch 2 elem
+        glitch2TimeMin: 400,
+
+        // set max time for glitch 2 elem
+        glitch2TimeMax: 600,
+
+        // z-index
+        zIndexStart: 5,
+      });
+    </script>
   </body>
 </html>
 
