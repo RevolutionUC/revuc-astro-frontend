@@ -3,21 +3,35 @@ import pastHacks from "../data/pastHacks.json";
 // TODO: fix last year's logo being mismatched
 ---
 
-<section id="past-hacks" class="flex flex-col justify-center items-center space-y-12 p-16">
-    <p class="text-lg text-center">RevolutionUC has been a leader in the Cincinnati hacker community since 2014. Check out submissions from previous hackathons.</p>
-    <div id="past-hack-logos" class="flex flex-wrap justify-center w-3/4">
-        {
-            Object.keys(pastHacks).reverse().map((key) => {
-                const dataArr = pastHacks[key as keyof typeof pastHacks];
-                return (
-                    <div class="w-32 group ml-6 mr-6">
-                        <a href={dataArr[3]} target="_blank" rel="noopener">
-                            <img src={dataArr[1]} alt={dataArr[2]} class="group-hover:brightness-75 transition-all" />
-                            <div class="relative text-center tracking-wider font-bold w-full bottom-2/4 opacity-0 pointer-events-none group-hover:opacity-100 text-white transition-opacity">{dataArr[0]}</div>
-                        </a>
-                    </div>
-                )
-            })
-        }
-    </div>
+<section
+  id="past-hacks"
+  class="flex flex-col justify-center items-center space-y-12 p-16"
+>
+  <p class="text-lg text-center">
+    RevolutionUC has been a leader in the Cincinnati hacker community since
+    2014. Check out submissions from previous hackathons.
+  </p>
+  <div id="past-hack-logos" class="flex flex-wrap justify-center w-3/4">
+    {
+      Object.keys(pastHacks)
+        .reverse()
+        .map((key) => {
+          const dataArr = pastHacks[key as keyof typeof pastHacks];
+          return (
+            <div class="w-32 group ml-6 mr-6">
+              <a href={dataArr[3]} target="_blank" rel="noopener">
+                <img
+                  src={dataArr[1]}
+                  alt={dataArr[2]}
+                  class="group-hover:brightness-75 transition-all"
+                />
+                <div class="relative text-center tracking-wider font-bold w-full bottom-2/4 opacity-0 pointer-events-none group-hover:opacity-100 text-white transition-opacity">
+                  {dataArr[0]}
+                </div>
+              </a>
+            </div>
+          );
+        })
+    }
+  </div>
 </section>
