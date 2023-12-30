@@ -8,7 +8,10 @@ module.exports = {
 			fontFamily: {
 				sans: ['Raleway', ...defaultTheme.fontFamily.sans],
 				mono: ['"Space Mono"', ...defaultTheme.fontFamily.mono]
-			}
+			},
+			gridTemplateColumns: {
+				'22': 'repeat(22, minmax(0, 1fr))',
+			},
 		},
 	},
 	plugins: [],

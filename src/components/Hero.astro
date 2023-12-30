@@ -4,10 +4,8 @@ interface Props {
 }
 
 const { siteState } = Astro.props; // for updating content depending on the stage of the hackathon
-let lgText = " Would you  like to join the        ".toUpperCase();
+let lgText = "   February  24-25".toUpperCase();
 let lgTextGlitch = "Revolution".toUpperCase();
-let smText = "Join our ".toUpperCase();
-let smTextGlitch = "Revolt".toUpperCase();
 ---
 
 <!--- Post-register site --><!--- <section id="hero" class="h-screen flex flex-col justify-center items-center space-y-4 bg-black">
@@ -24,10 +22,13 @@ let smTextGlitch = "Revolt".toUpperCase();
     <div id="landscape-base"></div>
   </div>
   <div
-    class="z-10 absolute flex justify-center items-center w-[80vw] font-mono"
+    class="z-10 absolute flex flex-col items-center w-[80vw] h-3/4 font-mono space-y-8"
   >
-    <div class="grid grid-cols-12 gap-2 w-4/5 max-lg:hidden desktop">
-      {
+    <div class="w-48 mt-12">
+      <img id="logo" src="/favicon.png" alt="RevolutionUC 2024 logo" />
+    </div>
+    <div class="grid grid-cols-22 gap-2 w-4/5 max-lg:hidden desktop">
+      <!-- {
         [...lgText].map((letter) => {
           if (letter === " ") return <div />;
           else
@@ -77,9 +78,55 @@ let smTextGlitch = "Revolt".toUpperCase();
         class="col-start-5 col-span-4 text-white text-[3vw] tracking-widest font-extrabold border-2 flex justify-center items-center shadow-2xl backdrop-blur-sm transition-all active:scale-[0.98] hover:scale-[1.02] hover:backdrop-blur-[6px] active:shadow-lg"
       >
         <span class="text-white">REGISTER</span>
+      </button> -->
+      {
+        [...lgTextGlitch].map((letter) => {
+          if (letter === " ") return <div />;
+          else
+            return (
+              <div
+                class="row-span-2 col-span-2 text-6xl font-extrabold flex justify-center items-center border shadow-2xl backdrop-blur-sm transition-transform active:scale-[0.98] hover:scale-[1.02]"
+                data-text={letter}
+              >
+                <span class="text-white">{letter}</span>
+              </div>
+            );
+        })
+      }
+      <div
+        class="row-span-2 col-span-2 border shadow-2xl backdrop-blur-sm p-2 transition-transform active:scale-[0.98] hover:scale-[1.02]"
+      >
+        <img
+          id="uc-logo"
+          src="/revuc_white.png"
+          alt="The word UC stylized in the RevolutionUC font"
+          class="relative -left-1"
+        />
+      </div>
+      {
+        [...lgText].map((letter) => {
+          if (letter === " ") return <div />;
+          else
+            return (
+              <div
+                class="text-4xl font-extrabold flex justify-center items-center border shadow-2xl backdrop-blur-sm"
+                data-text={letter}
+              >
+                <span class="text-white">{letter}</span>
+              </div>
+            );
+        })
+      }
+
+      <div class="col-span-12 h-[2vw]"></div>
+      <button
+        id="register-button"
+        class="col-start-8 col-span-8 text-white text-[3vw] tracking-widest font-extrabold border-2 flex justify-center items-center shadow-2xl backdrop-blur-sm transition-all active:scale-[0.98] hover:scale-[1.02] hover:backdrop-blur-[6px] active:shadow-lg"
+      >
+        <span class="text-white">REGISTER</span>
       </button>
     </div>
-    <div class="grid grid-cols-8 gap-2 w-fit lg:hidden mobile">
+    <!-- <div class="grid grid-cols-8 gap-2 w-fit lg:hidden mobile">
       {
         [...smText].map((letter) => {
           if (letter === " ") return <div />;
@@ -124,7 +171,7 @@ let smTextGlitch = "Revolt".toUpperCase();
         class="col-start-2 col-span-6 text-white text-5xl h-14 tracking-widest font-extrabold border-2 flex justify-center items-center"
         >REGISTER</button
       >
-    </div>
+    </div> -->
   </div>
 </div>
 
@@ -198,7 +245,7 @@ let smTextGlitch = "Revolt".toUpperCase();
       }, 40);
     }
   }
-  // check if screen is desktop or mobile
+  /* // check if screen is desktop or mobile
   const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
 
   // get all the text elements
@@ -250,5 +297,16 @@ let smTextGlitch = "Revolt".toUpperCase();
         };
       });
     }
+  }); */
+  const desktopText = document.querySelectorAll(
+    ".desktop > [data-text] > span"
+  );
+  desktopText.forEach((el) => {
+    glitchText(el);
+    el.onmouseover = (event) => {
+      glitchText(event.target, 20);
+    };
   });
+  const button = document.getElementById("register-button");
+  glitchText(button);
 </script>
