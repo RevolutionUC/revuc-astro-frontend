@@ -3,9 +3,9 @@ interface Props {
   siteState: string;
 }
 
-const { siteState }: Props = Astro.props; // for updating content depending on the stage of the hackathon
-let lgText = "   February  24-25".toUpperCase();
-let lgTextGlitch = "Revolution".toUpperCase();
+const { siteState } = Astro.props; // for updating content depending on the stage of the hackathon
+let title = "Revolution".toUpperCase();
+let date = "   February  24-25".toUpperCase(); // Keep the space in order to match with the RevolutionUC Text
 ---
 
 <!--- Post-register site --><!--- <section id="hero" class="h-screen flex flex-col justify-center items-center space-y-4 bg-black">
@@ -14,107 +14,42 @@ let lgTextGlitch = "Revolution".toUpperCase();
     <button class="bg-blue-300 p-6 rounded-lg text-4xl max-lg:text-2xl max-lg:p-4 hover:bg-blue-400 transition-colors tracking-widest">View Submissions</button>
 </section>
 --->
-<div
-  id="hero"
-  class="h-[115vh] w-full flex justify-center items-center space-y-4"
->
-  <div id="inner-wrapper" class="h-[115vh]">
-    <div id="landscape-base"></div>
-  </div>
-  <div
-    class="z-10 absolute flex flex-col items-center w-[80vw] h-3/4 font-mono space-y-8"
-  >
+<div id="hero" class="min-h-screen w-full flex justify-center items-center space-y-4 relative">
+  <div id="landscape-grid" class="absolute inset-0"></div>
+  <div class="z-10 absolute flex flex-col items-center w-[80vw] h-3/4 font-mono space-y-8">
     <div class="w-48 mt-12">
       <img id="logo" src="/favicon.png" alt="RevolutionUC 2024 logo" />
     </div>
     <div class="grid grid-cols-22 gap-2 w-4/5 desktop">
-      <!-- {
-        [...lgText].map((letter) => {
-          if (letter === " ") return <div />;
-          else
-            return (
-              <div
-                class="text-[3vw] font-extrabold flex justify-center items-center border shadow-2xl backdrop-blur-sm"
-                data-text={letter}
-              >
-                <span class="text-white">{letter}</span>
-              </div>
-            );
-        })
-      }
       {
-        [...lgTextGlitch].map((letter) => {
+        Array.from(title).map((letter) => {
           if (letter === " ") return <div />;
-          else
-            return (
-              <div
-                class="text-[3vw] font-extrabold flex justify-center items-center border shadow-2xl backdrop-blur-sm"
-                data-text={letter}
-              >
-                <span class="text-white">{letter}</span>
-              </div>
-            );
-        })
-      }
-      <div class="flex justify-center items-center">
-        <span class="absolute"
-          ><img
-            id="logo"
-            src="/favicon.png"
-            alt="RevolutionUC 2024 logo"
-            class="w-[4.5vw] h-[4.5vw]"
-          /></span
-        >
-      </div>
-      <div
-        class="text-white text-[3vw] font-extrabold border-2 flex justify-center items-center shadow-2xl backdrop-blur-sm"
-        data-text="?"
-      >
-        <span class="text-white">?</span>
-      </div>
-      <div class="col-span-12 h-[4.5vw]"></div>
-      <button
-        id="register-button"
-        class="col-start-5 col-span-4 text-white text-[3vw] tracking-widest font-extrabold border-2 flex justify-center items-center shadow-2xl backdrop-blur-sm transition-all active:scale-[0.98] hover:scale-[1.02] hover:backdrop-blur-[6px] active:shadow-lg"
-      >
-        <span class="text-white">REGISTER</span>
-      </button> -->
-      {
-        [...lgTextGlitch].map((letter) => {
-          if (letter === " ") return <div />;
-          else
-            return (
-              <div
-                class="row-span-2 col-span-2 text-6xl font-extrabold flex justify-center items-center border shadow-2xl backdrop-blur-sm transition-transform active:scale-[0.98] hover:scale-[1.02]"
-                data-text={letter}
-              >
-                <span class="text-white">{letter}</span>
-              </div>
-            );
+          return (
+            <div
+              class="row-span-2 col-span-2 text-6xl font-extrabold flex justify-center items-center border shadow-2xl backdrop-blur-sm transition-transform active:scale-[0.98] hover:scale-[1.02]"
+              data-text={letter}
+            >
+              <span class="text-white">{letter}</span>
+            </div>
+          );
         })
       }
       <div
         class="row-span-2 col-span-2 border shadow-2xl backdrop-blur-sm p-2 transition-transform active:scale-[0.98] hover:scale-[1.02]"
       >
-        <img
-          id="uc-logo"
-          src="/revuc_white.png"
-          alt="The word UC stylized in the RevolutionUC font"
-          class="relative -left-1"
-        />
+        <img id="uc-logo" src="/revuc_white.png" alt="The word UC stylized in the RevolutionUC font" class="relative -left-1" />
       </div>
       {
-        [...lgText].map((letter) => {
+        Array.from(date).map((letter) => {
           if (letter === " ") return <div />;
-          else
-            return (
-              <div
-                class="text-4xl font-extrabold flex justify-center items-center border shadow-2xl backdrop-blur-sm"
-                data-text={letter}
-              >
-                <span class="text-white">{letter}</span>
-              </div>
-            );
+          return (
+            <div
+              class="text-4xl font-extrabold flex justify-center items-center border shadow-2xl backdrop-blur-sm"
+              data-text={letter}
+            >
+              <span class="text-white">{letter}</span>
+            </div>
+          );
         })
       }
 
@@ -126,93 +61,31 @@ let lgTextGlitch = "Revolution".toUpperCase();
         <span class="text-white">REGISTER</span>
       </button>
     </div>
-    <!-- <div class="grid grid-cols-8 gap-2 w-fit lg:hidden mobile">
-      {
-        [...smText].map((letter) => {
-          if (letter === " ") return <div />;
-          else
-            return (
-              <div
-                class="text-5xl font-extrabold flex justify-center items-center h-14 border"
-                data-text={letter}
-              >
-                <span class="text-white">{letter}</span>
-              </div>
-            );
-        })
-      }
-      {
-        [...smTextGlitch].map((letter) => {
-          if (letter === " ") return <div />;
-          else
-            return (
-              <div
-                class="text-5xl font-extrabold flex justify-center items-center h-14 border"
-                data-text={letter}
-              >
-                <span class="text-white">{letter}</span>
-              </div>
-            );
-        })
-      }
-      <div class="flex justify-center items-center glitch layers">
-        <span
-          ><img
-            id="logo"
-            src="/favicon.png"
-            alt="RevolutionUC 2024 logo"
-            class="h-14"
-          /></span
-        >
-      </div>
-      <div class="col-span-8 h-14"></div>
-      <button
-        id="register-button-mobile"
-        class="col-start-2 col-span-6 text-white text-5xl h-14 tracking-widest font-extrabold border-2 flex justify-center items-center"
-        >REGISTER</button
-      >
-    </div> -->
   </div>
 </div>
 
 <style is:inline>
   #hero {
-    -webkit-font-smoothing: antialiased;
-    background: linear-gradient(#d80368 -12%, #f75c03 100%);
-    height: 130%;
+    background-image: linear-gradient(#d80368 -12%, #f75c03 100%);
   }
-  #inner-wrapper {
-    width: 100%;
-    margin: 0 auto;
-    perspective: 180px;
-    perspective-origin: 50% 55%;
-    overflow: hidden;
-  }
-  #landscape-base {
-    position: absolute;
-    width: 200%;
-    left: -50%;
-    height: 130%;
-    bottom: -30%;
-    background-image: linear-gradient(to bottom, #d80368 2px, transparent 2px),
-      linear-gradient(to right, #d80368 2px, transparent 2px);
-    background-size: 50px 50px, 80px 80px;
-    background-position: -50px -1px, -1px -1px;
-    animation: moveUp 3s linear infinite;
+  #landscape-grid {
+    background-size: 5vh 5vh, 80px 80px;
+    background-image: linear-gradient(to bottom, #d80368 1.5px, transparent 1.5px),
+      linear-gradient(to right, #d80368 1.5px, transparent 1.5px);
+    animation: moveUp 15s linear infinite forwards;
   }
   @keyframes moveUp {
     0% {
-      transform: translateY(0);
+      background-position: 0% 0%;
     }
     100% {
-      transform: translateY(-50px);
+      background-position: 0% -100%;
     }
   }
 </style>
 
 <script defer>
-  const alphabet =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+{}|:<>?~`1234567890-=[]\\;',./";
+  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+{}|:<>?~`1234567890-=[]\\;',./";
   function glitchText(el, inpIters) {
     let iters = 0;
     let targetIters = inpIters || Math.floor(Math.random() * 40 + 20);
@@ -298,15 +171,13 @@ let lgTextGlitch = "Revolution".toUpperCase();
       });
     }
   }); */
-  const desktopText = document.querySelectorAll(
-    ".desktop > [data-text] > span"
-  );
+  const desktopText = document.querySelectorAll(".desktop > [data-text] > span");
   desktopText.forEach((el) => {
-    glitchText(el);
+    glitchText(el, 20); // Glitch text on page load
     el.onmouseover = (event) => {
       glitchText(event.target, 20);
     };
   });
   const button = document.getElementById("register-button");
-  glitchText(button);
+  glitchText(button, 35); // Glitch button text on page load
 </script>

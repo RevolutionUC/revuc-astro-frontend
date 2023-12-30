@@ -24,18 +24,18 @@ const { title } = Astro.props;
   <body>
     <slot />
     <script defer>
-      $("#landscape-base").mgGlitch({
+      $("#landscape-grid").mgGlitch({
         // set 'true' to stop the plugin
-        destroy: false,
+        destroy: true,
 
         // set 'false' to stop glitching
         glitch: true,
 
         // set 'false' to stop scaling
-        scale: true,
+        scale: false,
 
         // set 'false' to stop glitch blending
-        blend: true,
+        blend: false,
 
         // CSS blend-mode property
         // normal
@@ -52,7 +52,7 @@ const { title } = Astro.props;
         // saturation
         // color
         // luminosity
-        blendModeType: "hue",
+        blendModeType: "overlay",
 
         // set min time for glitch 1 elem
         glitch1TimeMin: 600,
