@@ -3,7 +3,7 @@ interface Props {
   siteState: string;
 }
 
-const { siteState } = Astro.props; // for updating content depending on the stage of the hackathon
+const { siteState }: Props = Astro.props; // for updating content depending on the stage of the hackathon
 let lgText = "   February  24-25".toUpperCase();
 let lgTextGlitch = "Revolution".toUpperCase();
 ---

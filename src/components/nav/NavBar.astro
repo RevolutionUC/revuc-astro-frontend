@@ -52,14 +52,18 @@ const navLinks = {
   </ul>
 </nav>
 
-<script defer>
+<script defer define:vars={{ current }}>
   // change the nav bar to black when the user scrolls down
   const nav = document.querySelector("#nav-bar");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > window.innerHeight - 30) {
-      nav.style.backgroundColor = "black";
-    } else {
-      nav.style.backgroundColor = "transparent";
-    }
-  });
+  if (current !== "home") {
+    nav.style.backgroundColor = "black";
+  } else {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > window.innerHeight - 30) {
+        nav.style.backgroundColor = "black";
+      } else {
+        nav.style.backgroundColor = "transparent";
+      }
+    });
+  }
 </script>
