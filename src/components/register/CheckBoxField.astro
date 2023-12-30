@@ -1,0 +1,36 @@
+---
+interface CheckBoxFieldProps {
+  label: string;
+  name: string;
+  checkBoxLabel?: string;
+  href?: string;
+  hrefText?: string;
+  required?: boolean;
+}
+const { label, name, checkBoxLabel, href, hrefText, required } = Astro.props as CheckBoxFieldProps;
+
+interface CheckBoxItem {
+  id: string;
+  option: string;
+}
+const { checkBoxesData } = Astro.props;
+---
+
+<div>
+    <label class="font-bold">{label}</label>
+    <div class="pt-2">
+    { href && hrefText ? (
+      <label for={name}>
+        <input name={name} type="checkbox" id={name} required={required}/>
+        {checkBoxLabel}<sup><a data-turbolinks="false" href={href} class="underline text-blue-600">{hrefText}</a></sup>
+      </label>
+    ) : (
+      checkBoxesData.map((checkBox: CheckBoxItem) => (
+        <label for={checkBox.id}>
+          <input name={name} type="checkbox" id={checkBox.id} value={checkBox.id}/>
+          {checkBox.option}
+        </label><br />
+      ))
+    )}
+  </div>
+</div>

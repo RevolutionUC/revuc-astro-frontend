@@ -1,0 +1,30 @@
+[
+    {
+        "id": "Indian",
+        "option": "American Indian or Alaskan Native"
+    },
+    {
+        "id": "Asian",
+        "option": "Asian"
+    },
+    {
+        "id": "Black",
+        "option": "Black or African American"
+    },
+    {
+        "id": "Islander",
+        "option": "Native Hawaiian or other Pacific Islander"
+    },
+    {
+        "id": "White",
+        "option": "White"
+    },
+    {
+        "id": "Latino",
+        "option": "Hispanic or Latino"
+    },
+    {
+        "id": "Prefer Not",
+        "option": "Prefer Not"
+    }
+]
