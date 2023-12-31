@@ -6,10 +6,6 @@ interface Props {
 const { siteState } = Astro.props; // for updating content depending on the stage of the hackathon
 let title = "Revolution".toUpperCase();
 let date = "    February 24-25    ".toUpperCase(); // Keep the space in order to match with the RevolutionUC Text
-/* let hour = "00"; // hour until jan 1st 2024
-let minute = "00"; // minute until jan 1st 2024
-let second = "00"; // second until jan 1st 2024 */
-
 let subText = "Registration opens in:";
 ---
 
@@ -19,20 +15,16 @@ let subText = "Registration opens in:";
     <button class="bg-blue-300 p-6 rounded-lg text-4xl max-lg:text-2xl max-lg:p-4 hover:bg-blue-400 transition-colors tracking-widest">View Submissions</button>
 </section>
 --->
-<div
-  id="hero"
-  class="min-h-screen w-full flex justify-center items-center space-y-4 relative"
->
+<div id="hero" class="min-h-screen w-full flex justify-center items-center space-y-4 relative">
   <div id="landscape-grid" class="absolute inset-0"></div>
-  <div
-    class="z-10 absolute flex flex-col items-center w-[80vw] max-[1024px]:w-full h-3/4 font-mono space-y-8"
-  >
-    <div class="w-48 mt-12">
+  <div class="z-10 absolute flex flex-col items-center w-[80vw] max-[1024px]:w-full h-3/4 font-mono space-y-8">
+    <div class="glitch w-48 mt-12 relative">
       <img id="logo" src="/favicon.png" alt="RevolutionUC 2024 logo" />
+      <div class="glitch__img"></div>
+      <div class="glitch__img"></div>
+      <div class="glitch__img"></div>
     </div>
-    <div
-      class="grid grid-cols-22 gap-2 w-4/5 max-[1024px]:w-11/12 desktop text-white"
-    >
+    <div class="grid grid-cols-22 gap-2 w-4/5 max-[1024px]:w-11/12 desktop text-white">
       {
         Array.from(title).map((letter) => {
           if (letter === " ") return <div />;
@@ -85,56 +77,6 @@ let subText = "Registration opens in:";
         })
       }
 
-      <!-- {
-        Array.from(hour).map((letter) => {
-          if (letter === " ") return <div />;
-          return (
-            <div
-              class="countdown-hour text-4xl max-[1024px]:text-lg min-[1024px]:border font-extrabold flex justify-center items-center shadow-2xl backdrop-blur-sm"
-              data-text={letter}
-            >
-              <span>{letter}</span>
-            </div>
-          );
-        })
-      }
-      <div
-        class="text-4xl max-[1024px]:text-lg min-[1024px]:border font-extrabold flex justify-center items-center shadow-2xl backdrop-blur-sm"
-      >
-        <span>:</span>
-      </div>
-      {
-        Array.from(minute).map((letter) => {
-          if (letter === " ") return <div />;
-          return (
-            <div
-              class="countdown-minute text-4xl max-[1024px]:text-lg min-[1024px]:border font-extrabold flex justify-center items-center shadow-2xl backdrop-blur-sm"
-              data-text={letter}
-            >
-              <span>{letter}</span>
-            </div>
-          );
-        })
-      }
-      <div
-        class="text-4xl max-[1024px]:text-lg min-[1024px]:border font-extrabold flex justify-center items-center shadow-2xl backdrop-blur-sm"
-      >
-        <span>:</span>
-      </div>
-      {
-        Array.from(second).map((letter) => {
-          if (letter === " ") return <div />;
-          return (
-            <div
-              class="countdown-second text-4xl max-[1024px]:text-lg min-[1024px]:border font-extrabold flex justify-center items-center shadow-2xl backdrop-blur-sm"
-              data-text={letter}
-            >
-              <span>{letter}</span>
-            </div>
-          );
-        })
-      } -->
-
       <div class="col-span-12 h-[2vw]"></div>
       <a
         id="register-button"
@@ -153,14 +95,251 @@ let subText = "Registration opens in:";
   }
   #landscape-grid {
     background-size: 5vh 5vh, 80px 80px;
-    background-image: linear-gradient(
-        to bottom,
-        #d80368 1.5px,
-        transparent 1.5px
-      ),
+    background-image: linear-gradient(to bottom, #d80368 1.5px, transparent 1.5px),
       linear-gradient(to right, #d80368 1.5px, transparent 1.5px);
     animation: moveUp 15s linear infinite forwards;
   }
+
+  .glitch {
+    --gap-vertical: 10px;
+    --gap-horizontal: 5px;
+    --time-anim: 3s;
+  }
+
+  .glitch__img {
+    position: absolute;
+    top: calc(-1 * var(--gap-vertical));
+    left: calc(-1 * var(--gap-horizontal));
+    width: calc(100% + var(--gap-horizontal) * 2);
+    height: calc(100% + var(--gap-vertical) * 2);
+    background: url("/favicon.png") no-repeat 50% 0;
+    background-size: cover;
+    z-index: 10;
+  }
+
+  /* .glitch__img:nth-of-type(n + 2) {
+    opacity: 0;
+  } */
+
+  .glitch__img:nth-of-type(1) {
+    animation: glitch-anim-1 var(--time-anim) infinite linear alternate;
+  }
+
+  .glitch__img:nth-of-type(2) {
+    animation: glitch-anim-2 var(--time-anim) infinite linear alternate;
+  }
+
+  .glitch__img:nth-of-type(3) {
+    animation: glitch-anim-3 var(--time-anim) infinite linear alternate;
+  }
+
+  @keyframes glitch-anim-1 {
+    0% {
+      opacity: 1;
+      -webkit-clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+      clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+    }
+    4% {
+      -webkit-clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+      clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+    }
+    8% {
+      -webkit-clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+      clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+    }
+    12% {
+      -webkit-clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+      clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+    }
+    15% {
+      -webkit-clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+      clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+    }
+    17% {
+      -webkit-clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+      clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+    }
+    20% {
+      -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+      clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+    }
+    25% {
+      -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+      clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+    }
+    30% {
+      -webkit-clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+      clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+    }
+    34% {
+      -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+      clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+    }
+    36% {
+      -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+      clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+    }
+    39.9% {
+      opacity: 1;
+      transform: translate3d(var(--gap-horizontal), 0, 0);
+    }
+    40%,
+    100% {
+      opacity: 0;
+      -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+      clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    }
+  }
+
+  @keyframes glitch-anim-2 {
+    0% {
+      opacity: 1;
+      -webkit-clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%);
+      clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%);
+    }
+    6% {
+      -webkit-clip-path: polygon(0 3%, 100% 3%, 100% 3%, 0 3%);
+      clip-path: polygon(0 3%, 100% 3%, 100% 3%, 0 3%);
+    }
+    10% {
+      -webkit-clip-path: polygon(0 5%, 100% 5%, 100% 20%, 0 20%);
+      clip-path: polygon(0 5%, 100% 5%, 100% 20%, 0 20%);
+    }
+    14% {
+      -webkit-clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+      clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+    }
+    19% {
+      -webkit-clip-path: polygon(0 40%, 100% 40%, 100% 40%, 0 40%);
+      clip-path: polygon(0 40%, 100% 40%, 100% 40%, 0 40%);
+    }
+    21% {
+      -webkit-clip-path: polygon(0 52%, 100% 52%, 100% 59%, 0 59%);
+      clip-path: polygon(0 52%, 100% 52%, 100% 59%, 0 59%);
+    }
+    26% {
+      -webkit-clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+      clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+    }
+    30% {
+      -webkit-clip-path: polygon(0 75%, 100% 75%, 100% 75%, 0 75%);
+      clip-path: polygon(0 75%, 100% 75%, 100% 75%, 0 75%);
+    }
+    34% {
+      -webkit-clip-path: polygon(0 65%, 100% 65%, 100% 40%, 0 40%);
+      clip-path: polygon(0 65%, 100% 65%, 100% 40%, 0 40%);
+    }
+    38% {
+      -webkit-clip-path: polygon(0 45%, 100% 45%, 100% 50%, 0 50%);
+      clip-path: polygon(0 45%, 100% 45%, 100% 50%, 0 50%);
+    }
+    40% {
+      -webkit-clip-path: polygon(0 14%, 100% 14%, 100% 33%, 0 33%);
+      clip-path: polygon(0 14%, 100% 14%, 100% 33%, 0 33%);
+    }
+    43.9% {
+      opacity: 1;
+      transform: translate3d(calc(-1 * var(--gap-horizontal)), 0, 0);
+    }
+    44%,
+    100% {
+      opacity: 0;
+      transform: translate3d(0, 0, 0);
+      -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+      clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    }
+  }
+
+  @keyframes glitch-anim-3 {
+    0% {
+      opacity: 1;
+      transform: translate3d(0, calc(-1 * var(--gap-vertical)), 0) scale3d(-1, -1, 1);
+      -webkit-clip-path: polygon(0 1%, 100% 1%, 100% 3%, 0 3%);
+      clip-path: polygon(0 1%, 100% 1%, 100% 3%, 0 3%);
+    }
+    3% {
+      -webkit-clip-path: polygon(0 10%, 100% 10%, 100% 9%, 0 9%);
+      clip-path: polygon(0 10%, 100% 10%, 100% 9%, 0 9%);
+    }
+    5% {
+      -webkit-clip-path: polygon(0 5%, 100% 5%, 100% 6%, 0 6%);
+      clip-path: polygon(0 5%, 100% 5%, 100% 6%, 0 6%);
+    }
+    6% {
+      -webkit-clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+      clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+    }
+    8% {
+      -webkit-clip-path: polygon(0 10%, 100% 10%, 100% 10%, 0 10%);
+      clip-path: polygon(0 10%, 100% 10%, 100% 10%, 0 10%);
+    }
+    10% {
+      -webkit-clip-path: polygon(0 30%, 100% 30%, 100% 25%, 0 25%);
+      clip-path: polygon(0 30%, 100% 30%, 100% 25%, 0 25%);
+    }
+    11% {
+      -webkit-clip-path: polygon(0 15%, 100% 15%, 100% 16%, 0 16%);
+      clip-path: polygon(0 15%, 100% 15%, 100% 16%, 0 16%);
+    }
+    14% {
+      -webkit-clip-path: polygon(0 40%, 100% 40%, 100% 39%, 0 39%);
+      clip-path: polygon(0 40%, 100% 40%, 100% 39%, 0 39%);
+    }
+    16% {
+      -webkit-clip-path: polygon(0 20%, 100% 20%, 100% 21%, 0 21%);
+      clip-path: polygon(0 20%, 100% 20%, 100% 21%, 0 21%);
+    }
+    18% {
+      -webkit-clip-path: polygon(0 60%, 100% 60%, 100% 55%, 0 55%);
+      clip-path: polygon(0 60%, 100% 60%, 100% 55%, 0 55%);
+    }
+    19% {
+      -webkit-clip-path: polygon(0 30%, 100% 30%, 100% 31%, 0 31%);
+      clip-path: polygon(0 30%, 100% 30%, 100% 31%, 0 31%);
+    }
+    22% {
+      -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 69%, 0 69%);
+      clip-path: polygon(0 70%, 100% 70%, 100% 69%, 0 69%);
+    }
+    24% {
+      -webkit-clip-path: polygon(0 40%, 100% 40%, 100% 41%, 0 41%);
+      clip-path: polygon(0 40%, 100% 40%, 100% 41%, 0 41%);
+    }
+    27% {
+      -webkit-clip-path: polygon(0 80%, 100% 80%, 100% 75%, 0 75%);
+      clip-path: polygon(0 80%, 100% 80%, 100% 75%, 0 75%);
+    }
+    28% {
+      -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 51%, 0 51%);
+      clip-path: polygon(0 50%, 100% 50%, 100% 51%, 0 51%);
+    }
+    30% {
+      -webkit-clip-path: polygon(0 90%, 100% 90%, 100% 90%, 0 90%);
+      clip-path: polygon(0 90%, 100% 90%, 100% 90%, 0 90%);
+    }
+    32% {
+      -webkit-clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+      clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+    }
+    34% {
+      -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 99%, 0 99%);
+      clip-path: polygon(0 100%, 100% 100%, 100% 99%, 0 99%);
+    }
+    37% {
+      -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 71%, 0 71%);
+      clip-path: polygon(0 70%, 100% 70%, 100% 71%, 0 71%);
+    }
+    38.9% {
+      opacity: 1;
+    }
+    39%,
+    100% {
+      opacity: 0;
+      -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+      clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    }
+  }
+
   @keyframes moveUp {
     0% {
       background-position: 0% 0%;
@@ -172,8 +351,7 @@ let subText = "Registration opens in:";
 </style>
 
 <script defer define:vars={{ siteState }}>
-  const alphabet =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+{}|:<>?~`1234567890-=[]\\;',./";
+  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+{}|:<>?~`1234567890-=[]\\;',./";
   function glitchText(el, inpIters) {
     let iters = 0;
     let targetIters = inpIters || Math.floor(Math.random() * 40 + 20);
@@ -206,62 +384,8 @@ let subText = "Registration opens in:";
       }, 40);
     }
   }
-  /* // check if screen is desktop or mobile
-  const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
 
-  // get all the text elements
-  if (isDesktop) {
-    const desktopText = document.querySelectorAll(
-      ".desktop > [data-text] > span"
-    );
-    desktopText.forEach((el) => {
-      glitchText(el);
-      el.onmouseover = (event) => {
-        glitchText(event.target, 20);
-      };
-    });
-    const button = document.getElementById("register-button");
-    glitchText(button);
-  } else {
-    const mobileText = document.querySelectorAll(
-      ".mobile > [data-text] > span"
-    );
-    mobileText.forEach((el) => {
-      glitchText(el);
-      el.onmouseover = (event) => {
-        glitchText(event.target, 20);
-      };
-    });
-    const button = document.getElementById("register-button-mobile");
-    glitchText(button);
-  }
-
-  // also glitch on resize
-  window.addEventListener("resize", () => {
-    const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
-    if (isDesktop) {
-      const desktopText = document.querySelectorAll(
-        ".desktop > [data-text] > span"
-      );
-      desktopText.forEach((el) => {
-        el.onmouseover = (event) => {
-          glitchText(event.target, 20);
-        };
-      });
-    } else {
-      const mobileText = document.querySelectorAll(
-        ".mobile > [data-text] > span"
-      );
-      mobileText.forEach((el) => {
-        el.onmouseover = (event) => {
-          glitchText(event.target, 20);
-        };
-      });
-    }
-  }); */
-  const desktopText = document.querySelectorAll(
-    ".desktop > [data-text] > span"
-  );
+  const desktopText = document.querySelectorAll(".desktop > [data-text] > span");
   desktopText.forEach((el) => {
     glitchText(el, Math.floor(Math.random() * 15 + 10)); // Glitch text on page load
     el.onmouseover = (event) => {
@@ -281,13 +405,8 @@ let subText = "Registration opens in:";
       const diff = revolution - now;
       // make sure the countdown always has two digits
       const hours = `${Math.floor(diff / (1000 * 60 * 60))}`.padStart(2, "0");
-      const minutes = `${Math.floor(
-        (diff % (1000 * 60 * 60)) / (1000 * 60)
-      )}`.padStart(2, "0");
-      const seconds = `${Math.floor((diff % (1000 * 60)) / 1000)}`.padStart(
-        2,
-        "0"
-      );
+      const minutes = `${Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))}`.padStart(2, "0");
+      const seconds = `${Math.floor((diff % (1000 * 60)) / 1000)}`.padStart(2, "0");
 
       countdown.innerText = `${hours}:${minutes}:${seconds}`;
 
