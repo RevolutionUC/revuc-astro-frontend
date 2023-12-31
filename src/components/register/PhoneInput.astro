@@ -1,0 +1,33 @@
+---
+---
+
+<head>
+  <link rel="stylesheet" href="node_modules/intl-tel-input/build/css/intlTelInput.css">
+</head>
+
+<div class="relative">
+  <label for="phoneNumber">
+    <div class="inline-block group underline decoration-dotted font-bold">
+      Phone Number*
+      <span class="bg-gray-800 text-white text-sm text-center p-2 rounded-lg absolute bottom-full start-0 opacity-80 invisible group-hover:visible">
+        Choose country code & just type number, no spaces or brackets
+      </span>
+    </div>
+  </label>
+  <div class="pt-2 block">
+    <input class="border border-gray-500 rounded-xl p-3 w-full" name="phoneNumber[main]" id="phoneNumber" type="tel" required />
+  </div>
+</div>
+
+<script>
+  const input = document.querySelector("#phoneNumber");
+  if (input) {
+    import("intl-tel-input").then(({ default: intlTelInput }) => {
+      intlTelInput(input, {
+        initialCountry: "US",
+        utilsScript: "node_modules/intl-tel-input/build/js/utils.js",
+        hiddenInput: "full"
+      });
+    });
+  }
+</script>

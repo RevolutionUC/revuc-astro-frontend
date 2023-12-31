@@ -1,54 +1,58 @@
 ---
 import ResponsiveNav from "../components/ResponsiveNav.astro";
 import HTMLWrapper from "../layouts/HTMLWrapper.astro";
-import faqData from '../data/faqData.json';
+import faqData from "../data/faqData.json";
 import Footer from "../components/Footer.astro";
 ---
 
 <HTMLWrapper title="FAQ">
-    <ResponsiveNav current="faq" />
-    <main class="flex justify-center h-full mt-24">
-        <div class="xl:w-2/5 lg:w-3/5 w-full mb-8 mr-8 ml-8">
-            <img 
-                src="https://assets.revolutionuc.com/website-images/2023/photos/4x/faq.png" 
-                alt="faq image" 
-                class="w-full"
-                decoding="async"
-                loading="eager"
-            />
+  <ResponsiveNav current="faq" />
+  <main class="flex justify-center h-full mt-24">
+    <div class="xl:w-2/5 lg:w-3/5 w-full mb-8 mr-8 ml-8">
+      <img
+        src="https://assets.revolutionuc.com/website-images/2023/photos/4x/faq.png"
+        alt="faq image"
+        class="w-full"
+        decoding="async"
+        loading="eager"
+      />
 
-            <p class="mt-4 text-lg underline">
-                <small>
-                    <a href="#" class="expand-all">Expand all</a> | <a href="#" class="collapse-all">Collapse all</a>
-                </small>
-            </p>
-            
-            <script defer>
-                const btnExpand = document.querySelector('a.expand-all');
-                btnExpand?.addEventListener('click', () => {
-                    document.querySelectorAll('details').forEach(detail => {
-                        detail.open = true;
-                    });
-                });
+      <p class="mt-4 text-lg underline">
+        <small>
+          <a href="#" class="expand-all">Expand all</a> | <a
+            href="#"
+            class="collapse-all">Collapse all</a
+          >
+        </small>
+      </p>
 
-                const btnCollapse = document.querySelector('a.collapse-all');
-                btnCollapse?.addEventListener('click', () => {
-                    document.querySelectorAll('details').forEach(detail => {
-                        detail.open = false;
-                    });
-            });
-            </script>
+      <script defer>
+        const btnExpand = document.querySelector("a.expand-all");
+        btnExpand?.addEventListener("click", () => {
+          document.querySelectorAll("details").forEach((detail) => {
+            detail.open = true;
+          });
+        });
 
+        const btnCollapse = document.querySelector("a.collapse-all");
+        btnCollapse?.addEventListener("click", () => {
+          document.querySelectorAll("details").forEach((detail) => {
+            detail.open = false;
+          });
+        });
+      </script>
 
-            <div class="text-lg text-justify">
-                {faqData.map(faq => (
-                    <details class="my-4 cursor-pointer">
-                        <summary class="my-2 font-black">{faq.q}</summary>
-                        <div set:html={faq.a}></div>
-                    </details>
-                ))}
-            </div>
-        </div>
-    </main>
-    <Footer />
+      <div class="text-lg text-justify">
+        {
+          faqData.map((faq) => (
+            <details class="my-4 cursor-pointer">
+              <summary class="my-2 font-black">{faq.q}</summary>
+              <div set:html={faq.a} />
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </main>
+  <Footer />
 </HTMLWrapper>

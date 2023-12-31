@@ -1,0 +1,69 @@
+---
+---
+
+<head>
+  <link rel="stylesheet" href="node_modules/awesomplete/awesomplete.css" />
+  <script src="node_modules/awesomplete/awesomplete.js" async></script>
+</head>
+
+<div>
+  <label class="font-bold" for="school" id="school-label">School*</label>
+
+  <div class="pt-2">
+    <input class="input--school-other hidden border border-gray-500 rounded-xl p-3 w-full placeholder-gray-400" type="text" placeholder="Enter your school" />
+
+    <div class="flex" id="searchSchoolContainer">
+      <input class="border border-gray-500 rounded-xl p-3 w-full placeholder-gray-400" name="school" id="school" list="school-list" placeholder="Search your school" required />
+      <datalist class="w-full" id="school-list"></datalist>
+      <div id="school-dropdown-btn" class="text-2xl self-center px-4 cursor-pointer">&#9660;</div>
+    </div>
+
+    <div class="pt-2">
+      <input name="schoolOther" id="schoolOther" type="checkbox" class="button" /> 
+      <label for="schoolOther"><small>I can't find my school</small></label>
+    </div>
+  </div>
+</div>
+
+<script defer>
+  const schools$ = fetch("https://raw.githubusercontent.com/MLH/mlh-policies/master/schools.csv");
+  schools$
+    .then((response) => response.text())
+    .then((schools) => {
+      let arraySchools = schools.split("\n");
+      arraySchools.shift();
+      for (school of arraySchools) {
+        let newOption = document.createElement("option");
+
+        newOption.value = school;
+        newOption.innerText = school;
+        if (school == "The University of Cincinnati") newOption.setAttribute("selected", "");
+        document.querySelector("datalist#school-list").append(newOption);
+      }
+      var schoolComplete = new Awesomplete(document.getElementById("school"), { list: "#school-list", minChars: 0, maxItems: 1000000 });
+      Awesomplete.$("#school-dropdown-btn").addEventListener("click", function () {
+        if (schoolComplete.ul.childNodes.length === 0) {
+          schoolComplete.minChars = 0;
+          schoolComplete.evaluate();
+        } else if (schoolComplete.ul.hasAttribute("hidden")) {
+          schoolComplete.open();
+        } else {
+          schoolComplete.close();
+        }
+      });
+    });
+
+  const schoolOtherButton = document.getElementById("schoolOther");
+  const searchSchoolContainer = document.getElementById("searchSchoolContainer");
+  const schoolOtherInput = document.getElementsByClassName("input--school-other")[0];
+
+  schoolOtherButton.addEventListener("change", function () {
+    if (schoolOtherButton.checked) {
+      searchSchoolContainer.classList.add('hidden');
+      schoolOtherInput.classList.remove('hidden');
+    } else {
+      searchSchoolContainer.classList.remove('hidden');
+      schoolOtherInput.classList.add('hidden');
+    }
+  });
+</script>
