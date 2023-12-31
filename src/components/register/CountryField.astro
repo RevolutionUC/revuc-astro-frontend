@@ -1,0 +1,65 @@
+<head>
+    <link rel="stylesheet" href="node_modules/awesomplete/awesomplete.css" />
+    <script src="node_modules/awesomplete/awesomplete.js" async></script>
+</head>
+
+<div>
+    <label class="font-bold" for="country" id="country-label">Country*</label>
+  
+    <div class="pt-2">
+      <input class="input--country-other hidden border border-gray-500 rounded-xl p-3 w-full placeholder-gray-400" type="text" placeholder="Enter your country" />
+  
+      <div class="flex" id="searchCountryContainer">
+        <input class="border border-gray-500 rounded-xl p-3 w-full placeholder-gray-400" name="country" id="country" list="country-list" placeholder="Search your country" required />
+        <datalist class="border" id="country-list"></datalist>
+        <div id="country-dropdown-btn" class="text-2xl self-center px-4 cursor-pointer">&#9660;</div>
+      </div>
+  
+      <div class="pt-2">
+        <input name="countryOther" id="countryOther" type="checkbox" class="button" /> 
+        <label for="countryOther"><small>I can't find my country</small></label>
+      </div>
+    </div>
+</div>
+
+
+<script defer>
+    const countries$ = fetch("/src/data/register/countries.json");
+    countries$
+      .then((response) => response.json())
+      .then(({ countries }) => {
+        for (let country of countries) {
+          const newOption = document.createElement("option");
+
+          newOption.value = country;
+          newOption.innerText = country;
+          if (country == "United States") newOption.setAttribute("selected", "");
+          document.querySelector("datalist#country-list").append(newOption);
+        }
+        const countryComplete = new Awesomplete(document.getElementById("country"), { list: "#country-list", minChars: 0, maxItems: 1000000 });
+        Awesomplete.$("#country-dropdown-btn").addEventListener("click", function () {
+          if (countryComplete.ul.childNodes.length === 0) {
+            countryComplete.minChars = 0;
+            countryComplete.evaluate();
+          } else if (countryComplete.ul.hasAttribute("hidden")) {
+            countryComplete.open();
+          } else {
+            countryComplete.close();
+          }
+        });
+      });     
+
+    const countryOtherButton = document.getElementById("countryOther");
+    const searchCountryContainer = document.getElementById("searchCountryContainer");
+    const countryOtherInput = document.getElementsByClassName("input--country-other")[0];
+
+    countryOtherButton.addEventListener("change", function () {
+        if (countryOtherButton.checked) {
+            searchCountryContainer.classList.add('hidden');
+            countryOtherInput.classList.remove('hidden');
+        } else {
+            searchCountryContainer.classList.remove('hidden');
+            countryOtherInput.classList.add('hidden');
+        }
+    });
+</script>

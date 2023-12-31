@@ -1,0 +1,282 @@
+---
+import ResponsiveNav from "../../components/ResponsiveNav.astro";
+import HTMLWrapper from "../../layouts/HTMLWrapper.astro";
+import Footer from "../../components/Footer.astro";
+import TextField from "../../components/register/TextField.astro";
+import CheckBoxField from "../../components/register/CheckBoxField.astro";
+import AgreementDescription from "../../components/register/AgreementDescription.astro";
+import DropDownField from "../../components/register/DropDownField.astro";
+import PhoneInput from "../../components/register/PhoneInput.astro";
+import generalData from "../../data/register/generalData.json";
+import howYouHeardData from "../../data/register/howYouHeardData.json";
+import ethnicityData from "../../data/register/ethnicityData.json";
+import SchoolField from "../../components/register/SchoolField.astro";
+import CountryField from "../../components/register/CountryField.astro";
+
+interface RegistrantData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  school: string;
+  country: string;
+  educationLevel: string;
+  major: string;
+  gender: string;
+  ethnicity: string[];
+  howYouHeard: string[];
+  hackathons: number;
+  shirtSize: string;
+  githubUsername?: string;
+  dateOfBirth: string;
+  acceptedWaiver: boolean;
+  allergens: string[];
+  otherAllergens: string;
+}
+
+if (Astro.request.method === "POST") {
+  try {
+    const data: FormData = await Astro.request.formData();
+    const acceptedWaiverBool: boolean =
+      data.get("dataSharing") === "on" &&
+      data.get("codeOfConduct") === "on" &&
+      data.get("mlhEmails") === "on";
+    const jsonData: RegistrantData = {
+      firstName: data.get("firstName") as string,
+      lastName: data.get("lastName") as string,
+      email: data.get("email") as string,
+      phoneNumber: data.get("phoneNumber[full]") as string,
+      school: data.get("school") as string,
+      country: data.get("country") as string,
+      educationLevel: data.get("educationLevel") as string,
+      major: data.get("major") as string,
+      gender: data.get("gender") as string,
+      ethnicity: data.getAll("ethnicity[]") as string[],
+      howYouHeard: data.getAll("howYouHeard[]") as string[],
+      hackathons: parseInt(data.get("hackathons") as string),
+      shirtSize: data.get("shirtSize") as string,
+      githubUsername: data.get("githubUsername") as string,
+      dateOfBirth: new Date(data.get("dateOfBirth") as string).toISOString(),
+      acceptedWaiver: acceptedWaiverBool,
+      allergens: /* data.getAll("allergens") as string[] */ [],
+      otherAllergens: /* data.get("otherAllergens") as string */ "",
+    };
+    console.log(`JSON Data: ${JSON.stringify(jsonData)}`);
+    const response = await fetch(
+      "https://revolutionuc-api.onrender.com/api/registrant",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(jsonData),
+      }
+    );
+  } catch (error) {
+    console.log(`Error: ${error}`);
+  }
+}
+---
+
+<HTMLWrapper title="Register">
+  <ResponsiveNav current="register" />
+  <main class="mt-24 flex justify-center">
+    <div class="flex flex-col w-[760px] max-md:w-11/12">
+      <h1 class="text-4xl font-bold py-8">Register</h1>
+      <div class="pb-20">
+        <form
+          class="gap-4 gap-y-8 grid-cols-2 grid"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <!-- firstName -->
+          <TextField
+            label="First Name*"
+            type="text"
+            placeholder="Bob"
+            name="firstName"
+            required={true}
+          />
+
+          <!-- lastName -->
+          <TextField
+            label="Last Name*"
+            type="text"
+            placeholder="Evans"
+            name="lastName"
+            required={true}
+          />
+          <!-- email -->
+          <TextField
+            label="Email*"
+            type="email"
+            placeholder="Email"
+            name="email"
+            required={true}
+          />
+
+          <!-- confirmEmail -->
+          <TextField
+            label="Confirm Email*"
+            type="email"
+            placeholder="Confirm Email"
+            name="emailConfirmed"
+            required={true}
+          />
+
+          <!-- school -->
+          <div class="col-span-2">
+            <SchoolField />
+          </div>
+
+          <!-- country -->
+          <div class="col-span-2">
+            <CountryField />
+          </div>
+
+          <!-- education -->
+          <div class="col-span-2">
+            <DropDownField
+              label="Education*"
+              name="educationLevel"
+              placeholder="Level of Education"
+              dropdown={generalData.educationData}
+              required={true}
+            />
+          </div>
+
+          <!-- major -->
+          <div class="col-span-2">
+            <DropDownField
+              label="Major*"
+              name="major"
+              placeholder="Major"
+              dropdown={generalData.majorData}
+              required={true}
+            />
+          </div>
+
+          <!-- dob -->
+          <TextField
+            label="Date of Birth*"
+            type="date"
+            placeholder="mm/dd/yyyy"
+            name="dateOfBirth"
+            required={true}
+          />
+
+          <!-- gender -->
+          <DropDownField
+            label="Gender*"
+            name="gender"
+            placeholder="Gender"
+            dropdown={generalData.genderData}
+            required={true}
+          />
+
+          <!-- phoneNumber -->
+          <PhoneInput />
+
+          <!-- github -->
+          <TextField
+            label="GitHub"
+            type="text"
+            placeholder="GitHub Username"
+            name="githubUsername"
+            required={false}
+          />
+
+          <div class="col-span-2">
+            <DropDownField
+              label="Shirt Size*"
+              name="shirtSize"
+              placeholder="Shirt Size"
+              dropdown={generalData.shirtSizeData}
+              required={true}
+            />
+          </div>
+
+          <!-- resume -->
+          <div class="col-span-2">
+            <label for="resume" class="font-bold">Resume</label>
+            <div class="pt-2">
+              <input name="resume" id="resume" type="file" />
+            </div>
+          </div>
+
+          <!-- hackathons -->
+          <div class="col-span-2">
+            <DropDownField
+              label="How many hackathons have you attended?"
+              name="hackathons"
+              placeholder="Number of hackathons attended"
+              dropdown={generalData.hackathonData}
+              required={false}
+            />
+          </div>
+
+          <!-- ethnicity -->
+          <div class="col-span-2">
+            <CheckBoxField
+              label="Race/Ethnicity*"
+              name="ethnicity[]"
+              checkBoxesData={ethnicityData}
+            />
+          </div>
+
+          <!-- howYouHeard -->
+          <div class="col-span-2">
+            <CheckBoxField
+              label="How did you hear about RevUC?"
+              name="howYouHeard[]"
+              checkBoxesData={howYouHeardData}
+            />
+          </div>
+
+          <!-- MLH -->
+          <div class="col-span-2">
+            <CheckBoxField
+              label="I agree*"
+              name="dataSharing"
+              checkBoxLabel="MLH Data Sharing"
+              href="#agree-1"
+              hrefText="1"
+              required={true}
+            />
+          </div>
+          <div class="col-span-2">
+            <CheckBoxField
+              label="I agree*"
+              name="codeOfConduct"
+              checkBoxLabel="MLH Code of Conduct"
+              href="#agree-2"
+              hrefText="2"
+              required={true}
+            />
+          </div>
+          <div class="col-span-2">
+            <CheckBoxField
+              label="I agree"
+              name="mlhEmails"
+              checkBoxLabel="MLH Informational Emails"
+              href="#agree-3"
+              hrefText="3"
+              required={false}
+            />
+          </div>
+
+          <!-- registerButton -->
+          <div>
+            <button
+              class="bg-gray-500 text-white text-lg p-3 rounded-2xl"
+              name="registrationSubmit"
+              type="submit">Register</button
+            >
+          </div>
+        </form>
+      </div>
+      <AgreementDescription />
+    </div>
+  </main>
+  <Footer />
+</HTMLWrapper>

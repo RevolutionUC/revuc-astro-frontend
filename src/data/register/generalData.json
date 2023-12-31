@@ -1,0 +1,173 @@
+{
+  "educationData": [
+    {
+      "value": "HighSchool",
+      "option": "High School (16+)"
+    },
+    {
+      "value": "Undergraduate",
+      "option": "Undergraduate"
+    },
+    {
+      "value": "Graduate",
+      "option": "Graduate"
+    }
+  ],
+  "genderData": [
+    {
+      "value": "Male",
+      "option": "Male"
+    },
+    {
+      "value": "Female",
+      "option": "Female"
+    },
+    {
+      "value": "NonBinary",
+      "option": "Non-binary / Third Gender"
+    },
+    {
+      "value": "Other",
+      "option": "Other"
+    },
+    {
+      "value": "PreferNot",
+      "option": "Prefer not to say"
+    }
+  ],
+  "hackathonData": [
+    {
+      "value": "0",
+      "option": "0"
+    },
+    {
+      "value": "1",
+      "option": "1"
+    },
+    {
+      "value": "2",
+      "option": "2"
+    },
+    {
+      "value": "3",
+      "option": "3"
+    },
+    {
+      "value": "4",
+      "option": "4"
+    },
+    {
+      "value": "5",
+      "option": "5"
+    },
+    {
+      "value": "6",
+      "option": "6"
+    },
+    {
+      "value": "7",
+      "option": "7"
+    },
+    {
+      "value": "8",
+      "option": "8"
+    },
+    {
+      "value": "9",
+      "option": "9"
+    },
+    {
+      "value": "10",
+      "option": "10+"
+    }
+  ],
+  "majorData": [
+    {
+      "value": "ComputerScience",
+      "option": "Computer science, computer engineering, or software engineering"
+    },
+    {
+      "value": "AnotherEngineering",
+      "option": "Another engineering discipline (such as civil, electrical, mechanical, etc.)"
+    },
+    {
+      "value": "InformationSystems",
+      "option": "Information systems, information technology, or system administration"
+    },
+    {
+      "value": "NaturalScience",
+      "option": "A natural science (such as biology, chemistry, physics, etc.)"
+    },
+    {
+      "value": "Mathematics",
+      "option": "Mathematics or statistics"
+    },
+    {
+      "value": "WebDevelopment",
+      "option": "Web development or web design"
+    },
+    {
+      "value": "BusinessDiscipline",
+      "option": "Business discipline (such as accounting, finance, marketing, etc.)"
+    },
+    {
+      "value": "HumanitiesDiscipline",
+      "option": "Humanities discipline (such as literature, history, philosophy, etc.)"
+    },
+    {
+      "value": "SocialScience",
+      "option": "Social science (such as anthropology, psychology, political science, etc.)"
+    },
+    {
+      "value": "FineArts",
+      "option": "Fine arts or performing arts (such as graphic design, music, studio art, etc.)"
+    },
+    {
+      "value": "HealthScience",
+      "option": "Health science (such as nursing, pharmacy, radiology, etc.)"
+    },
+    {
+      "value": "Other",
+      "option": "Other"
+    },
+    {
+      "value": "Undecided",
+      "option": "Undecided / No Declared Major"
+    },
+    {
+      "value": "NotOffered",
+      "option": "My school does not offer majors / primary areas of study"
+    },
+    {
+      "value": "PreferNotToAnswer",
+      "option": "Prefer not to answer"
+    }
+  ],
+  "shirtSizeData": [
+    {
+      "value": "X-Small",
+      "option": "X-Small"
+    },
+    {
+      "value": "Small",
+      "option": "Small"
+    },
+    {
+      "value": "Medium",
+      "option": "Medium"
+    },
+    {
+      "value": "Large",
+      "option": "Large"
+    },
+    {
+      "value": "X-Large",
+      "option": "X-Large"
+    },
+    {
+      "value": "XX-Large",
+      "option": "XX-Large"
+    }
+  ]
+}
+  

@@ -12,3 +12,7 @@ Krish Kalathiya
 Sahil Thakare
 
 Nhi Nguyen
+
+Daryn Nguyen
+
+Srihar Chakravarthy

@@ -1,9 +1,27 @@
 ---
 import ResponsiveNav from "../components/ResponsiveNav.astro";
 import HTMLWrapper from "../layouts/HTMLWrapper.astro";
+import ScheduleTable from "../components/ScheduleTable.astro";
+import Footer from "../components/Footer.astro";
+import scheduleData from "../data/scheduleData.json";
 ---
 
 <HTMLWrapper title="Schedule">
     <ResponsiveNav current="schedule" />
-    <p>Schedule</p>
+    <main class="mt-24 flex justify-center">
+        <div class="flex flex-col justify-center items-center">
+            <img 
+                src="https://assets.revolutionuc.com/website-images/2023/photos/2x/schedule.png" 
+                alt="RevolutionUC's Schedule" 
+                class="w-[760px] max-md:w-11/12 h-[500px] max-md:h-[300px] object-cover pb-8"
+                decoding="async"
+                loading="eager"
+            />  
+            <h1 class="text-3xl font-bold">Schedule</h1>
+            <ScheduleTable schedule={scheduleData.scheduleDayOne} label="February 25th" />
+            <ScheduleTable schedule={scheduleData.scheduleDayTwo} label="February 26th" />
+            <p class="pb-8">Register for RevolutionUC to receive updates!</p>
+        </div>      
+    </main>
+    <Footer />
 </HTMLWrapper>
