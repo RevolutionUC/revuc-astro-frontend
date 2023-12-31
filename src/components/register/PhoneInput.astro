@@ -1,10 +1,6 @@
 ---
 ---
 
-<head>
-  <link type="text-css" href="node_modules/intl-tel-input/build/css/intlTelInput.css">
-</head>
-
 <div class="relative">
   <label for="phoneNumber">
     <div class="inline-block group underline decoration-dotted font-bold">
@@ -25,7 +21,7 @@
     import("intl-tel-input").then(({ default: intlTelInput }) => {
       intlTelInput(input, {
         initialCountry: "US",
-        utilsScript: "node_modules/intl-tel-input/build/js/utils.js",
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.3.3/js/utils.js",
         hiddenInput: "full"
       });
     });
