@@ -277,7 +277,7 @@ let subText = "Registration opens in:";
 
     const interval = setInterval(() => {
       const now = new Date();
-      const revolution = new Date("January 1, 2024 00:00:00");
+      const revolution = new Date("2024-01-01T00:00:00-05:00");
       const diff = revolution - now;
       // make sure the countdown always has two digits
       const hours = `${Math.floor(diff / (1000 * 60 * 60))}`.padStart(2, "0");
