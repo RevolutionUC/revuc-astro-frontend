@@ -5,10 +5,12 @@ interface Props {
 
 const { siteState } = Astro.props; // for updating content depending on the stage of the hackathon
 let title = "Revolution".toUpperCase();
-let date = "    February 24-25           ".toUpperCase(); // Keep the space in order to match with the RevolutionUC Text
-let hour = "00"; // hour until jan 1st 2024
+let date = "    February 24-25    ".toUpperCase(); // Keep the space in order to match with the RevolutionUC Text
+/* let hour = "00"; // hour until jan 1st 2024
 let minute = "00"; // minute until jan 1st 2024
-let second = "00"; // second until jan 1st 2024
+let second = "00"; // second until jan 1st 2024 */
+
+let subText = "Registration opens in:";
 ---
 
 <!--- Post-register site --><!--- <section id="hero" class="h-screen flex flex-col justify-center items-center space-y-4 bg-black">
@@ -67,8 +69,23 @@ let second = "00"; // second until jan 1st 2024
           );
         })
       }
-
       {
+        Array.from(subText).map((letter) => {
+          if (siteState === "pre-registration") {
+            if (letter === " ") return <div />;
+            return (
+              <div
+                class="text-4xl max-[1024px]:text-lg min-[1024px]:border font-extrabold flex justify-center items-center shadow-2xl backdrop-blur-sm"
+                data-text={letter}
+              >
+                <span>{letter}</span>
+              </div>
+            );
+          }
+        })
+      }
+
+      <!-- {
         Array.from(hour).map((letter) => {
           if (letter === " ") return <div />;
           return (
@@ -116,15 +133,15 @@ let second = "00"; // second until jan 1st 2024
             </div>
           );
         })
-      }
+      } -->
 
       <div class="col-span-12 h-[2vw]"></div>
       <a
         id="register-button"
         class="col-start-8 col-span-8 text-[3vw] max-[1024px]:text-[5vw] tracking-widest font-extrabold border-2 flex justify-center items-center cursor-pointer shadow-2xl backdrop-blur-sm transition-all active:scale-[0.99] hover:scale-[1.01] hover:bg-white hover:text-[#f75c03] hover:backdrop-blur-[6px] active:shadow-lg"
-        href="/registration"
+        href={siteState === "pre-registration" ? "#" : "/register"}
       >
-        <span>REGISTER</span>
+        <span>{siteState === "pre-registration" ? "##:##:##" : "REGISTER"}</span>
       </a>
     </div>
   </div>
@@ -154,7 +171,7 @@ let second = "00"; // second until jan 1st 2024
   }
 </style>
 
-<script defer>
+<script defer define:vars={{ siteState }}>
   const alphabet =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+{}|:<>?~`1234567890-=[]\\;',./";
   function glitchText(el, inpIters) {
@@ -254,42 +271,30 @@ let second = "00"; // second until jan 1st 2024
   const button = document.getElementById("register-button");
   glitchText(button, 35); // Glitch button text on page load
 
-  // do countdown until jan 1st 2024
-  const countdownHour = document.querySelectorAll(".countdown-hour");
-  const countdownMinute = document.querySelectorAll(".countdown-minute");
-  const countdownSecond = document.querySelectorAll(".countdown-second");
+  // if siteState is pre-registration, start countdown until jan 1st 2024
+  if (siteState === "pre-registration") {
+    const countdown = document.querySelector("#register-button");
 
-  const countdownInterval = setInterval(() => {
-    const now = new Date();
-    const revolution = new Date("January 1, 2024 00:00:00");
-    const diff = revolution - now;
-    const hours = Math.floor(diff / 1000 / 60 / 60);
-    const minutes = Math.floor((diff / 1000 / 60) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-    /* countdownHour.innerText = hours.toString().padStart(2, "0");
-    countdownMinute.innerText = minutes.toString().padStart(2, "0");
-    countdownSecond.innerText = seconds.toString().padStart(2, "0"); */
-    countdownHour.forEach((el, index) => {
-      el.innerText = hours.toString().padStart(2, "0")[index];
-    });
-    countdownMinute.forEach((el, index) => {
-      el.innerText = minutes.toString().padStart(2, "0")[index];
-    });
-    countdownSecond.forEach((el, index) => {
-      el.innerText = seconds.toString().padStart(2, "0")[index];
-    });
+    const interval = setInterval(() => {
+      const now = new Date();
+      const revolution = new Date("January 1, 2024 00:00:00");
+      const diff = revolution - now;
+      // make sure the countdown always has two digits
+      const hours = `${Math.floor(diff / (1000 * 60 * 60))}`.padStart(2, "0");
+      const minutes = `${Math.floor(
+        (diff % (1000 * 60 * 60)) / (1000 * 60)
+      )}`.padStart(2, "0");
+      const seconds = `${Math.floor((diff % (1000 * 60)) / 1000)}`.padStart(
+        2,
+        "0"
+      );
 
-    if (diff <= 0) {
-      clearInterval(countdownInterval);
-      countdownHour.forEach((el) => {
-        el.innerText = "00";
-      });
-      countdownMinute.forEach((el) => {
-        el.innerText = "00";
-      });
-      countdownSecond.forEach((el) => {
-        el.innerText = "00";
-      });
-    }
-  }, 1000);
+      countdown.innerText = `${hours}:${minutes}:${seconds}`;
+
+      if (diff < 0) {
+        clearInterval(interval);
+        countdown.innerText = "REGISTER";
+      }
+    }, 1000);
+  }
 </script>
