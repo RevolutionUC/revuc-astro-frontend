@@ -1,0 +1,54 @@
+[
+  {
+    "q": "What is a hackathon?",
+    "a": "Great Question! A hackathon is an event where student hackers bring their passion for technology to create a new project coded from scratch. It's a chance to collaborate and create something unique in any number of forms - an app, a robot, a website! You'll hopefully learn something new along the way in our high energy, engaging environment! At RevolutionUC, participants are provided with opportunities to grow while building something they're proud of!"
+  },
+  {
+    "q": "How long does RevolutionUC last?",
+    "a": "Hacking at RevolutionUC lasts for 24 hours, however there is additional time before and after hacking for introductions and presentations."
+  },
+  {
+    "q": "How much does RevolutionUC cost?",
+    "a": "RevolutionUC is free for all students enrolled at any accredited university or high school. Swag, prizes, and great memories are all included with this completely free cost!"
+  },
+  {
+    "q": "How do teams register?",
+    "a": "Teams are formed at the event. If you already have a team, please make sure every individual in your team is registered before the event! The maximum team size is 4."
+  },
+  {
+    "q": "What if I don't have a team?",
+    "a": "That's okay! Using <a href=\"https://lattice.revolutionuc.com/\"><span class=\"text-red-400 underline\">Lattice</span></a> will assist you in looking for team members that you want in your team."
+  },
+  {
+    "q": "What if I don't have much experience?",
+    "a": "You're new to hackathons? Wonderful! RevolutionUC is open to all skill levels, beginners to veterans. There's nothing we love more than helping our hackers learn something new while they build something cool!"
+  },
+  {
+    "q": "Should I expect a waiver?",
+    "a": "You betcha. Before any hacking begins we require you to sign a waiver which will be emailed to all registered participants prior to the hackathon. If you are under 18 you will need a parent or legal guardian to sign the waiver."
+  },
+  {
+    "q": "Is there a minimum age for participants?",
+    "a": "Yes, all coders must be at least 16 years of age! If you're under 18, you will need to have a parent/guardian sign the waiver."
+  },
+  {
+    "q": "Where is the hackathon?",
+    "a": "This year we will be completely in-person! We hope to give you the best hackathon experience at the <a href=\"https://innovation.uc.edu\"><span class=\"text-red-400 underline\">1819 Innovation Hub</span></a> of University of Cincinnati, located at 2900 Reading Rd, Cincinnati, OH 45206."
+  },
+  {
+    "q": "What should I bring?",
+    "a": "Please bring a valid school ID for registration, a computer to hack on, any chargers for your device(s), and a positive attitude. We also recommend bringing basic toiletries (toothbrush, deodorant, etc), a pillow/blanket (if you choose to nap). Please note that Ethernet access will be limited, so please plan to use a Wi-Fi connection."
+  },
+  {
+    "q": "Will there be travel reimbursements?",
+    "a": "Unfortunately, we are unable to offer travel reimbursements at this time."
+  },
+  {
+    "q": "What if I have more questions?",
+    "a": "Send us an email to info@revolutionuc.com. We are always happy to help."
+  },
+  {
+    "q": "Is there a Code of Conduct?",
+    "a": "Absolutely! We operate on the <a href=\"https://static.mlh.io/docs/mlh-code-of-conduct.pdf\"><span class=\"text-red-400 underline\">Major League Hacking Code of Conduct</span></a> to create an all-inclusive environment for our hackers."
+  }
+]

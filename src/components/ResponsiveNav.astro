@@ -3,13 +3,12 @@ import NavBar from "./nav/NavBar.astro";
 import NavHamburg from "./nav/NavHamburg.astro";
 
 interface Props {
-    current: string;
+  current: string;
 }
-
 const { current } = Astro.props;
 ---
 
-<header>
-    <NavHamburg current={current} />
-	<NavBar current={current} />
+<header class="h-0">
+  <NavHamburg current={current} />
+  <NavBar current={current} />
 </header>

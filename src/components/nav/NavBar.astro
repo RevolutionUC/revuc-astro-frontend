@@ -1,35 +1,69 @@
 ---
 interface Props {
-    current: string;
+  current: string;
 }
 
 const { current } = Astro.props;
 const navLinks = {
-    Home: "/",
-    About: "/about",
-    Schedule: "/schedule",
-    Sponsors: "/sponsors",
-    FAQ: "/faq"
-}
+  Home: "/",
+  About: "/about",
+  // Schedule: "/schedule",
+  // Sponsors: "/sponsors",
+  FAQ: "/faq",
+};
 ---
 
-<nav class="fixed w-full">
-    <ul class="flex flex-row justify-center space-x-16 text-white text-lg p-8 max-md:hidden">
-        {
-            /* map over the navLinks object and create a link for each key */
-            Object.keys(navLinks).map((key) => {
-                const link = navLinks[key as keyof typeof navLinks]; /* to make typescript happy */
-                return (
-                    <li>
-                        {
-                            /* if the current page is the same as the link, add the active class */
-                            current == key.toLowerCase() ?
-                            <a class="p-0.5 after:block after:w-full after:h-1 after:bg-white" href={link}>{key}</a> :
-                            <a class="p-0.5 after:block after:w-full after:h-1 after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left opacity-75 hover:opacity-100" href={link}>{key}</a>
-                        }
-                    </li>
-                )
-            })
-        }
-    </ul>
+<nav
+  id="nav-bar"
+  class="fixed w-full z-50 top-0 transition-colors duration-300"
+>
+  <ul
+    class="flex flex-row justify-center space-x-16 text-white text-xl p-6 max-md:hidden bg-transparent"
+  >
+    {
+      /* map over the navLinks object and create a link for each key */
+      Object.keys(navLinks).map((key) => {
+        const link =
+          navLinks[key as keyof typeof navLinks]; /* to make typescript happy */
+        return (
+          <li>
+            {
+              /* if the current page is the same as the link, add the active class */
+              current == key.toLowerCase() ? (
+                <a
+                  class="after:block after:w-full after:h-0.5 after:bg-white"
+                  href={link}
+                >
+                  {key}
+                </a>
+              ) : (
+                <a
+                  class="after:block after:w-full after:h-0.5 after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left opacity-75 hover:opacity-100"
+                  href={link}
+                >
+                  {key}
+                </a>
+              )
+            }
+          </li>
+        );
+      })
+    }
+  </ul>
 </nav>
+
+<script defer define:vars={{ current }}>
+  // change the nav bar to black when the user scrolls down
+  const nav = document.querySelector("#nav-bar");
+  if (current !== "home") {
+    nav.style.backgroundColor = "black";
+  } else {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > window.innerHeight - 30) {
+        nav.style.backgroundColor = "black";
+      } else {
+        nav.style.backgroundColor = "transparent";
+      }
+    });
+  }
+</script>

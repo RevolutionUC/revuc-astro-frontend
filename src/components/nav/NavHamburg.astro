@@ -1,72 +1,115 @@
 ---
 interface Props {
-    current: string;
+  current: string;
 }
-
 const { current } = Astro.props;
 const navLinks = {
-    Home: "/",
-    About: "/about",
-    Schedule: "/schedule",
-    Sponsors: "/sponsors",
-    FAQ: "/faq"
-}
+  Home: "/",
+  About: "/about",
+  // Schedule: "/schedule",
+  // Sponsors: "/sponsors",
+  FAQ: "/faq",
+};
 ---
 
-<!-- Hamburger style navbar for mobile devices -->
-<nav id="navbar" class="fixed h-screen right-0 flex flex-col items-end md:hidden">
-    <input id="burger-checkbox" type="checkbox" name="" class="hidden" />
-    <div id="hamburger-lines" class="h-6 w-8 flex flex-col justify-between cursor-pointer absolute top-12 right-8">
-        <span id="hamburger-line-1" class="block h-1 w-full rounded-lg bg-white transition-transform"></span>
-        <span id="hamburger-line-2" class="block h-1 w-full rounded-lg bg-white transition-transform"></span>
-        <span id="hamburger-line-3" class="block h-1 w-full rounded-lg bg-white transition-transform"></span>
-    </div>
-    <ul id="menu-items" class="flex flex-col justify-start items-end space-y-4 text-xl translate-x-full bg-white w-[60vw] h-screen p-8 pt-36 z-5 transition-transform origin-right">
-        {
-            /* map over the navLinks object and create a link for each key */
-            Object.keys(navLinks).map((key) => {
-                const link = navLinks[key as keyof typeof navLinks]; /* to make typescript happy */
-                return (
-                    <li>
-                        {
-                            /* if the current page is the same as the link, add the active class */
-                            current == key.toLowerCase() ?
-                            <a class="p-0.5 after:block after:w-full after:h-1 after:bg-black" href={link}>{key}</a> :
-                            <a class="p-0.5 after:block after:w-full after:h-1 after:bg-black after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right opacity-75 hover:opacity-100" href={link}>{key}</a>
-                        }
-                    </li>
-                )
-            })
-        }
-    </ul>
+<nav
+  id="nav-hamburg"
+  class="z-30 w-full fixed top-0 md:hidden transition-colors duration-300"
+>
+  <div class="flex flex-row-reverse bg-transparent p-6">
+    <svg
+      id="hamburger"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-8 h-8 cursor-pointer mr-4 z-50"
+    >
+      <path
+        d="M4 18L20 18"
+        stroke="#000000"
+        stroke-width="2"
+        stroke-linecap="round"></path>
+      <path
+        d="M4 12L20 12"
+        stroke="#000000"
+        stroke-width="2"
+        stroke-linecap="round"></path>
+      <path
+        d="M4 6L20 6"
+        stroke="#000000"
+        stroke-width="2"
+        stroke-linecap="round"></path>
+    </svg>
+  </div>
+  <ul
+    id="hamburger-panel"
+    class="flex flex-col items-center space-y-12 text-3xl p-8 pt-48 text-center w-full h-screen z-40 absolute top-0 bg-white transition-transform origin-top"
+  >
+    {
+      /* map over the navLinks object and create a link for each key */
+      Object.keys(navLinks).map((key) => {
+        const link =
+          navLinks[key as keyof typeof navLinks]; /* to make typescript happy */
+        return (
+          <li class="flex flex-col justify-end items-end">
+            {
+              /* if the current page is the same as the link, add the active class */
+              current == key.toLowerCase() ? (
+                <a
+                  class="after:block after:w-full after:h-0.5 after:bg-black"
+                  href={link}
+                >
+                  {key}
+                </a>
+              ) : (
+                <a
+                  class="after:block after:w-full after:h-0.5 after:bg-black after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-center opacity-75 hover:opacity-100"
+                  href={link}
+                >
+                  {key}
+                </a>
+              )
+            }
+          </li>
+        );
+      })
+    }
+  </ul>
 </nav>
 
-<style>
-    #hamburger-lines {
-        z-index: 2; /* not sure why but adding z-2 to the tailwind class does not work */
+<script defer define:vars={{ current }}>
+  let isOpen = false;
+  const hamburg = document.querySelector("#hamburger");
+  const panel = document.querySelector("#hamburger-panel");
+  const navHam = document.querySelector("#nav-hamburg");
+  const hamburgPaths = document.querySelectorAll("#hamburger path");
+  if (isOpen) {
+    panel.style.transform = "scaleY(1)";
+    hamburgPaths.forEach((path) => (path.style.stroke = "#000000"));
+  } else {
+    panel.style.transform = "scaleY(0)";
+    hamburgPaths.forEach((path) => (path.style.stroke = "#FFFFFF"));
+  }
+  hamburg.addEventListener("click", () => {
+    isOpen = !isOpen;
+    if (isOpen) {
+      panel.style.transform = "scaleY(1)";
+      hamburgPaths.forEach((path) => (path.style.stroke = "#000000"));
+    } else {
+      panel.style.transform = "scaleY(0)";
+      hamburgPaths.forEach((path) => (path.style.stroke = "#FFFFFF"));
     }
-    input[type="checkbox"]:checked ~ #hamburger-lines #hamburger-line-1 {
-        transform: rotate(41deg);
-        background-color: black;
-    }
-    input[type="checkbox"]:checked ~ #hamburger-lines #hamburger-line-2 {
-        transform: scaleY(0)
-    }
-    input[type="checkbox"]:checked ~ #hamburger-lines #hamburger-line-3 {
-        transform: rotate(-41deg);
-        background-color: black;
-    }
-    input[type="checkbox"]:checked ~ #menu-items {
-        transform: translateX(0%)
-    }
-    #hamburger-lines #hamburger-line-1 {
-        transform-origin: 0% 0%;
-    }
-    #hamburger-lines #hamburger-line-3 {
-        transform-origin: 0% 100%;
-    }
-</style>
+  });
 
-<script>
-    import "../../scripts/hamburg.js"
+  if (current !== "home") {
+    navHam.style.backgroundColor = "black";
+  } else {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > window.innerHeight - 30) {
+        navHam.style.backgroundColor = "black";
+      } else {
+        navHam.style.backgroundColor = "transparent";
+      }
+    });
+  }
 </script>
