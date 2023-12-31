@@ -14,13 +14,12 @@ let date = "   February  24-25".toUpperCase(); // Keep the space in order to mat
     <button class="bg-blue-300 p-6 rounded-lg text-4xl max-lg:text-2xl max-lg:p-4 hover:bg-blue-400 transition-colors tracking-widest">View Submissions</button>
 </section>
 --->
-<div id="hero" class="min-h-screen w-full flex justify-center items-center space-y-4 relative">
-  <div id="landscape-grid" class="absolute inset-0"></div>
-  <div class="z-10 absolute flex flex-col items-center w-[80vw] max-[1024px]:w-full h-3/4 font-mono space-y-8">
-    <div class="w-48 mt-12">
+<section id="hero" class="w-full flex flex-col justify-center items-center space-y-4 relative overflow-hidden">
+  <div class="flex basis-full flex-col min-h-screen items-center space-y-8">
+    <div class="w-48 z-10">
       <img id="logo" src="/favicon.png" alt="RevolutionUC 2024 logo" />
     </div>
-    <div class="grid grid-cols-22 gap-2 w-4/5 max-[1024px]:w-11/12 desktop">
+    <div class="grid grid-cols-22 gap-2 w-4/5 z-10 desktop">
       {
         Array.from(title).map((letter) => {
           if (letter === " ") return <div />;
@@ -64,18 +63,25 @@ let date = "   February  24-25".toUpperCase(); // Keep the space in order to mat
     </a>
     </div>
   </div>
-</div>
+    
+</section>
 
 <style is:inline>
   #hero {
     background-image: linear-gradient(#d80368 -12%, #f75c03 100%);
   }
-  #landscape-grid {
-    background-size: 5vh 5vh, 80px 80px;
+
+  /* Landscape grid */
+  #hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: 80px 5vh;
     background-image: linear-gradient(to bottom, #d80368 1.5px, transparent 1.5px),
       linear-gradient(to right, #d80368 1.5px, transparent 1.5px);
-    animation: moveUp 15s linear infinite forwards;
+    animation: moveUp 19.01s linear infinite;
   }
+
   @keyframes moveUp {
     0% {
       background-position: 0% 0%;
