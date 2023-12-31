@@ -15,7 +15,7 @@
     </div>
   </label>
   <div class="pt-2 block">
-    <input class="border border-gray-500 rounded-xl p-3 w-full" name="phoneNumber" id="phoneNumber" type="tel" required />
+    <input class="border border-gray-500 rounded-xl p-3 w-full" name="phoneNumber[main]" id="phoneNumber" type="tel" required />
   </div>
 </div>
 
@@ -26,6 +26,7 @@
       intlTelInput(input, {
         initialCountry: "US",
         utilsScript: "node_modules/intl-tel-input/build/js/utils.js",
+        hiddenInput: "full"
       });
     });
   }

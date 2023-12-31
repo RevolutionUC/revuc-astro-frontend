@@ -142,6 +142,32 @@
       "value": "PreferNotToAnswer",
       "option": "Prefer not to answer"
     }
+  ],
+  "shirtSizeData": [
+    {
+      "value": "X-Small",
+      "option": "X-Small"
+    },
+    {
+      "value": "Small",
+      "option": "Small"
+    },
+    {
+      "value": "Medium",
+      "option": "Medium"
+    },
+    {
+      "value": "Large",
+      "option": "Large"
+    },
+    {
+      "value": "X-Large",
+      "option": "X-Large"
+    },
+    {
+      "value": "XX-Large",
+      "option": "XX-Large"
+    }
   ]
 }
   

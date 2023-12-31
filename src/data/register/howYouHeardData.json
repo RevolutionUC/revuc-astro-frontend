@@ -1,38 +1,38 @@
 [
     {
-        "id": "howYouHeard-searchEngine",
+        "id": "Search Engine",
         "option": "Search Engine"
     },
     {
-        "id": "howYouHeard-RevolutionUCWebsite",
+        "id": "RevolutionUC Website",
         "option": "RevolutionUC Website"
     },
     {
-        "id": "howYouHeard-Facebook",
+        "id": "Facebook",
         "option": "Facebook"
     },
     {
-        "id": "howYouHeard-Twitter",
+        "id": "Twitter",
         "option": "Twitter"
     },
     {
-        "id": "howYouHeard-Instagram",
+        "id": "Instagram",
         "option": "Instagram"
     },
     {
-        "id": "howYouHeard-LinkedIn",
+        "id": "LinkedIn",
         "option": "LinkedIn"
     },
     {
-        "id": "howYouHeard-Email",
+        "id": "Email",
         "option": "Email"
     },
     {
-        "id": "howYouHeard-WordOfMouth",
+        "id": "Word Of Mouth",
         "option": "Word of Mouth"
     },
     {
-        "id": "howYouHeard-Other",
+        "id": "Other",
         "option": "Other"
     }
 ]
