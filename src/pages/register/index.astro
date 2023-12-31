@@ -61,7 +61,7 @@ if (Astro.request.method === "POST") {
       allergens: /* data.getAll("allergens") as string[] */ [],
       otherAllergens: /* data.get("otherAllergens") as string */ "",
     };
-    console.log(`JSON Data: ${JSON.stringify(jsonData)}`);
+    /* console.log(`JSON Data: ${JSON.stringify(jsonData)}`); */
     const response = await fetch(
       "https://revolutionuc-api.onrender.com/api/registrant",
       {
