@@ -62,16 +62,43 @@ if (Astro.request.method === "POST") {
       otherAllergens: /* data.get("otherAllergens") as string */ "",
     };
     /* console.log(`JSON Data: ${JSON.stringify(jsonData)}`); */
-    const response = await fetch(
-      "https://revolutionuc-api.onrender.com/api/registrant",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(jsonData),
-      }
-    );
+    fetch("https://revolutionuc-api.onrender.com/api/registrant", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(jsonData),
+    })
+      .then((response) => {
+        if (response) {
+          return response.json();
+        }
+      })
+      .then((d) => {
+        console.log(d);
+        if (d) {
+          console.log("uploading resume");
+          // this should work but I don't know if it does
+          let form = new FormData();
+          form.append("resume", data.get("resume") as File);
+          fetch(
+            `https://revolutionuc-api.onrender.com/api/uploadResume/${d["uploadKey"]}`,
+            {
+              method: "POST",
+              body: form,
+            }
+          )
+            .then((response) => {
+              console.log(response);
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   } catch (error) {
     console.log(`Error: ${error}`);
   }
