@@ -62,7 +62,7 @@ if (Astro.request.method === "POST") {
       otherAllergens: /* data.get("otherAllergens") as string */ "",
     };
     /* console.log(`JSON Data: ${JSON.stringify(jsonData)}`); */
-    fetch("https://revolutionuc-api.onrender.com/api/registrant", {
+    fetch(`${import.meta.env.PUBLIC_API}/api/registrant`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -76,13 +76,13 @@ if (Astro.request.method === "POST") {
       })
       .then((d) => {
         console.log(d);
-        if (d) {
+        if (!d.error && d["uploadKey"]) {
           console.log("uploading resume");
           // this should work but I don't know if it does
           let form = new FormData();
           form.append("resume", data.get("resume") as File);
           fetch(
-            `https://revolutionuc-api.onrender.com/api/uploadResume/${d["uploadKey"]}`,
+            `${import.meta.env.PUBLIC_API}/api/uploadResume/${d["uploadKey"]}`,
             {
               method: "POST",
               body: form,
