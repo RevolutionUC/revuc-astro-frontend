@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <div>
@@ -72,15 +73,22 @@
   schoolOtherButton.addEventListener("change", function () {
     if (schoolOtherButton.checked) {
       searchSchoolContainer.classList.add("hidden");
-      schoolOtherInput.classList.remove("hidden");
       // Remove the `required` field from the normal input, since it is hidden away
-      schoolNormalInput.required = false
-      schoolOtherInput.required = true
+      schoolNormalInput.required = false;
+      schoolNormalInput.removeAttribute("name");
+      // Enable the other input
+      schoolOtherInput.classList.remove("hidden");
+      schoolOtherInput.required = true;
+      schoolOtherInput.setAttribute("name", "school");
     } else {
-      searchSchoolContainer.classList.remove("hidden");
-      schoolNormalInput.required = true
+      // Disable the other input
       schoolOtherInput.classList.add("hidden");
-      schoolOtherInput.required = false
+      schoolOtherInput.required = false;
+      schoolOtherInput.removeAttribute("name");
+      // Enable the normal input
+      searchSchoolContainer.classList.remove("hidden");
+      schoolNormalInput.required = true;
+      schoolNormalInput.setAttribute("name", "school");
     }
   });
 </script>
