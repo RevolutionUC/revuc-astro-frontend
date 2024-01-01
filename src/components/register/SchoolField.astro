@@ -5,16 +5,28 @@
   <label class="font-bold" for="school" id="school-label">School*</label>
 
   <div class="pt-2">
-    <input class="input--school-other hidden border border-gray-500 rounded-xl p-3 w-full placeholder-gray-400" type="text" placeholder="Enter your school" />
+    <input
+      class="input--school-other hidden border border-gray-500 rounded-xl p-3 w-full placeholder-gray-400"
+      type="text"
+      placeholder="Enter your school"
+      name="school"
+    />
 
     <div class="flex" id="searchSchoolContainer">
-      <input class="border border-gray-500 rounded-xl p-3 w-full placeholder-gray-400" name="school" id="school" list="school-list" placeholder="Search your school" required />
+      <input
+        class="border border-gray-500 rounded-xl p-3 w-full placeholder-gray-400"
+        name="school"
+        id="school"
+        list="school-list"
+        placeholder="Search your school"
+        required
+      />
       <datalist class="w-full" id="school-list"></datalist>
       <div id="school-dropdown-btn" class="text-2xl self-center px-4 cursor-pointer">&#9660;</div>
     </div>
 
     <div class="pt-2">
-      <input name="schoolOther" id="schoolOther" type="checkbox" class="button" /> 
+      <input name="schoolOther" id="schoolOther" type="checkbox" class="button" />
       <label for="schoolOther"><small>I can't find my school</small></label>
     </div>
   </div>
@@ -35,7 +47,11 @@
         if (school == "The University of Cincinnati") newOption.setAttribute("selected", "");
         document.querySelector("datalist#school-list").append(newOption);
       }
-      var schoolComplete = new Awesomplete(document.getElementById("school"), { list: "#school-list", minChars: 0, maxItems: 1000000 });
+      var schoolComplete = new Awesomplete(document.getElementById("school"), {
+        list: "#school-list",
+        minChars: 0,
+        maxItems: 1000000
+      });
       Awesomplete.$("#school-dropdown-btn").addEventListener("click", function () {
         if (schoolComplete.ul.childNodes.length === 0) {
           schoolComplete.minChars = 0;
@@ -50,15 +66,21 @@
 
   const schoolOtherButton = document.getElementById("schoolOther");
   const searchSchoolContainer = document.getElementById("searchSchoolContainer");
+  const schoolNormalInput = document.getElementById("school");
   const schoolOtherInput = document.getElementsByClassName("input--school-other")[0];
 
   schoolOtherButton.addEventListener("change", function () {
     if (schoolOtherButton.checked) {
-      searchSchoolContainer.classList.add('hidden');
-      schoolOtherInput.classList.remove('hidden');
+      searchSchoolContainer.classList.add("hidden");
+      schoolOtherInput.classList.remove("hidden");
+      // Remove the `required` field from the normal input, since it is hidden away
+      schoolNormalInput.required = false
+      schoolOtherInput.required = true
     } else {
-      searchSchoolContainer.classList.remove('hidden');
-      schoolOtherInput.classList.add('hidden');
+      searchSchoolContainer.classList.remove("hidden");
+      schoolNormalInput.required = true
+      schoolOtherInput.classList.add("hidden");
+      schoolOtherInput.required = false
     }
   });
 </script>

@@ -766,7 +766,7 @@
 
 "@types/intl-tel-input@^18.1.4":
   version "18.1.4"
-  resolved "https://registry.npmjs.org/@types/intl-tel-input/-/intl-tel-input-18.1.4.tgz"
+  resolved "https://registry.yarnpkg.com/@types/intl-tel-input/-/intl-tel-input-18.1.4.tgz#0eb5211a7490f8a8d7aa940ee594a85138d514c9"
   integrity sha512-UT4dQ4dQA0w0uxU161aPROEEwMOQj5Qedm3ImdDNfkxi3JXzBX2FhcUS72pTyZ8ypaUr2e9ruJBiK6bwSGfbew==
   dependencies:
     "@types/jquery" "*"

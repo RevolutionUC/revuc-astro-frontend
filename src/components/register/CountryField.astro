@@ -10,6 +10,7 @@ import countriesJson from "../../data/register/countries.json";
       class="input--country-other hidden border border-gray-500 rounded-xl p-3 w-full placeholder-gray-400"
       type="text"
       placeholder="Enter your country"
+      name="country"
     />
 
     <div class="flex" id="searchCountryContainer">
@@ -22,21 +23,11 @@ import countriesJson from "../../data/register/countries.json";
         required
       />
       <datalist class="border" id="country-list"></datalist>
-      <div
-        id="country-dropdown-btn"
-        class="text-2xl self-center px-4 cursor-pointer"
-      >
-        &#9660;
-      </div>
+      <div id="country-dropdown-btn" class="text-2xl self-center px-4 cursor-pointer">&#9660;</div>
     </div>
 
     <div class="pt-2">
-      <input
-        name="countryOther"
-        id="countryOther"
-        type="checkbox"
-        class="button"
-      />
+      <input name="countryOther" id="countryOther" type="checkbox" class="button" />
       <label for="countryOther"><small>I can't find my country</small></label>
     </div>
   </div>
@@ -55,7 +46,7 @@ import countriesJson from "../../data/register/countries.json";
   const countryComplete = new Awesomplete(document.getElementById("country"), {
     list: "#country-list",
     minChars: 0,
-    maxItems: 1000000,
+    maxItems: 1000000
   });
   Awesomplete.$("#country-dropdown-btn").addEventListener("click", function () {
     if (countryComplete.ul.childNodes.length === 0) {
@@ -69,20 +60,21 @@ import countriesJson from "../../data/register/countries.json";
   });
 
   const countryOtherButton = document.getElementById("countryOther");
-  const searchCountryContainer = document.getElementById(
-    "searchCountryContainer"
-  );
-  const countryOtherInput = document.getElementsByClassName(
-    "input--country-other"
-  )[0];
+  const countryNormalInput = document.getElementById("country");
+  const searchCountryContainer = document.getElementById("searchCountryContainer");
+  const countryOtherInput = document.getElementsByClassName("input--country-other")[0];
 
   countryOtherButton.addEventListener("change", function () {
-    if (countryOtherButton.checked) {
+    if (countryOtherButton.checked) { // Cannot find my country
       searchCountryContainer.classList.add("hidden");
+      countryNormalInput.required = false;
       countryOtherInput.classList.remove("hidden");
+      countryOtherInput.required = true;
     } else {
       searchCountryContainer.classList.remove("hidden");
+      countryNormalInput.required = true
       countryOtherInput.classList.add("hidden");
+      countryOtherInput.required = false
     }
   });
 </script>
