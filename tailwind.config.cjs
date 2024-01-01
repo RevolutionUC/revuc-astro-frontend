@@ -3,6 +3,11 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	safelist: [
+		// Safe list the background classes used in the form notification
+    'bg-red-400',
+    'bg-green-400',
+  ],
 	theme: {
 		extend: {
 			fontFamily: {

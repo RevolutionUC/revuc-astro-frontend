@@ -13,143 +13,46 @@ import ethnicityData from "../../data/register/ethnicityData.json";
 import SchoolField from "../../components/register/SchoolField.astro";
 import CountryField from "../../components/register/CountryField.astro";
 
-interface RegistrantData {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phoneNumber: string;
-  school: string;
-  country: string;
-  educationLevel: string;
-  major: string;
-  gender: string;
-  ethnicity: string[];
-  howYouHeard: string[];
-  hackathons: number;
-  shirtSize: string;
-  githubUsername?: string;
-  dateOfBirth: string;
-  acceptedWaiver: boolean;
-  allergens: string[];
-  otherAllergens: string;
-}
-
-if (Astro.request.method === "POST") {
-  try {
-    const data: FormData = await Astro.request.formData();
-    const acceptedWaiverBool: boolean =
-      data.get("dataSharing") === "on" &&
-      data.get("codeOfConduct") === "on" &&
-      data.get("mlhEmails") === "on";
-    const jsonData: RegistrantData = {
-      firstName: data.get("firstName") as string,
-      lastName: data.get("lastName") as string,
-      email: data.get("email") as string,
-      phoneNumber: data.get("phoneNumber[full]") as string,
-      school: data.get("school") as string,
-      country: data.get("country") as string,
-      educationLevel: data.get("educationLevel") as string,
-      major: data.get("major") as string,
-      gender: data.get("gender") as string,
-      ethnicity: data.getAll("ethnicity[]") as string[],
-      howYouHeard: data.getAll("howYouHeard[]") as string[],
-      hackathons: parseInt(data.get("hackathons") as string),
-      shirtSize: data.get("shirtSize") as string,
-      githubUsername: data.get("githubUsername") as string,
-      dateOfBirth: new Date(data.get("dateOfBirth") as string).toISOString(),
-      acceptedWaiver: acceptedWaiverBool,
-      allergens: /* data.getAll("allergens") as string[] */ [],
-      otherAllergens: /* data.get("otherAllergens") as string */ "",
-    };
-    /* console.log(`JSON Data: ${JSON.stringify(jsonData)}`); */
-    fetch(`${import.meta.env.PUBLIC_API}/api/registrant`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(jsonData),
-    })
-      .then((response) => {
-        if (response) {
-          return response.json();
-        }
-      })
-      .then((d) => {
-        console.log(d);
-        if (!d.error && d["uploadKey"]) {
-          console.log("uploading resume");
-          // this should work but I don't know if it does
-          let form = new FormData();
-          form.append("resume", data.get("resume") as File);
-          fetch(
-            `${import.meta.env.PUBLIC_API}/api/uploadResume/${d["uploadKey"]}`,
-            {
-              method: "POST",
-              body: form,
-            }
-          )
-            .then((response) => {
-              console.log(response);
-            })
-            .catch((error) => {
-              console.log(error);
-            });
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  } catch (error) {
-    console.log(`Error: ${error}`);
-  }
-}
+// interface RegistrantData {
+//   firstName: string;
+//   lastName: string;
+//   email: string;
+//   phoneNumber: string;
+//   school: string;
+//   country: string;
+//   educationLevel: string;
+//   major: string;
+//   gender: string;
+//   ethnicity: string[];
+//   howYouHeard: string[];
+//   hackathons: number;
+//   shirtSize: string;
+//   githubUsername?: string;
+//   dateOfBirth: string;
+//   acceptedWaiver: boolean;
+//   allergens: string[];
+//   otherAllergens: string;
+// }
 ---
 
 <HTMLWrapper title="Register">
   <ResponsiveNav current="register" />
   <main class="mt-24 flex justify-center">
     <div class="flex flex-col w-[760px] max-md:w-11/12">
+      <div id="notification" class="rounded-md p-2 md:p-4 invisible"></div>
       <h1 class="text-4xl font-bold py-8">Register</h1>
       <div class="pb-20">
-        <form
-          class="gap-4 gap-y-8 grid-cols-2 grid"
-          method="POST"
-          enctype="multipart/form-data"
-        >
+        <form class="gap-4 gap-y-8 grid-cols-2 grid" method="POST" enctype="multipart/form-data" id="registrationForm">
           <!-- firstName -->
-          <TextField
-            label="First Name*"
-            type="text"
-            placeholder="Bob"
-            name="firstName"
-            required={true}
-          />
+          <TextField label="First Name*" type="text" placeholder="Bob" name="firstName" required={true} />
 
           <!-- lastName -->
-          <TextField
-            label="Last Name*"
-            type="text"
-            placeholder="Evans"
-            name="lastName"
-            required={true}
-          />
+          <TextField label="Last Name*" type="text" placeholder="Evans" name="lastName" required={true} />
           <!-- email -->
-          <TextField
-            label="Email*"
-            type="email"
-            placeholder="Email"
-            name="email"
-            required={true}
-          />
+          <TextField label="Email*" type="email" placeholder="Email" name="email" required={true} />
 
           <!-- confirmEmail -->
-          <TextField
-            label="Confirm Email*"
-            type="email"
-            placeholder="Confirm Email"
-            name="emailConfirmed"
-            required={true}
-          />
+          <TextField label="Confirm Email*" type="email" placeholder="Confirm Email" name="emailConfirmed" required={true} />
 
           <!-- school -->
           <div class="col-span-2">
@@ -174,44 +77,20 @@ if (Astro.request.method === "POST") {
 
           <!-- major -->
           <div class="col-span-2">
-            <DropDownField
-              label="Major*"
-              name="major"
-              placeholder="Major"
-              dropdown={generalData.majorData}
-              required={true}
-            />
+            <DropDownField label="Major*" name="major" placeholder="Major" dropdown={generalData.majorData} required={true} />
           </div>
 
           <!-- dob -->
-          <TextField
-            label="Date of Birth*"
-            type="date"
-            placeholder="mm/dd/yyyy"
-            name="dateOfBirth"
-            required={true}
-          />
+          <TextField label="Date of Birth*" type="date" placeholder="mm/dd/yyyy" name="dateOfBirth" required={true} />
 
           <!-- gender -->
-          <DropDownField
-            label="Gender*"
-            name="gender"
-            placeholder="Gender"
-            dropdown={generalData.genderData}
-            required={true}
-          />
+          <DropDownField label="Gender*" name="gender" placeholder="Gender" dropdown={generalData.genderData} required={true} />
 
           <!-- phoneNumber -->
           <PhoneInput />
 
           <!-- github -->
-          <TextField
-            label="GitHub"
-            type="text"
-            placeholder="GitHub Username"
-            name="githubUsername"
-            required={false}
-          />
+          <TextField label="GitHub" type="text" placeholder="GitHub Username" name="githubUsername" required={false} />
 
           <div class="col-span-2">
             <DropDownField
@@ -244,20 +123,12 @@ if (Astro.request.method === "POST") {
 
           <!-- ethnicity -->
           <div class="col-span-2">
-            <CheckBoxField
-              label="Race/Ethnicity*"
-              name="ethnicity[]"
-              checkBoxesData={ethnicityData}
-            />
+            <CheckBoxField label="Race/Ethnicity*" name="ethnicity[]" checkBoxesData={ethnicityData} />
           </div>
 
           <!-- howYouHeard -->
           <div class="col-span-2">
-            <CheckBoxField
-              label="How did you hear about RevUC?"
-              name="howYouHeard[]"
-              checkBoxesData={howYouHeardData}
-            />
+            <CheckBoxField label="How did you hear about RevUC?" name="howYouHeard[]" checkBoxesData={howYouHeardData} />
           </div>
 
           <!-- MLH -->
@@ -294,10 +165,8 @@ if (Astro.request.method === "POST") {
 
           <!-- registerButton -->
           <div>
-            <button
-              class="bg-gray-500 text-white text-lg p-3 rounded-2xl"
-              name="registrationSubmit"
-              type="submit">Register</button
+            <button class="bg-gray-500 text-white text-lg p-3 rounded-2xl" name="registrationSubmit" type="submit"
+              >Register</button
             >
           </div>
         </form>
@@ -307,3 +176,33 @@ if (Astro.request.method === "POST") {
   </main>
   <Footer />
 </HTMLWrapper>
+
+<script>
+  const registrationForm = document.getElementById("registrationForm") as HTMLFormElement | null;
+  const notification = document.getElementById("notification")!;
+
+  if (registrationForm) {
+    registrationForm.onsubmit = async (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target as HTMLFormElement);
+      formData.append("phoneNumber[full]", window.iti.getNumber());
+      const response = await fetch("/registration/api", {
+        method: "POST",
+        body: formData
+      });
+      const data = await response.json();
+      const message = Array.isArray(data.message) ? data.message.join("\n") : data.message;
+      if (response.ok) {
+        notification.innerText = message;
+        notification.classList.remove("invisible");
+        notification.classList.add("bg-green-400");
+        registrationForm.reset();
+      } else {
+        notification.innerText = message;
+        notification.classList.remove("invisible");
+        notification.classList.add("bg-red-400");
+      }
+      notification.scrollIntoView();
+    };
+  }
+</script>
