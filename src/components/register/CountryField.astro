@@ -66,15 +66,22 @@ import countriesJson from "../../data/register/countries.json";
 
   countryOtherButton.addEventListener("change", function () {
     if (countryOtherButton.checked) { // Cannot find my country
+      // Complete disable the normal input
       searchCountryContainer.classList.add("hidden");
       countryNormalInput.required = false;
+      countryNormalInput.removeAttribute("name");
+      // Enable the other input
       countryOtherInput.classList.remove("hidden");
       countryOtherInput.required = true;
+      countryOtherInput.setAttribute("name", "country")
     } else {
       searchCountryContainer.classList.remove("hidden");
       countryNormalInput.required = true
+      countryNormalInput.setAttribute("name", "country");
+      // Disable the other input
       countryOtherInput.classList.add("hidden");
       countryOtherInput.required = false
+      countryOtherInput.removeAttribute("name");
     }
   });
 </script>
