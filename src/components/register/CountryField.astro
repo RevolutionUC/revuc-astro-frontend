@@ -12,9 +12,9 @@ import countriesJson from "../../data/register/countries.json";
       placeholder="Enter your country"
     />
 
-    <div class="flex" id="searchCountryContainer">
+    <div class="flex border border-gray-500 rounded-xl w-full placeholder-gray-400" id="searchCountryContainer">
       <input
-        class="border border-gray-500 rounded-xl p-3 w-full placeholder-gray-400"
+        class="p-3 rounded-xl w-full outline-none remove-calendar-dropdown"
         name="country"
         id="country"
         list="country-list"
@@ -22,7 +22,7 @@ import countriesJson from "../../data/register/countries.json";
         required
       />
       <datalist class="border" id="country-list"></datalist>
-      <div id="country-dropdown-btn" class="text-2xl self-center px-4 cursor-pointer">&#9660;</div>
+      <div id="country-dropdown-btn" class="flex text-[#9ca3af] text-sm pl-4 pr-1 cursor-pointer"><span class="self-center justify-self-center">&#9013;</span></div>
     </div>
 
     <div class="pt-2">
