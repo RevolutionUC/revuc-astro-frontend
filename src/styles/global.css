@@ -2,6 +2,10 @@ html {
   scroll-padding-top: 8rem;
 }
 
+.remove-calendar-dropdown::-webkit-calendar-picker-indicator {
+  display: none !important;
+}
+
 .intl-tel-input {
     width: 100%;
 }
