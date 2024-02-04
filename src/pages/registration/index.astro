@@ -113,11 +113,11 @@ import CountryField from "../../components/register/CountryField.astro";
           <!-- hackathons -->
           <div class="col-span-2">
             <DropDownField
-              label="How many hackathons have you attended?"
+              label="How many hackathons have you attended?*"
               name="hackathons"
               placeholder="Number of hackathons attended"
               dropdown={generalData.hackathonData}
-              required={false}
+              required={true}
             />
           </div>
 
