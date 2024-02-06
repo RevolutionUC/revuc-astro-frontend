@@ -10,7 +10,7 @@ export const POST: APIRoute = async ({ request }) => {
     // Since HTML5 checkbox doesn't have native client-side validation, we need to manually validate
     return new Response(JSON.stringify({ message: "Please select at least one ethnicity" }), { status: 400 });
   }
-  
+
   const jsonData = {
     firstName: data.get("firstName") as string,
     lastName: data.get("lastName") as string,
@@ -41,34 +41,34 @@ export const POST: APIRoute = async ({ request }) => {
 
   const responseJson = await newRegistrantResponse.json();
 
-  console.log("HERE", responseJson);
-
   if (!newRegistrantResponse.ok) {
     // Error
     return new Response(JSON.stringify({ message: responseJson.message }), { status: newRegistrantResponse.status });
   }
 
-  // Response is OK, so now submit the resume
+  // Response is OK, so now submit the resume (if there is resume file)
   const uploadKey = responseJson.uploadKey;
   let form = new FormData();
-  form.append("resume", data.get("resume") as File);
+  const resumeFile = data.get("resume") as File;
+  if (resumeFile) {
+    form.append("resume", resumeFile);
 
-  const submitResumeResponse = await fetch(`${import.meta.env.PUBLIC_API}/api/uploadResume/${uploadKey}`, {
-    method: "POST",
-    body: form
-  });
+    const submitResumeResponse = await fetch(`${import.meta.env.PUBLIC_API}/api/uploadResume/${uploadKey}`, {
+      method: "POST",
+      body: form
+    });
 
-  console.log("HERE2", submitResumeResponse.status);
 
-  if (!submitResumeResponse.ok) {
-    // const submitResumeResponseJson = await submitResumeResponse.json();
-    return new Response(
-      JSON.stringify({
-        message:
-          "There was an error submitting your resume. Please contact us at info@revolutionuc.com and we'll help resolve it for you"
-      }),
-      { status: submitResumeResponse.status }
-    );
+    if (!submitResumeResponse.ok) {
+      // const submitResumeResponseJson = await submitResumeResponse.json();
+      return new Response(
+        JSON.stringify({
+          message:
+            "There was an error submitting your resume. Please contact us at info@revolutionuc.com and we'll help resolve it for you."
+        }),
+        { status: submitResumeResponse.status }
+      );
+    }
   }
 
   // OK

@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <div>
@@ -9,12 +10,11 @@
       class="input--school-other hidden border border-gray-500 rounded-xl p-3 w-full placeholder-gray-400"
       type="text"
       placeholder="Enter your school"
-      name="school"
     />
 
-    <div class="flex" id="searchSchoolContainer">
+    <div class="flex border border-gray-500 rounded-xl w-full placeholder-gray-400" id="searchSchoolContainer">
       <input
-        class="border border-gray-500 rounded-xl p-3 w-full placeholder-gray-400"
+        class="p-3 rounded-xl w-full outline-none remove-calendar-dropdown"
         name="school"
         id="school"
         list="school-list"
@@ -22,7 +22,7 @@
         required
       />
       <datalist class="w-full" id="school-list"></datalist>
-      <div id="school-dropdown-btn" class="text-2xl self-center px-4 cursor-pointer">&#9660;</div>
+      <div id="school-dropdown-btn" class="flex text-[#9ca3af] text-sm pl-4 pr-1 cursor-pointer"><span class="self-center justify-self-center">&#9013;</span></div>
     </div>
 
     <div class="pt-2">
@@ -72,15 +72,22 @@
   schoolOtherButton.addEventListener("change", function () {
     if (schoolOtherButton.checked) {
       searchSchoolContainer.classList.add("hidden");
-      schoolOtherInput.classList.remove("hidden");
       // Remove the `required` field from the normal input, since it is hidden away
-      schoolNormalInput.required = false
-      schoolOtherInput.required = true
+      schoolNormalInput.required = false;
+      schoolNormalInput.removeAttribute("name");
+      // Enable the other input
+      schoolOtherInput.classList.remove("hidden");
+      schoolOtherInput.required = true;
+      schoolOtherInput.setAttribute("name", "school");
     } else {
-      searchSchoolContainer.classList.remove("hidden");
-      schoolNormalInput.required = true
+      // Disable the other input
       schoolOtherInput.classList.add("hidden");
-      schoolOtherInput.required = false
+      schoolOtherInput.required = false;
+      schoolOtherInput.removeAttribute("name");
+      // Enable the normal input
+      searchSchoolContainer.classList.remove("hidden");
+      schoolNormalInput.required = true;
+      schoolNormalInput.setAttribute("name", "school");
     }
   });
 </script>

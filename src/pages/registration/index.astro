@@ -195,11 +195,13 @@ import CountryField from "../../components/register/CountryField.astro";
       if (response.ok) {
         notification.innerText = message;
         notification.classList.remove("invisible");
+        notification.classList.remove("bg-red-400");
         notification.classList.add("bg-green-400");
         registrationForm.reset();
       } else {
         notification.innerText = message;
         notification.classList.remove("invisible");
+        notification.classList.remove("bg-green-400");
         notification.classList.add("bg-red-400");
       }
       notification.scrollIntoView();
