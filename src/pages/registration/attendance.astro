@@ -3,30 +3,27 @@ import ResponsiveNav from "../../components/ResponsiveNav.astro";
 import HTMLWrapper from "../../layouts/HTMLWrapper.astro";
 import Footer from "../../components/Footer.astro";
 
-const { confirmParam, idParam } = Astro.params;
+const id = Astro.url.searchParams.get("id");
+const confirm = Astro.url.searchParams.get("confirm");
 ---
 
 <HTMLWrapper title="Attendance">
   <ResponsiveNav current="Attendance" />
-  <main
-    class="mt-24 flex flex-col justify-center items-center w-full h-[60vh] space-y-8"
-    data-confirm={confirmParam}
-    data-id={idParam}
-  >
+  <main class="mt-24 flex flex-col justify-center items-center w-full h-[60vh] space-y-8" data-confirm={confirm} data-id={id}>
     <h1 class="text-6xl"></h1>
     <div class="text-lg" id="textValue"></div>
   </main>
   <Footer />
 </HTMLWrapper>
 
-<script defer>
+<script>
   const confirm = document.getElementsByTagName("main")[0].dataset.confirm;
-  const id = document.getElementsByTagName("main")[0].dataset.confirm;
+  const id = document.getElementsByTagName("main")[0].dataset.id;
 
   const h1 = document.getElementsByTagName("h1")[0];
   const content = document.getElementById("textValue");
 
-  if (confirmParam && idParam) {
+  if (confirm && id && content) {
     document.title = "Please wait...";
     h1.textContent = "Please wait...";
     content.textContent = "";
@@ -34,9 +31,10 @@ const { confirmParam, idParam } = Astro.params;
     var regHeaders = new Headers();
     regHeaders.append("Content-Type", "application/json");
 
-    let jsonData = {};
-    jsonData["uuid"] = id;
-    jsonData["isConfirmed"] = confirm == "true";
+    const jsonData = {
+      uuid: id,
+      isConfirmed: confirm === "true"
+    };
 
     fetch(`${import.meta.env.PUBLIC_API}/api/confirmAttendance/`, {
       method: "POST",
@@ -64,8 +62,7 @@ const { confirmParam, idParam } = Astro.params;
             } else {
               document.title = "Error";
               h1.textContent = "Error";
-              content.textContent =
-                "There was a problem confirming your attendance. Please contact us at info@revolutionuc.com.";
+              content.textContent = "There was a problem confirming your attendance. Please contact us at info@revolutionuc.com.";
             }
           });
         } else {
