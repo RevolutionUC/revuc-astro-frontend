@@ -8,12 +8,12 @@
       {
         "time": "10:00 AM",
         "event": "Sponsor Expo Opens",
-        "location": "260"
+        "location": ""
       },
       {
         "time": "11:00 AM",
         "event": "Opening Ceremony",
-        "location": "230"
+        "location": ""
       },
       {
         "time": "12:00 AM",
@@ -46,8 +46,8 @@
         "location": ""
       },
       {
-        "time": "2:00 PM - 2:30 PM",
-        "event": "Workshop 3: Soroban by MLH",
+        "time": "5:00 PM - 5:30 PM",
+        "event": "Workshop 4: Soroban by MLH",
         "location": ""
       },
       {
@@ -74,7 +74,7 @@
     "scheduleDayTwo": [
       {
         "time": "12:00 AM",
-        "event": "Midnight Snack: Potbelly Shakes and Cookies",
+        "event": "Midnight Snack: Potbelly Shakes",
         "location": ""
       },
       {
@@ -110,7 +110,7 @@
       {
         "time": "2:30 AM",
         "event": "Closing Ceremony",
-        "location": "230"
+        "location": ""
       }
     ]
   }
