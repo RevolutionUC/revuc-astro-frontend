@@ -20,8 +20,6 @@ const user = Astro.url.searchParams.get("user");
   const h1 = document.getElementsByTagName("h1")[0];
   const content = document.getElementById("textValue");
 
-  console.log("USER", user)
-
   if (user && h1 && content) {
     fetch(`${import.meta.env.PUBLIC_API}/api/verify/${user}`, {
       method: "POST"
