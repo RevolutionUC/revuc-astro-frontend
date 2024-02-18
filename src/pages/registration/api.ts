@@ -3,7 +3,7 @@ import type { APIRoute } from "astro";
 export const POST: APIRoute = async ({ request }) => {
   const data = await request.formData();
   const acceptedWaiverBool: boolean =
-    data.get("dataSharing") === "on" && data.get("codeOfConduct") === "on" && data.get("mlhEmails") === "on";
+    data.get("waiver") === "on" && data.get("dataSharing") === "on" && data.get("codeOfConduct") === "on" && data.get("mlhEmails") === "on";
 
   // Special client-side validation
   if (data.getAll("ethnicity[]").length == 0) {

@@ -131,12 +131,12 @@ import CountryField from "../../components/register/CountryField.astro";
             <CheckBoxField label="How did you hear about RevUC?" name="howYouHeard[]" checkBoxesData={howYouHeardData} />
           </div>
 
-          <!-- MLH -->
+          <!-- MLH and waiver -->
           <div class="col-span-2">
             <CheckBoxField
               label="I agree*"
-              name="dataSharing"
-              checkBoxLabel="MLH Data Sharing"
+              name="waiver"
+              checkBoxLabel="RevolutionUC Waiver Form"
               href="#agree-1"
               hrefText="1"
               required={true}
@@ -145,10 +145,20 @@ import CountryField from "../../components/register/CountryField.astro";
           <div class="col-span-2">
             <CheckBoxField
               label="I agree*"
-              name="codeOfConduct"
-              checkBoxLabel="MLH Code of Conduct"
+              name="dataSharing"
+              checkBoxLabel="MLH Data Sharing"
               href="#agree-2"
               hrefText="2"
+              required={true}
+            />
+          </div>
+          <div class="col-span-2">
+            <CheckBoxField
+              label="I agree*"
+              name="codeOfConduct"
+              checkBoxLabel="MLH Code of Conduct"
+              href="#agree-3"
+              hrefText="3"
               required={true}
             />
           </div>
@@ -157,8 +167,8 @@ import CountryField from "../../components/register/CountryField.astro";
               label="I agree"
               name="mlhEmails"
               checkBoxLabel="MLH Informational Emails"
-              href="#agree-3"
-              hrefText="3"
+              href="#agree-4"
+              hrefText="4"
               required={false}
             />
           </div>
@@ -171,7 +181,45 @@ import CountryField from "../../components/register/CountryField.astro";
           </div>
         </form>
       </div>
-      <AgreementDescription />
+      <!-- Agreement Discription -->
+      <section class="pb-20">
+        <p>
+          <small
+            ><sup id="agree-1">1 </sup>I have read an agree to the <a
+              href="/waiver"
+              target="_blank"
+              class="text-red-700 underline">Liability Release, Waiver, Discharge and Covenant Not to Sue</a
+            >.</small>
+          <br/>
+          <small
+            ><sup id="agree-2">2 </sup>I authorize you to share my application/registration information with Major League Hacking
+            for event administration, ranking, and MLH administration in-line with the <a
+              href="https://mlh.io/privacy"
+              target="_blank"
+              class="text-red-700 underline">MLH Privacy Policy</a
+            >. I further agree to the terms of both the
+            <a
+              href="https://github.com/MLH/mlh-policies/tree/master/prize-terms-and-conditions"
+              target="_blank"
+              class="text-red-700 underline">MLH Contest Terms and Conditions</a
+            >
+            and the
+            <a href="https://mlh.io/privacy" target="_blank" class="text-red-700 underline">MLH Privacy Policy</a>.</small
+          >
+          <br />
+          <small
+            ><sup id="agree-3">3 </sup>I have read and agree to the
+            <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" class="text-red-700 underline"
+              >MLH Code of Conduct</a
+            >.</small
+          >
+          <br />
+          <small
+            ><sup id="agree-4">4 </sup>I authorize MLH to send me pre- and post-event informational emails, which contain free
+            credit and opportunities from their partners.</small
+          >
+        </p>
+      </section>
     </div>
   </main>
   <Footer />
