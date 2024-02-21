@@ -11,8 +11,8 @@ import shuttleData from "../data/scheduleShuttle.json";
 <HTMLWrapper title="Home">
   <ResponsiveNav current="home" />
   <main>
-    <Hero siteState="registration" />
-    <div class="flex flex-col justify-center items-center">
+    <Hero siteState="live" />
+    <div class="flex flex-col justify-center items-center pt-10">
         <h1 class="text-3xl font-bold">Schedule</h1>
         <ScheduleTable schedule={scheduleData.scheduleDayOne} label="February 24th" />
         <ScheduleTable schedule={scheduleData.scheduleDayTwo} label="February 25th" />
