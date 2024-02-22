@@ -51,15 +51,17 @@ let liveSubText = "   Hacking ends in:   ";
       </div>
       {
         Array.from(date).map((letter) => {
-          if (letter === " ") return <div />;
-          return (
-            <div
-              class="text-4xl max-[1024px]:text-lg min-[1024px]:border font-extrabold flex justify-center items-center shadow-2xl cursor-default backdrop-blur-sm"
-              data-text={letter}
-            >
-              <span>{letter}</span>
-            </div>
-          );
+          if (siteState !== "live") {
+            if (letter === " ") return <div />;
+            return (
+              <div
+                class="text-4xl max-[1024px]:text-lg min-[1024px]:border font-extrabold flex justify-center items-center shadow-2xl cursor-default backdrop-blur-sm"
+                data-text={letter}
+              >
+                <span>{letter}</span>
+              </div>
+            );
+          }
         })
       }
       {
