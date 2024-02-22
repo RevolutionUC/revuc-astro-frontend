@@ -1,0 +1,109 @@
+---
+import ResponsiveNav from "../components/ResponsiveNav.astro";
+import HTMLWrapper from "../layouts/HTMLWrapper.astro";
+import hackIdeas from "../data/hackIdeas.json";
+import Footer from "../components/Footer.astro";
+---
+
+<HTMLWrapper title="Hack Ideas">
+  <ResponsiveNav current="hack-ideas" />
+  <main class="flex justify-center h-full mt-24">
+    <div class="xl:w-2/5 lg:w-3/5 w-full mb-8 mr-8 ml-8">
+      <div class="relative">
+        <img
+          src="https://assets.revolutionuc.com/website-images/2021/photos/2x/hack-ideas.jpg"
+          alt="hack ideas image"
+          class="w-full"
+          decoding="async"
+          loading="eager"
+        />
+
+        <div class="absolute bottom-0 left-0 p-4 text-white">
+          <h2 class="text-2xl font-bold">Hack Ideas</h2>
+          <p class="text-lg">
+            Don't have a project idea? Use those Hack Ideas to help guide you.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 gap-4 mt-8">
+        {
+          hackIdeas.map((idea, index) => (
+            <div>
+              <button
+                id={`open-${index}`}
+                class="grid place-items-center max-w-xs h-36 flex justify-center items-center rounded-lg shadow-lg"
+              >
+                <img
+                  src={idea.image}
+                  alt="hack ideas image"
+                  class="w-1/2"
+                  decoding="async"
+                  loading="eager"
+                />
+
+                <div class="font-bold text-gray-800">{idea.topic}</div>
+              </button>
+
+              <div
+                id={`modal-${index}`}
+                class="modal hidden fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50"
+              >
+                <div class="bg-white rounded-lg shadow-lg w-2/3 h-2/3 grid place-items-center flex justify-center items-center relative">
+                  <div
+                    id={`close-${index}`}
+                    class="absolute top-4 right-4 p-2 h-16 w-auto rounded-full hover:text-4xl text-2xl right-0 cursor-pointer"
+                  >
+                    &times;
+                  </div>
+                  <h3 class="text-2xl font-bold my-8">{idea.topic}</h3>
+                  <div class="grid place-items-center max-w-xs h-full justify-center items-center">
+                    <img
+                      src={idea.image}
+                      alt="hack ideas image"
+                      decoding="async"
+                      loading="eager"
+                      class="object-cover h-full w-auto"
+                    />
+                  </div>
+
+                  <p class="m-8">{idea.idea}</p>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <script defer>
+        const modals = document.querySelectorAll("div.modal");
+        console.log(modals);
+        modals.forEach((modal, index) => {
+          var m = document.getElementById(`modal-${index}`);
+          var btn = document.getElementById(`open-${index}`); // Get the button that opens the modal
+          var closeBtn = document.getElementById(`close-${index}`); // Get the <span> element that closes the modal
+
+          btn.onclick = function () {
+            m.classList.toggle("hidden");
+            window.onclick = function (event) {
+              if (event.target == m) {
+                m.classList.toggle("hidden");
+              }
+            };
+          };
+
+          closeBtn.onclick = function () {
+            m.classList.toggle("hidden");
+          };
+
+          window.onclick = function (event) {
+            if (event.target == m) {
+              m.classList.toggle("hidden");
+            }
+          };
+        });
+      </script>
+    </div>
+  </main>
+</HTMLWrapper>
+<Footer />

@@ -1,0 +1,32 @@
+[
+  {
+    "topic": "Healthcare",
+    "image": "https://assets.revolutionuc.com/website-images/2023/hack-ideas/healthcare.svg",
+    "idea": "Improving health and well-being will forever be one of the greatest challenges for humankind. Wellness refers to the interconnectedness of physical, mental and social well-being, and includes all aspects of one's life, extending past just their physical health. How can we, as technology pioneers, help people achieve a positive well-being? Try to design and develop new and creative solutions to personal health, by improving the life of a patient or innovating the way we learn, diagnose, and treat illness."
+  },
+  {
+    "topic": "Education",
+    "image": "https://assets.revolutionuc.com/website-images/2023/hack-ideas/education.svg",
+    "idea": "Education is the hallmark for personal, social and economic development of both our nation and ourselves. Education empowers minds that innovate and move society forward. Education is more than just earning money; it exposes individuals to new worlds and varying perspectives. It gives one an avenue to be fun and adventurous, to build a network personally and professionally, and develop important skills in life - it applies beyond the school or office, and is seen in economic, social, and political circles. Education creates positive thought patterns."
+  },
+  {
+    "topic": "Sustainability",
+    "image": "https://assets.revolutionuc.com/website-images/2023/hack-ideas/sustainability.svg",
+    "idea": "Sustainability is the key to a better future. Humans rely on natural resources for business, activities, and survival. Ignoring sustainability can lead to the exhaustion of natural resources. Regardless of who we are, where we live, and what we do, we all have a moral obligation to each other, our future generations, and other species to sustain the planet. Our present choices and actions have huge long-term impacts on future generations. Practicing sustainability ensures that we make ethical choices that bring a safe and livable future to everyone. If we deplete the resources of the Earth, future generations will be depleted."
+  },
+  {
+    "topic": "Cyber Security",
+    "image": "https://assets.revolutionuc.com/website-images/2023/hack-ideas/cybersec.svg",
+    "idea": "The threat of digital attacks is a growing concern as the world becomes more connected and technology advances. Many individuals store their information (work and personal) in the cloud. What practices would protect the information of an everyday user? How can we better inform users how to protect their online footprint?"
+  },
+  {
+    "topic": "Community/Social Good",
+    "image": "https://assets.revolutionuc.com/website-images/2023/hack-ideas/social-good.svg",
+    "idea": "The Community/Social Good track addresses the critical societal issues today. The projects in this track can approach important and nuanced topics such as diversity, equity, and inclusion, civil engagement, community service, and more with a creative and unique perspective. Each and every project that embraces the challenge of making our communities stronger and better connected is wanted in this track."
+  },
+  {
+    "topic": "Other",
+    "image": "https://assets.revolutionuc.com/website-images/2023/hack-ideas/other.svg",
+    "idea": "The tracks above are mere suggestions for you all so don't let that limit your creativity. Thinking outside the box is not only welcome but also appreciated. You can create some brilliant projects in the hardware realm or even Machine Learning and whatnot. Innovation has no bounds and neither do you."
+  }
+]
