@@ -1,0 +1,20 @@
+[
+    {
+        "name": "discord",
+        "text": "Join our Discord Server",
+        "icon": "/quick-links/discord.png",
+        "link": "https://discord.revolutionuc.com"
+    },
+    {
+        "name": "devpost",
+        "text": "Submit to Devpost",
+        "icon": "/quick-links/devpost.png",
+        "link": "https://revolutionuc2024.devpost.com/"
+    },
+    {
+        "name": "mlh-prizes",
+        "text": "MLH Prizes Resources",
+        "icon": "/quick-links/mlh-logo-color.png",
+        "link": "https://hack.mlh.io/prizes"
+    }
+]

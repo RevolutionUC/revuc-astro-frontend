@@ -7,6 +7,7 @@ const { siteState } = Astro.props; // for updating content depending on the stag
 let title = "Revolution".toUpperCase();
 let date = "    February 24-25    ".toUpperCase(); // Keep the space in order to match with the RevolutionUC Text
 let subText = "Registration opens in:";
+let liveSubText = "   Hacking ends in:   ";
 ---
 
 <!--- Post-register site --><!--- <section id="hero" class="h-screen flex flex-col justify-center items-center space-y-4 bg-black">
@@ -50,15 +51,17 @@ let subText = "Registration opens in:";
       </div>
       {
         Array.from(date).map((letter) => {
-          if (letter === " ") return <div />;
-          return (
-            <div
-              class="text-4xl max-[1024px]:text-lg min-[1024px]:border font-extrabold flex justify-center items-center shadow-2xl cursor-default backdrop-blur-sm"
-              data-text={letter}
-            >
-              <span>{letter}</span>
-            </div>
-          );
+          if (siteState !== "live") {
+            if (letter === " ") return <div />;
+            return (
+              <div
+                class="text-4xl max-[1024px]:text-lg min-[1024px]:border font-extrabold flex justify-center items-center shadow-2xl cursor-default backdrop-blur-sm"
+                data-text={letter}
+              >
+                <span>{letter}</span>
+              </div>
+            );
+          }
         })
       }
       {
@@ -76,14 +79,29 @@ let subText = "Registration opens in:";
           }
         })
       }
+      { 
+        Array.from(liveSubText).map((letter) => {
+          if (siteState === "live") {
+            if (letter === " ") return <div />;
+            return (
+              <div
+                class="text-4xl max-[1024px]:text-lg min-[1024px]:border font-extrabold flex justify-center items-center shadow-2xl cursor-default backdrop-blur-sm"
+                data-text={letter}
+              >
+                <span>{letter}</span>
+              </div>
+            );
+          }
+        })
+      }
 
       <div class="col-span-12 h-[2vw]"></div>
       <a
         id="register-button"
         class="col-start-8 col-span-8 text-[3vw] max-[1024px]:text-[5vw] tracking-widest font-extrabold border-2 flex justify-center items-center cursor-pointer shadow-2xl backdrop-blur-sm transition-all active:scale-[0.99] hover:scale-[1.01] hover:bg-white hover:text-[#f75c03] hover:backdrop-blur-[6px] active:shadow-lg"
-        href={siteState === "pre-registration" ? "#" : "/registration"}
+        href={siteState === "registration" ? "/registration" : "#"}
       >
-        <span>{siteState === "pre-registration" ? "##:##:##" : "REGISTER"}</span>
+        <span>{siteState === "registration" ? "REGISTER" : "##:##:##"}</span>
       </a>
     </div>
   </div>
@@ -416,4 +434,27 @@ let subText = "Registration opens in:";
       }
     }, 1000);
   }
+  // if siteState is live, start countdown until feb 25th 2024 12pm
+  if (siteState === "live") {
+    const countdown = document.querySelector("#register-button")
+
+    const interval = setInterval(() => {
+      const now = new Date();
+      const revolution = new Date("2024-02-25T12:00:00-05:00");
+      const diff = revolution - now;
+      // make sure the countdown always has two digits
+      const hours = `${Math.floor(diff / (1000 * 60 * 60))}`.padStart(2, "0");
+      const minutes = `${Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))}`.padStart(2, "0");
+      const seconds = `${Math.floor((diff % (1000 * 60)) / 1000)}`.padStart(2, "0");
+
+      countdown.innerText = `${hours}:${minutes}:${seconds}`;
+
+      if (diff < 0) {
+        clearInterval(interval);
+        countdown.innerText = "REGISTER";
+      }
+    }, 1000);
+    
+  }
+
 </script>

@@ -1,0 +1,22 @@
+---
+import quickLinksData from "../data/quickLinks.json";
+---
+
+<div class="w-60">
+    <h2 class="font-bold text-xl text-center">Quick Links</h2>
+
+    <table class="w-full">
+        {
+            quickLinksData.map((quickLink) => (
+                <tr>
+                    <td>
+                        <img class="w-8" src={quickLink.icon} alt={quickLink.name} />
+                    </td>
+                    <td>
+                        <a class="underline text-blue-500 pl-2" href={quickLink.link} target="_blank" rel="noopener">{quickLink.text}</a>
+                    </td>
+                </tr>
+            ))
+        }
+    </table>
+</div>
