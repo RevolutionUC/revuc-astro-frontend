@@ -11,7 +11,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['Raleway', ...defaultTheme.fontFamily.sans],
+				sans: ['Noto Sans', ...defaultTheme.fontFamily.sans],
 				mono: ['"Space Mono"', ...defaultTheme.fontFamily.mono]
 			},
 			gridTemplateColumns: {
