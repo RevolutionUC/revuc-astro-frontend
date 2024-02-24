@@ -38,11 +38,11 @@ import CountryField from "../../components/register/CountryField.astro";
 <HTMLWrapper title="Register">
   <ResponsiveNav current="register" />
   <main class="mt-24 flex justify-center">
-    <div class="flex flex-col w-[760px] max-md:w-11/12">
-      <div id="notification" class="rounded-md p-2 md:p-4 invisible"></div>
-      <h1 class="text-4xl font-bold py-8">Register</h1>
+    <div class="flex w-[760px] flex-col max-md:w-11/12">
+      <div id="notification" class="invisible rounded-md p-2 md:p-4"></div>
+      <h1 class="py-8 text-4xl font-bold">Register</h1>
       <div class="pb-20">
-        <form class="gap-4 gap-y-8 grid-cols-2 grid" method="POST" enctype="multipart/form-data" id="registrationForm">
+        <form class="grid grid-cols-2 gap-4 gap-y-8" method="POST" enctype="multipart/form-data" id="registrationForm">
           <!-- firstName -->
           <TextField label="First Name*" type="text" placeholder="Bob" name="firstName" required={true} />
 
@@ -52,7 +52,13 @@ import CountryField from "../../components/register/CountryField.astro";
           <TextField label="Email*" type="email" placeholder="Email" name="email" required={true} />
 
           <!-- confirmEmail -->
-          <TextField label="Confirm Email*" type="email" placeholder="Confirm Email" name="emailConfirmed" required={true} />
+          <TextField
+            label="Confirm Email*"
+            type="email"
+            placeholder="Confirm Email"
+            name="emailConfirmed"
+            required={true}
+          />
 
           <!-- school -->
           <div class="col-span-2">
@@ -77,14 +83,26 @@ import CountryField from "../../components/register/CountryField.astro";
 
           <!-- major -->
           <div class="col-span-2">
-            <DropDownField label="Major*" name="major" placeholder="Major" dropdown={generalData.majorData} required={true} />
+            <DropDownField
+              label="Major*"
+              name="major"
+              placeholder="Major"
+              dropdown={generalData.majorData}
+              required={true}
+            />
           </div>
 
           <!-- dob -->
           <TextField label="Date of Birth*" type="date" placeholder="mm/dd/yyyy" name="dateOfBirth" required={true} />
 
           <!-- gender -->
-          <DropDownField label="Gender*" name="gender" placeholder="Gender" dropdown={generalData.genderData} required={true} />
+          <DropDownField
+            label="Gender*"
+            name="gender"
+            placeholder="Gender"
+            dropdown={generalData.genderData}
+            required={true}
+          />
 
           <!-- phoneNumber -->
           <PhoneInput />
@@ -128,7 +146,11 @@ import CountryField from "../../components/register/CountryField.astro";
 
           <!-- howYouHeard -->
           <div class="col-span-2">
-            <CheckBoxField label="How did you hear about RevUC?" name="howYouHeard[]" checkBoxesData={howYouHeardData} />
+            <CheckBoxField
+              label="How did you hear about RevUC?"
+              name="howYouHeard[]"
+              checkBoxesData={howYouHeardData}
+            />
           </div>
 
           <!-- MLH and waiver -->
@@ -175,7 +197,7 @@ import CountryField from "../../components/register/CountryField.astro";
 
           <!-- registerButton -->
           <div>
-            <button class="bg-gray-500 text-white text-lg p-3 rounded-2xl" name="registrationSubmit" type="submit"
+            <button class="rounded-2xl bg-gray-500 p-3 text-lg text-white" name="registrationSubmit" type="submit"
               >Register</button
             >
           </div>
@@ -189,11 +211,12 @@ import CountryField from "../../components/register/CountryField.astro";
               href="/waiver"
               target="_blank"
               class="text-red-700 underline">Liability Release, Waiver, Discharge and Covenant Not to Sue</a
-            >.</small>
-          <br/>
+            >.</small
+          >
+          <br />
           <small
-            ><sup id="agree-2">2 </sup>I authorize you to share my application/registration information with Major League Hacking
-            for event administration, ranking, and MLH administration in-line with the <a
+            ><sup id="agree-2">2 </sup>I authorize you to share my application/registration information with Major
+            League Hacking for event administration, ranking, and MLH administration in-line with the <a
               href="https://mlh.io/privacy"
               target="_blank"
               class="text-red-700 underline">MLH Privacy Policy</a
@@ -204,7 +227,8 @@ import CountryField from "../../components/register/CountryField.astro";
               class="text-red-700 underline">MLH Contest Terms and Conditions</a
             >
             and the
-            <a href="https://mlh.io/privacy" target="_blank" class="text-red-700 underline">MLH Privacy Policy</a>.</small
+            <a href="https://mlh.io/privacy" target="_blank" class="text-red-700 underline">MLH Privacy Policy</a
+            >.</small
           >
           <br />
           <small
@@ -215,8 +239,8 @@ import CountryField from "../../components/register/CountryField.astro";
           >
           <br />
           <small
-            ><sup id="agree-4">4 </sup>I authorize MLH to send me pre- and post-event informational emails, which contain free
-            credit and opportunities from their partners.</small
+            ><sup id="agree-4">4 </sup>I authorize MLH to send me pre- and post-event informational emails, which
+            contain free credit and opportunities from their partners.</small
           >
         </p>
       </section>
@@ -236,7 +260,7 @@ import CountryField from "../../components/register/CountryField.astro";
       formData.append("phoneNumber[full]", window.iti.getNumber());
       const response = await fetch("/registration/api", {
         method: "POST",
-        body: formData
+        body: formData,
       });
       const data = await response.json();
       const message = Array.isArray(data.message) ? data.message.join("\n") : data.message;

@@ -8,7 +8,7 @@ const user = Astro.url.searchParams.get("user");
 
 <HTMLWrapper title="Verify">
   <ResponsiveNav current="verify" />
-  <main class="mt-24 flex flex-col justify-center items-center w-full h-[60vh] space-y-8" data-user={user}>
+  <main class="mt-24 flex h-[60vh] w-full flex-col items-center justify-center space-y-8" data-user={user}>
     <h1 class="text-6xl"></h1>
     <div class="text-lg" id="textValue"></div>
   </main>
@@ -22,7 +22,7 @@ const user = Astro.url.searchParams.get("user");
 
   if (user && h1 && content) {
     fetch(`${import.meta.env.PUBLIC_API}/api/verify/${user}`, {
-      method: "POST"
+      method: "POST",
     }).then((response) => {
       if (response.status == 200 || response.status == 201) {
         console.log("success");
@@ -30,7 +30,8 @@ const user = Astro.url.searchParams.get("user");
         content.textContent = "Congratulations! You are registered for RevolutionUC!!";
       } else {
         h1.textContent = "Error";
-        content.textContent = "There was a problem verifying your registration. Please contact us at info@revolutionuc.com.";
+        content.textContent =
+          "There was a problem verifying your registration. Please contact us at info@revolutionuc.com.";
       }
     });
   }

@@ -1,38 +1,38 @@
 [
-    {
-        "id": "Search Engine",
-        "option": "Search Engine"
-    },
-    {
-        "id": "RevolutionUC Website",
-        "option": "RevolutionUC Website"
-    },
-    {
-        "id": "Facebook",
-        "option": "Facebook"
-    },
-    {
-        "id": "Twitter",
-        "option": "Twitter"
-    },
-    {
-        "id": "Instagram",
-        "option": "Instagram"
-    },
-    {
-        "id": "LinkedIn",
-        "option": "LinkedIn"
-    },
-    {
-        "id": "Email",
-        "option": "Email"
-    },
-    {
-        "id": "Word Of Mouth",
-        "option": "Word of Mouth"
-    },
-    {
-        "id": "Other",
-        "option": "Other"
-    }
+  {
+    "id": "Search Engine",
+    "option": "Search Engine"
+  },
+  {
+    "id": "RevolutionUC Website",
+    "option": "RevolutionUC Website"
+  },
+  {
+    "id": "Facebook",
+    "option": "Facebook"
+  },
+  {
+    "id": "Twitter",
+    "option": "Twitter"
+  },
+  {
+    "id": "Instagram",
+    "option": "Instagram"
+  },
+  {
+    "id": "LinkedIn",
+    "option": "LinkedIn"
+  },
+  {
+    "id": "Email",
+    "option": "Email"
+  },
+  {
+    "id": "Word Of Mouth",
+    "option": "Word of Mouth"
+  },
+  {
+    "id": "Other",
+    "option": "Other"
+  }
 ]

@@ -7,14 +7,14 @@
 
   <div class="pt-2">
     <input
-      class="input--school-other hidden border border-gray-500 rounded-xl p-3 w-full placeholder-gray-400"
+      class="input--school-other hidden w-full rounded-xl border border-gray-500 p-3 placeholder-gray-400"
       type="text"
       placeholder="Enter your school"
     />
 
-    <div class="flex border border-gray-500 rounded-xl w-full placeholder-gray-400" id="searchSchoolContainer">
+    <div class="flex w-full rounded-xl border border-gray-500 placeholder-gray-400" id="searchSchoolContainer">
       <input
-        class="p-3 rounded-xl w-full outline-none remove-calendar-dropdown"
+        class="remove-calendar-dropdown w-full rounded-xl p-3 outline-none"
         name="school"
         id="school"
         list="school-list"
@@ -22,7 +22,9 @@
         required
       />
       <datalist class="w-full" id="school-list"></datalist>
-      <div id="school-dropdown-btn" class="flex text-[#9ca3af] text-sm pl-4 pr-1 cursor-pointer"><span class="self-center justify-self-center">&#9013;</span></div>
+      <div id="school-dropdown-btn" class="flex cursor-pointer pl-4 pr-1 text-sm text-[#9ca3af]">
+        <span class="self-center justify-self-center">&#9013;</span>
+      </div>
     </div>
 
     <div class="pt-2">
@@ -50,7 +52,7 @@
       var schoolComplete = new Awesomplete(document.getElementById("school"), {
         list: "#school-list",
         minChars: 0,
-        maxItems: 1000000
+        maxItems: 1000000,
       });
       Awesomplete.$("#school-dropdown-btn").addEventListener("click", function () {
         if (schoolComplete.ul.childNodes.length === 0) {

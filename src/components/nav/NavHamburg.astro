@@ -13,59 +13,50 @@ const navLinks = {
 };
 ---
 
-<nav
-  id="nav-hamburg"
-  class="z-30 w-full fixed top-0 md:hidden transition-colors duration-300"
->
-  <a id="mlh-trust-badge" style="display:block;max-width:100px;min-width:60px;position:fixed;left:50px;top:0;width:10%;z-index:10000" href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=red" target="_blank"><img src="https://s3.amazonaws.com/logged-assets/trust-badge/2024/mlh-trust-badge-2024-red.svg" alt="Major League Hacking 2024 Hackathon Season" style="width:100%"></a>
+<nav id="nav-hamburg" class="fixed top-0 z-30 w-full transition-colors duration-300 md:hidden">
+  <a
+    id="mlh-trust-badge"
+    style="display:block;max-width:100px;min-width:60px;position:fixed;left:50px;top:0;width:10%;z-index:10000"
+    href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=red"
+    target="_blank"
+    ><img
+      src="https://s3.amazonaws.com/logged-assets/trust-badge/2024/mlh-trust-badge-2024-red.svg"
+      alt="Major League Hacking 2024 Hackathon Season"
+      style="width:100%"
+    /></a
+  >
   <div class="flex flex-row-reverse bg-transparent p-6">
     <svg
       id="hamburger"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      class="w-8 h-8 cursor-pointer mr-4 z-50"
+      class="z-50 mr-4 h-8 w-8 cursor-pointer"
     >
-      <path
-        d="M4 18L20 18"
-        stroke="#000000"
-        stroke-width="2"
-        stroke-linecap="round"></path>
-      <path
-        d="M4 12L20 12"
-        stroke="#000000"
-        stroke-width="2"
-        stroke-linecap="round"></path>
-      <path
-        d="M4 6L20 6"
-        stroke="#000000"
-        stroke-width="2"
-        stroke-linecap="round"></path>
+      <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round"></path>
+      <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round"></path>
+      <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round"></path>
     </svg>
   </div>
   <ul
     id="hamburger-panel"
-    class="flex flex-col items-center space-y-12 text-3xl p-8 pt-48 text-center w-full h-screen z-40 absolute top-0 bg-white transition-transform origin-top"
+    class="absolute top-0 z-40 flex h-screen w-full origin-top flex-col items-center space-y-12 bg-white p-8 pt-48 text-center text-3xl transition-transform"
   >
     {
       /* map over the navLinks object and create a link for each key */
       Object.keys(navLinks).map((key) => {
-        const link =
-          navLinks[key as keyof typeof navLinks]; /* to make typescript happy */
+        const link = navLinks[key as keyof typeof navLinks]; /* to make typescript happy */
         return (
-          <li class="flex flex-col justify-end items-end">
+          <li class="flex flex-col items-end justify-end">
             {
               /* if the current page is the same as the link, add the active class */
               current == key.toLowerCase() ? (
-                <a
-                  class="after:block after:w-full after:h-0.5 after:bg-black"
-                  href={link}
-                >
+                <a class="after:block after:h-0.5 after:w-full after:bg-black" href={link}>
                   {key}
                 </a>
               ) : (
                 <a
-                  class="after:block after:w-full after:h-0.5 after:bg-black after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-center opacity-75 hover:opacity-100"
+                  class="opacity-75 after:block after:h-0.5 after:w-full after:origin-center after:scale-x-0 after:bg-black after:transition-transform hover:opacity-100 hover:after:scale-x-100"
                   href={link}
                 >
                   {key}

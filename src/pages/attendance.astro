@@ -6,14 +6,11 @@ import Footer from "../components/Footer.astro";
 
 <HTMLWrapper title="Confirm Attendance">
   <ResponsiveNav current="verify" />
-  <main
-    class="mt-24 flex flex-col justify-center items-center w-full h-[60vh] space-y-8"
-  >
+  <main class="mt-24 flex h-[60vh] w-full flex-col items-center justify-center space-y-8">
     <h1 class="text-6xl">Attendance Confirmed!</h1>
     <div class="text-lg" id="textValue">
-      Thank you for confirming your attendance with us! If something comes up
-      and you are no longer able to attend the event please be sure to email us
-      at <a href="mailto:info@revolutionuc.com">info@revolutionuc.com</a>.
+      Thank you for confirming your attendance with us! If something comes up and you are no longer able to attend the
+      event please be sure to email us at <a href="mailto:info@revolutionuc.com">info@revolutionuc.com</a>.
     </div>
   </main>
   <Footer />
@@ -22,12 +19,9 @@ import Footer from "../components/Footer.astro";
 <script defer>
   function getUrlVars() {
     var vars = {};
-    var parts = window.location.href.replace(
-      /[?&]+([^=&]+)=([^&]*)/gi,
-      function (m, key, value) {
-        vars[key] = value;
-      }
-    );
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+      vars[key] = value;
+    });
     return vars;
   }
 
@@ -48,8 +42,7 @@ import Footer from "../components/Footer.astro";
     } else {
       document.title = "Verify";
       h1.textContent = "Registration Verified";
-      content.textContent =
-        "Congratulations!  You are registered for RevolutionUC!";
+      content.textContent = "Congratulations!  You are registered for RevolutionUC!";
 
       fetch("https://revolutionuc-api.onrender.com/api/verify/" + user, {
         method: "POST",
@@ -83,25 +76,20 @@ import Footer from "../components/Footer.astro";
       jsonData["uuid"] = id;
       jsonData["isConfirmed"] = confirm == "true";
 
-      fetch(
-        "https://revolutionuc-api.onrender.com/api/confirmAttendance/",
-        {
-          method: "POST",
-          headers: regHeaders,
-          body: JSON.stringify(jsonData),
-        }
-      ).then((response) => {
+      fetch("https://revolutionuc-api.onrender.com/api/confirmAttendance/", {
+        method: "POST",
+        headers: regHeaders,
+        body: JSON.stringify(jsonData),
+      }).then((response) => {
         if (confirm == "false") {
           document.title = "Confirm Attendance";
           h1.textContent = "Attendance Confirmed";
-          content.textContent =
-            "Thank You! You have confirmed that you will NOT be attending RevolutionUC 2024.";
+          content.textContent = "Thank You! You have confirmed that you will NOT be attending RevolutionUC 2024.";
         } else if (confirm == "true") {
           if (response.status == 200 || response.status == 201) {
             document.title = "Confirm Attendance";
             h1.textContent = "Attendance Confirmed";
-            content.textContent =
-              "Thank You! You have confirmed your attendance to RevolutionUC 2024!";
+            content.textContent = "Thank You! You have confirmed your attendance to RevolutionUC 2024!";
           } else if (response.status == 500) {
             response.json().then((body) => {
               if (body.error == "ConfirmedQuotaReached") {

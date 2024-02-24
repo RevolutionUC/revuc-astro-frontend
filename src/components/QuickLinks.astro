@@ -2,8 +2,8 @@
 import quickLinksData from "../data/quickLinks.json";
 ---
 
-<div class="w-80 border-2 p-3 shadow-lg max-h-36">
-  <h2 class="font-bold text-xl text-center">Quick Links</h2>
+<div class="w-80 border-2 p-3 shadow-lg">
+  <h2 class="text-center text-xl font-bold">Quick Links</h2>
 
   <table class="w-full">
     {
@@ -13,12 +13,7 @@ import quickLinksData from "../data/quickLinks.json";
             <img class="w-8" src={quickLink.icon} alt={quickLink.name} />
           </td>
           <td>
-            <a
-              class="underline text-blue-500 pl-2"
-              href={quickLink.link}
-              target="_blank"
-              rel="noopener"
-            >
+            <a class="pl-2 text-blue-500 underline" href={quickLink.link} target="_blank" rel="noopener">
               {quickLink.text}
             </a>
           </td>

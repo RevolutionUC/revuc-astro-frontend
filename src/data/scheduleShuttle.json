@@ -1,26 +1,26 @@
 {
-    "scheduleDayOne": [
-        {
-            "time": "9:00 AM - 1:00 PM",
-            "event": "Behind Lindner College of Business",
-            "location": "1819 Innovation Hub"
-        },
-        {
-            "time": "9:00PM - 12:00 AM",
-            "event": "1819 Innovation Hub",
-            "location": "Behind Lindner College of Business"
-        }
-    ],
-    "scheduleDayTwo": [
-        {
-            "time": "7:00 AM - 11:00 AM",
-            "event": "Behind Lindner College of Business",
-            "location": "1819 Innovation Hub"
-        },
-        {
-            "time": "2:00PM - 5:00 PM",
-            "event": "1819 Innovation Hub",
-            "location": "Behind Lindner College of Business"
-        }
-    ]
+  "scheduleDayOne": [
+    {
+      "time": "9:00 AM - 1:00 PM",
+      "event": "Behind Lindner College of Business",
+      "location": "1819 Innovation Hub"
+    },
+    {
+      "time": "9:00PM - 12:00 AM",
+      "event": "1819 Innovation Hub",
+      "location": "Behind Lindner College of Business"
+    }
+  ],
+  "scheduleDayTwo": [
+    {
+      "time": "7:00 AM - 11:00 AM",
+      "event": "Behind Lindner College of Business",
+      "location": "1819 Innovation Hub"
+    },
+    {
+      "time": "2:00PM - 5:00 PM",
+      "event": "1819 Innovation Hub",
+      "location": "Behind Lindner College of Business"
+    }
+  ]
 }

@@ -13,7 +13,7 @@ const ctaTextBySiteState: Record<typeof siteState, string> = {
   live: "Live site",
   registration: "Register",
   "live.countdown": "##:##:##",
-  "post-registration": "Our Devpost"
+  "post-registration": "Our Devpost",
 };
 const ctaText = ctaTextBySiteState[siteState];
 ---
@@ -24,22 +24,22 @@ const ctaText = ctaTextBySiteState[siteState];
     <button class="bg-blue-300 p-6 rounded-lg text-4xl max-lg:text-2xl max-lg:p-4 hover:bg-blue-400 transition-colors tracking-widest">View Submissions</button>
 </section>
 --->
-<div id="hero" class="min-h-screen w-full flex justify-center items-center space-y-4 relative">
+<div id="hero" class="relative flex min-h-screen w-full items-center justify-center space-y-4">
   <div id="landscape-grid" class="absolute inset-0"></div>
-  <div class="z-10 absolute flex flex-col items-center w-[80vw] max-[1024px]:w-full h-3/4 font-mono space-y-8">
-    <div class="glitch w-48 mt-12 relative">
+  <div class="absolute z-10 flex h-3/4 w-[80vw] flex-col items-center space-y-8 font-mono max-[1024px]:w-full">
+    <div class="glitch relative mt-12 w-48">
       <img id="logo" src="/favicon.png" alt="RevolutionUC 2024 logo" />
       <div class="glitch__img"></div>
       <div class="glitch__img"></div>
       <div class="glitch__img"></div>
     </div>
-    <div class="grid grid-cols-22 gap-2 w-4/5 max-[1024px]:w-11/12 desktop text-white">
+    <div class="desktop grid w-4/5 grid-cols-22 gap-2 text-white max-[1024px]:w-11/12">
       {
         Array.from(heading).map((letter) => {
           if (letter === " ") return <div />;
           return (
             <div
-              class="uppercase row-span-2 col-span-2 text-6xl max-[1024px]:text-lg font-extrabold flex justify-center items-center border shadow-2xl cursor-default min-[1024px]:backdrop-blur-sm transition-transform active:scale-[0.98] hover:scale-[1.02]"
+              class="col-span-2 row-span-2 flex cursor-default items-center justify-center border text-6xl font-extrabold uppercase shadow-2xl transition-transform hover:scale-[1.02] active:scale-[0.98] max-[1024px]:text-lg min-[1024px]:backdrop-blur-sm"
               data-text={letter}
             >
               <span>{letter}</span>
@@ -48,13 +48,13 @@ const ctaText = ctaTextBySiteState[siteState];
         })
       }
       <div
-        class="row-span-2 col-span-2 min-[1024px]:border shadow-2xl min-[1024px]:backdrop-blur-sm min-[1024px]:p-2 transition-transform active:scale-[0.98] hover:scale-[1.02]"
+        class="col-span-2 row-span-2 shadow-2xl transition-transform hover:scale-[1.02] active:scale-[0.98] min-[1024px]:border min-[1024px]:p-2 min-[1024px]:backdrop-blur-sm"
       >
         <img
           id="uc-logo"
           src="/revuc_white.png"
           alt="The word UC stylized in the RevolutionUC font"
-          class="relative -left-1 max-[1024px]:w-full max-[1024px]:top-0.5"
+          class="relative -left-1 max-[1024px]:top-0.5 max-[1024px]:w-full"
         />
       </div>
       {
@@ -62,7 +62,7 @@ const ctaText = ctaTextBySiteState[siteState];
           if (letter === " ") return <div />;
           return (
             <div
-              class="uppercase text-4xl max-[1024px]:text-lg min-[1024px]:border font-extrabold flex justify-center items-center shadow-2xl cursor-default backdrop-blur-sm"
+              class="flex cursor-default items-center justify-center text-4xl font-extrabold uppercase shadow-2xl backdrop-blur-sm max-[1024px]:text-lg min-[1024px]:border"
               data-text={letter}
             >
               <span>{letter}</span>
@@ -74,7 +74,7 @@ const ctaText = ctaTextBySiteState[siteState];
       <div class="col-span-12 h-[2vw]"></div>
       <a
         id="register-button"
-        class="uppercase col-start-8 col-span-8 text-[3vw] max-[1024px]:text-[5vw] tracking-widest font-extrabold border-2 flex justify-center items-center cursor-pointer shadow-2xl backdrop-blur-sm transition-all active:scale-[0.99] hover:scale-[1.01] hover:bg-white hover:text-[#f75c03] hover:backdrop-blur-[6px] active:shadow-lg"
+        class="col-span-8 col-start-8 flex cursor-pointer items-center justify-center border-2 text-[3vw] font-extrabold uppercase tracking-widest shadow-2xl backdrop-blur-sm transition-all hover:scale-[1.01] hover:bg-white hover:text-[#f75c03] hover:backdrop-blur-[6px] active:scale-[0.99] active:shadow-lg max-[1024px]:text-[5vw]"
         href={siteState === "registration" ? "/registration" : siteState === "live" ? "/live" : "#"}
       >
         <span>{ctaText}</span>

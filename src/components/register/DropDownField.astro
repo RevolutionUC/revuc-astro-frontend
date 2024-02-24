@@ -10,11 +10,20 @@ const { label, name, placeholder, dropdown, required } = Astro.props;
 <div>
   <label for={name} class="font-bold">{label}</label>
   <div class="pt-2">
-    <select name={name} id={name} class="invalid:text-gray-400 border border-gray-500 bg-transparent rounded-xl p-3 w-full" required={required}>
+    <select
+      name={name}
+      id={name}
+      class="w-full rounded-xl border border-gray-500 bg-transparent p-3 invalid:text-gray-400"
+      required={required}
+    >
       <option value="" disabled selected>{placeholder}</option>
-        {dropdown.map((item: DropDownItem) => (
-          <option value={item.value} class="text-black">{item.option}</option>
-        ))}
+      {
+        dropdown.map((item: DropDownItem) => (
+          <option value={item.value} class="text-black">
+            {item.option}
+          </option>
+        ))
+      }
     </select>
   </div>
 </div>

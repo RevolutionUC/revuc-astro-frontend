@@ -5,12 +5,10 @@ import Footer from "../components/Footer.astro";
 ---
 
 <HTMLWrapper title="404">
-    <ResponsiveNav current="verify" />
-    <main
-      class="mt-24 flex flex-col justify-center items-center w-full h-[60vh] space-y-8"
-    >
-      <h1 class="text-6xl">404</h1>
-      <div class="text-lg" id="textValue">Woops! It looks like that route does not exist?</div>
-    </main>
-    <Footer />
+  <ResponsiveNav current="verify" />
+  <main class="mt-24 flex h-[60vh] w-full flex-col items-center justify-center space-y-8">
+    <h1 class="text-6xl">404</h1>
+    <div class="text-lg" id="textValue">Woops! It looks like that route does not exist?</div>
+  </main>
+  <Footer />
 </HTMLWrapper>

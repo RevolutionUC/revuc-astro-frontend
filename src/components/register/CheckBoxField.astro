@@ -17,20 +17,30 @@ const { checkBoxesData } = Astro.props;
 ---
 
 <div>
-    <label class="font-bold">{label}</label>
-    <div class="pt-2">
-    { href && hrefText ? (
-      <label for={name}>
-        <input name={name} type="checkbox" id={name} required={required}/>
-        {checkBoxLabel}<sup><a data-turbolinks="false" href={href} class="underline text-blue-600">{hrefText}</a></sup>
-      </label>
-    ) : (
-      checkBoxesData.map((checkBox: CheckBoxItem) => (
-        <label for={checkBox.id}>
-          <input name={name} type="checkbox" id={checkBox.id} value={checkBox.id}/>
-          {checkBox.option}
-        </label><br />
-      ))
-    )}
+  <label class="font-bold">{label}</label>
+  <div class="pt-2">
+    {
+      href && hrefText ? (
+        <label for={name}>
+          <input name={name} type="checkbox" id={name} required={required} />
+          {checkBoxLabel}
+          <sup>
+            <a data-turbolinks="false" href={href} class="text-blue-600 underline">
+              {hrefText}
+            </a>
+          </sup>
+        </label>
+      ) : (
+        checkBoxesData.map((checkBox: CheckBoxItem) => (
+          <>
+            <label for={checkBox.id}>
+              <input name={name} type="checkbox" id={checkBox.id} value={checkBox.id} />
+              {checkBox.option}
+            </label>
+            <br />
+          </>
+        ))
+      )
+    }
   </div>
 </div>

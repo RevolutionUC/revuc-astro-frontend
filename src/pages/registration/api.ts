@@ -3,7 +3,10 @@ import type { APIRoute } from "astro";
 export const POST: APIRoute = async ({ request }) => {
   const data = await request.formData();
   const acceptedWaiverBool: boolean =
-    data.get("waiver") === "on" && data.get("dataSharing") === "on" && data.get("codeOfConduct") === "on" && data.get("mlhEmails") === "on";
+    data.get("waiver") === "on" &&
+    data.get("dataSharing") === "on" &&
+    data.get("codeOfConduct") === "on" &&
+    data.get("mlhEmails") === "on";
 
   // Special client-side validation
   if (data.getAll("ethnicity[]").length == 0) {
@@ -29,14 +32,14 @@ export const POST: APIRoute = async ({ request }) => {
     dateOfBirth: new Date(data.get("dateOfBirth") as string).toISOString(),
     acceptedWaiver: acceptedWaiverBool,
     allergens: /* data.getAll("allergens") as string[] */ [],
-    otherAllergens: /* data.get("otherAllergens") as string */ ""
+    otherAllergens: /* data.get("otherAllergens") as string */ "",
   };
 
   // Submit a new registrant
   const newRegistrantResponse = await fetch(`${import.meta.env.PUBLIC_API}/api/registrant`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(jsonData)
+    body: JSON.stringify(jsonData),
   });
 
   const responseJson = await newRegistrantResponse.json();
@@ -55,18 +58,17 @@ export const POST: APIRoute = async ({ request }) => {
 
     const submitResumeResponse = await fetch(`${import.meta.env.PUBLIC_API}/api/uploadResume/${uploadKey}`, {
       method: "POST",
-      body: form
+      body: form,
     });
-
 
     if (!submitResumeResponse.ok) {
       // const submitResumeResponseJson = await submitResumeResponse.json();
       return new Response(
         JSON.stringify({
           message:
-            "There was an error submitting your resume. Please contact us at info@revolutionuc.com and we'll help resolve it for you."
+            "There was an error submitting your resume. Please contact us at info@revolutionuc.com and we'll help resolve it for you.",
         }),
-        { status: submitResumeResponse.status }
+        { status: submitResumeResponse.status },
       );
     }
   }
@@ -74,6 +76,6 @@ export const POST: APIRoute = async ({ request }) => {
   // OK
   return new Response(
     JSON.stringify({ message: "Registered successfully!. Check your email inbox for our email verification process" }),
-    { status: 200 }
+    { status: 200 },
   );
 };

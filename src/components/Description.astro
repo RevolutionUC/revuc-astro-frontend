@@ -1,9 +1,10 @@
 ---
+
 ---
 
-<section id="description" class="flex flex-col justify-center items-center relative">
-  <div class="glitch-transition h-[20vh] w-full relative top-0 left-0">
-    <div id="landscape-transition" class="absolute top-0 left-0 w-full h-full overflow-hidden"></div>
+<section id="description" class="relative flex flex-col items-center justify-center">
+  <div class="glitch-transition relative left-0 top-0 h-[20vh] w-full">
+    <div id="landscape-transition" class="absolute left-0 top-0 h-full w-full overflow-hidden"></div>
     <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" viewBox="0 0 1573 135" fill="none">
       <defs>
         <clipPath id="clip0_301_2">
@@ -34,48 +35,53 @@
       </defs>
     </svg>
   </div>
-  <div class="w-full flex justify-center">
-    <div class="w-[70rem] max-md:w-full flex flex-col items-center justify-center p-20 max-md:p-10 space-y-24 max-md:space-y-12">
-      <div class="flex max-md:flex-col justify-start items-center space-x-8 md:space-x-8 max-md:space-y-8">
+  <div class="flex w-full justify-center">
+    <div
+      class="flex w-[70rem] flex-col items-center justify-center space-y-24 p-20 max-md:w-full max-md:space-y-12 max-md:p-10"
+    >
+      <div class="flex items-center justify-start space-x-8 max-md:flex-col max-md:space-y-8 md:space-x-8">
         <img
           src="/home/home-1.jpg"
           alt=""
-          class="w-xs max-md:w-full h-52 max-md:h-72 object-cover rounded-md hover:opacity-90 transition-opacity"
+          class="w-xs h-52 rounded-md object-cover transition-opacity hover:opacity-90 max-md:h-72 max-md:w-full"
         />
         <p class="text-left text-lg max-md:text-center">
-          <strong>RevolutionUC</strong> is a 24-hour <strong>in-person</strong> student hackathon at the University of Cincinnati that is organized by <a
+          <strong>RevolutionUC</strong> is a 24-hour <strong>in-person</strong> student hackathon at the University of Cincinnati
+          that is organized by <a
             href="http://acmatuc.org/"
-            class="underline text-[#f75c03]"
+            class="text-[#f75c03] underline"
             target="_blank"
             rel="noopener">ACM@UC</a
-          >. We invite you to join 300+ motivated students for an awesome weekend of code, community, and self-improvement! You
-          don’t have to have to be a computer science major or engineering student to attend. It’s a learning experience for
-          students of all skill levels!
+          >. We invite you to join 300+ motivated students for an awesome weekend of code, community, and
+          self-improvement! You don’t have to have to be a computer science major or engineering student to attend. It’s
+          a learning experience for students of all skill levels!
         </p>
       </div>
-      <div class="flex max-md:flex-col-reverse justify-end items-center md:space-x-8">
-        <p class="text-right text-lg max-md:text-center max-md:mt-8">
-          A <strong>hackathon</strong> is an event where people get together, form teams, build something new to solve a problem, and
-          have fun doing it! Some project ideas include websites, mobile apps, robots, and more! A hackathon is an all-inclusive environment,
-          you’ll learn something new and meet people who are passionate about technology.
+      <div class="flex items-center justify-end max-md:flex-col-reverse md:space-x-8">
+        <p class="text-right text-lg max-md:mt-8 max-md:text-center">
+          A <strong>hackathon</strong> is an event where people get together, form teams, build something new to solve a
+          problem, and have fun doing it! Some project ideas include websites, mobile apps, robots, and more! A hackathon
+          is an all-inclusive environment, you’ll learn something new and meet people who are passionate about technology.
         </p>
         <img
           src="/home/home-2.jpg"
           alt=""
-          class="w-xs max-md:w-full h-52 max-md:h-72 object-cover rounded-md hover:opacity-90 transition-opacity"
+          class="w-xs h-52 rounded-md object-cover transition-opacity hover:opacity-90 max-md:h-72 max-md:w-full"
         />
       </div>
-      <div class="flex max-md:flex-col justify-start items-center space-x-8 md:space-x-8 max-md:space-y-8">
+      <div class="flex items-center justify-start space-x-8 max-md:flex-col max-md:space-y-8 md:space-x-8">
         <img
           src="/home/1819-innovation-img.jpg"
           alt=""
-          class="w-xs max-md:w-full h-52 max-md:h-72 object-cover rounded-md hover:opacity-90 transition-opacity"
+          class="w-xs h-52 rounded-md object-cover transition-opacity hover:opacity-90 max-md:h-72 max-md:w-full"
         />
         <p class="text-left text-lg max-md:text-center">
           This year, we will be hosting the entire hackathon in-person at the
-          <strong>1819 Innovation Hub</strong>! The 1819 Innovation Hub is located at 2900 Reading Rd, Cincinnati, OH 45206 and is
-          a fantastic facility with many beautiful classrooms and collaborative work spaces. Visit their website at
-          <a href="https://innovation.uc.edu" class="underline text-[#f75c03]" target="_blank" rel="noopener">innovation.uc.edu</a
+          <strong>1819 Innovation Hub</strong>! The 1819 Innovation Hub is located at 2900 Reading Rd, Cincinnati, OH
+          45206 and is a fantastic facility with many beautiful classrooms and collaborative work spaces. Visit their
+          website at
+          <a href="https://innovation.uc.edu" class="text-[#f75c03] underline" target="_blank" rel="noopener"
+            >innovation.uc.edu</a
           > to learn more about our amazing venue this year! (Photo taken from the 1819 Innovation Hub Website).
         </p>
       </div>
@@ -91,7 +97,9 @@
     #landscape-transition {
       background-image: linear-gradient(to bottom, #d80368 1.5px, transparent 1.5px),
         linear-gradient(to right, #d80368 1.5px, transparent 1.5px);
-      background-size: 5vh 5vh, 80px 80px;
+      background-size:
+        5vh 5vh,
+        80px 80px;
       animation: moveUp 3s linear infinite forwards;
     }
     @keyframes moveUp {

@@ -6,29 +6,25 @@ import Footer from "../components/Footer.astro";
 
 <HTMLWrapper title="Sponsors">
   <ResponsiveNav current="sponsors" />
-  <div class="flex flex-col justify-center items-center mt-24">
+  <div class="mt-24 flex flex-col items-center justify-center">
     <img
       src="https://assets.revolutionuc.com/website-images/2023/photos/2x/sponsors.png"
       alt="RevolutionUC's Schedule"
-      class="w-[760px] max-md:w-11/12 h-[500px] max-md:h-[300px] object-cover pb-8"
+      class="h-[500px] w-[760px] object-cover pb-8 max-md:h-[300px] max-md:w-11/12"
       loading="eager"
     />
     <h1 class="text-3xl font-extrabold">Sponsors</h1>
   </div>
 
   <section class="mt-4">
-    <div
-      class="sponsor-list flex flex-col flex-wrap justify-center items-center p-8"
-    >
+    <div class="sponsor-list flex flex-col flex-wrap items-center justify-center p-8">
       <!-- TODO:
                 This is fine for now, but I want this to be dynamically rendered
                 Specifically, I want a json file in the /data folder
                 I want you to load the images as well as the corresponding website for sponsors
                 based solely on that json.
             -->
-      <div
-        class="flex flex-row justify-center items-center flex-wrap space-x-8 m-4"
-      >
+      <div class="m-4 flex flex-row flex-wrap items-center justify-center space-x-8">
         <a href="https://innovation.uc.edu/" target="_blank noopenner">
           <img
             class="w-96"
@@ -37,10 +33,7 @@ import Footer from "../components/Footer.astro";
           />
         </a>
         <!-- Without the relative positioning the logo won't level -->
-        <a
-          href="https://business.uc.edu/centers-partnerships/entrepreneurship.html"
-          target="_blank noopenner"
-        >
+        <a href="https://business.uc.edu/centers-partnerships/entrepreneurship.html" target="_blank noopenner">
           <img
             class="w-96 md:relative md:bottom-4"
             src="/sponsors/UC Entre.webp"
@@ -49,47 +42,27 @@ import Footer from "../components/Footer.astro";
         </a>
       </div>
 
-      <div
-        class="flex flex-row justify-center items-center flex-wrap space-x-8 m-4"
-      >
+      <div class="m-4 flex flex-row flex-wrap items-center justify-center space-x-8">
         <a href="https://www.medpace.com/" target="_blank noopenner">
-          <img
-            class="w-[26rem]"
-            src="/sponsors/medpace.png"
-            alt="Medpace Logo"
-          />
+          <img class="w-[26rem]" src="/sponsors/medpace.png" alt="Medpace Logo" />
         </a>
         <a href="https://icr-team.com/" target="_blank noopenner">
           <img class="w-40" src="/sponsors/icr-inc.png" alt="ICR Logo" />
         </a>
       </div>
 
-      <div
-        class="flex flex-row justify-center items-center flex-wrap space-x-9 space-y-8 m-4 max-w-5xl"
-      >
+      <div class="m-4 flex max-w-5xl flex-row flex-wrap items-center justify-center space-x-9 space-y-8">
         <a href="https://tembo.io/" target="_blank noopenner">
           <img class="w-64" src="/sponsors/tembo.png" alt="Tembo Logo" />
         </a>
         <a href="https://international.uc.edu/" target="_blank noopenner">
-          <img
-            class="w-64"
-            src="/sponsors/UCI & IPALS.png"
-            alt="UCI & IPALs Logo"
-          />
+          <img class="w-64" src="/sponsors/UCI & IPALS.png" alt="UCI & IPALs Logo" />
         </a>
         <a href="https://tribunal.uc.edu/" target="_blank noopenner">
-          <img
-            class="w-64"
-            src="/sponsors/ceas-tri-whitebg.jpg"
-            alt="CEAS Tribunal Logo"
-          />
+          <img class="w-64" src="/sponsors/ceas-tri-whitebg.jpg" alt="CEAS Tribunal Logo" />
         </a>
         <a href="https://cech.uc.edu/schools/it.html" target="_blank noopenner">
-          <img
-            class="w-64"
-            src="/sponsors/school-it.png"
-            alt="UC School of IT Logo"
-          />
+          <img class="w-64" src="/sponsors/school-it.png" alt="UC School of IT Logo" />
         </a>
         <a href="https://www.uc.edu/about/ucit.html" target="_blank noopenner">
           <img
@@ -100,9 +73,7 @@ import Footer from "../components/Footer.astro";
         </a>
       </div>
 
-      <div
-        class="flex flex-row justify-center items-center flex-wrap space-x-9 space-y-8 m-4 max-w-5xl"
-      >
+      <div class="m-4 flex max-w-5xl flex-row flex-wrap items-center justify-center space-x-9 space-y-8">
         <a href="https://aws.amazon.com/" target="_blank noopenner">
           <img class="w-20" src="/sponsors/aws.jpg" alt="AWS Logo" />
         </a>
@@ -119,35 +90,19 @@ import Footer from "../components/Footer.astro";
           />
         </a>
         <a href="https://parkinsonstogether.us/" target="_blank noopenner">
-          <img
-            class="w-36"
-            src="/sponsors/parkinson-together.jpg"
-            alt="Parkinson's Together Logo"
-          />
+          <img class="w-36" src="/sponsors/parkinson-together.jpg" alt="Parkinson's Together Logo" />
         </a>
         <a href="https://www.enableuc.org/" target="_blank noopenner">
           <img class="w-24" src="/sponsors/enable.jpg" alt="EnableUC Logo" />
         </a>
         <a href="https://www.cincytechusa.com/" target="_blank noopenner">
-          <img
-            class="w-36"
-            src="/sponsors/CincyTech.png"
-            alt="CincyTech Logo"
-          />
+          <img class="w-36" src="/sponsors/CincyTech.png" alt="CincyTech Logo" />
         </a>
         <a href="https://www.netimpactuc.com/" target="_blank noopenner">
-          <img
-            class="w-40"
-            src="/sponsors/uc-net-impact.png"
-            alt="UC Net Impact Logo"
-          />
+          <img class="w-40" src="/sponsors/uc-net-impact.png" alt="UC Net Impact Logo" />
         </a>
         <a href="https://www.fortifieddata.com/" target="_blank noopenner">
-          <img
-            class="w-48"
-            src="/sponsors/Fortified.png"
-            alt="Fortified Logo"
-          />
+          <img class="w-48" src="/sponsors/Fortified.png" alt="Fortified Logo" />
         </a>
         <a href="https://incogni.com/" target="_blank noopenner">
           <img class="w-36" src="/sponsors/incogni.png" alt="Incogni Logo" />
@@ -160,35 +115,23 @@ import Footer from "../components/Footer.astro";
         </a>
       </div>
 
-    <div
-      class="flex flex-row justify-center items-center flex-wrap space-x-9 m-4 max-w-5xl"
-    >
-      <a href="https://www.echo3d.com/" target="_blank noopenner">
-        <img class="w-36" src="/sponsors/echo3D.png" alt="echo3D Logo" />
-      </a>
-      <a href="https://mule.to/p5oe" target="_blank noopenner">
-        <img
-          class="w-48"
-          src="/sponsors/sticker-mule.svg"
-          alt="stickermule Logo"
-        />
-      </a>
-      <a href="https://www.standoutstickers.com/" target="_blank noopenner">
-        <img
-          class="w-28"
-          src="/sponsors/stand-out-sticker.png"
-          alt="Standout Stickers Logo"
-        />
-      </a>
+      <div class="m-4 flex max-w-5xl flex-row flex-wrap items-center justify-center space-x-9">
+        <a href="https://www.echo3d.com/" target="_blank noopenner">
+          <img class="w-36" src="/sponsors/echo3D.png" alt="echo3D Logo" />
+        </a>
+        <a href="https://mule.to/p5oe" target="_blank noopenner">
+          <img class="w-48" src="/sponsors/sticker-mule.svg" alt="stickermule Logo" />
+        </a>
+        <a href="https://www.standoutstickers.com/" target="_blank noopenner">
+          <img class="w-28" src="/sponsors/stand-out-sticker.png" alt="Standout Stickers Logo" />
+        </a>
+      </div>
     </div>
-  </div>
   </section>
 
   <div>
-    <h2 class="text-xl text-center font-bold">Organized By</h2>
-    <div
-      class="flex flex-row justify-center items-center flex-wrap space-x-8 m-4"
-    >
+    <h2 class="text-center text-xl font-bold">Organized By</h2>
+    <div class="m-4 flex flex-row flex-wrap items-center justify-center space-x-8">
       <a href="https://mlh.io/" target="_blank">
         <img class="w-36" src="/sponsors/mlh-logo-color.png" alt="MLH logo" />
       </a>
@@ -200,14 +143,12 @@ import Footer from "../components/Footer.astro";
 </HTMLWrapper>
 
 <section>
-  <div class="flex flex-col justify-center items-center mb-10 mt-6">
+  <div class="mb-10 mt-6 flex flex-col items-center justify-center">
     <p class="m-8">
-      Interested in sponsoring RevolutionUC? It's a great way to connect with
-      talented and motivated students! Send us an email at
+      Interested in sponsoring RevolutionUC? It's a great way to connect with talented and motivated students! Send us
+      an email at
       <u>
-        <a href="mailto:sponsor@revolutionuc.com" class="text-blue-400">
-          sponsor@revolutionuc.com
-        </a>
+        <a href="mailto:sponsor@revolutionuc.com" class="text-blue-400"> sponsor@revolutionuc.com </a>
       </u>
       for information.
     </p>

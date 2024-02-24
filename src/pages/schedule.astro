@@ -8,24 +8,24 @@ import shuttleData from "../data/scheduleShuttle.json";
 ---
 
 <HTMLWrapper title="Schedule">
-    <ResponsiveNav current="schedule" />
-    <main class="mt-24 flex justify-center">
-        <div class="flex flex-col justify-center items-center">
-            <img 
-                src="https://assets.revolutionuc.com/website-images/2023/photos/2x/schedule.png" 
-                alt="RevolutionUC's Schedule" 
-                class="w-[760px] max-md:w-11/12 h-[500px] max-md:h-[300px] object-cover pb-8"
-                decoding="async"
-                loading="eager"
-            />  
-            <h1 class="text-3xl font-bold">Schedule</h1>
-            <ScheduleTable schedule={scheduleData.scheduleDayOne} label="February 24th" />
-            <ScheduleTable schedule={scheduleData.scheduleDayTwo} label="February 25th" />
-            <h1 class="text-3xl font-bold">Shuttle Schedule</h1>
-            <ScheduleTable schedule={shuttleData.scheduleDayOne} label="February 24th" />
-            <ScheduleTable schedule={shuttleData.scheduleDayTwo} label="February 25th" />
-            <p class="pb-8">Register for RevolutionUC to receive updates!</p>
-        </div>      
-    </main>
-    <Footer />
+  <ResponsiveNav current="schedule" />
+  <main class="mt-24 flex justify-center">
+    <div class="flex flex-col items-center justify-center">
+      <img
+        src="https://assets.revolutionuc.com/website-images/2023/photos/2x/schedule.png"
+        alt="RevolutionUC's Schedule"
+        class="h-[500px] w-[760px] object-cover pb-8 max-md:h-[300px] max-md:w-11/12"
+        decoding="async"
+        loading="eager"
+      />
+      <h1 class="text-3xl font-bold">Schedule</h1>
+      <ScheduleTable schedule={scheduleData.scheduleDayOne} label="February 24th" />
+      <ScheduleTable schedule={scheduleData.scheduleDayTwo} label="February 25th" />
+      <h1 class="text-3xl font-bold">Shuttle Schedule</h1>
+      <ScheduleTable schedule={shuttleData.scheduleDayOne} label="February 24th" />
+      <ScheduleTable schedule={shuttleData.scheduleDayTwo} label="February 25th" />
+      <p class="pb-8">Register for RevolutionUC to receive updates!</p>
+    </div>
+  </main>
+  <Footer />
 </HTMLWrapper>

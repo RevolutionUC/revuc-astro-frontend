@@ -7,8 +7,8 @@ import Footer from "../components/Footer.astro";
 
 <HTMLWrapper title="FAQ">
   <ResponsiveNav current="faq" />
-  <main class="flex justify-center h-full mt-24">
-    <div class="xl:w-2/5 lg:w-3/5 w-full mb-8 mr-8 ml-8">
+  <main class="mt-24 flex h-full justify-center">
+    <div class="mb-8 ml-8 mr-8 w-full lg:w-3/5 xl:w-2/5">
       <img
         src="https://assets.revolutionuc.com/website-images/2023/photos/4x/faq.png"
         alt="faq image"
@@ -19,10 +19,7 @@ import Footer from "../components/Footer.astro";
 
       <p class="mt-4 text-lg underline">
         <small>
-          <a href="#" class="expand-all">Expand all</a> | <a
-            href="#"
-            class="collapse-all">Collapse all</a
-          >
+          <a href="#" class="expand-all">Expand all</a> | <a href="#" class="collapse-all">Collapse all</a>
         </small>
       </p>
 
@@ -42,7 +39,7 @@ import Footer from "../components/Footer.astro";
         });
       </script>
 
-      <div class="text-lg text-justify">
+      <div class="text-justify text-lg">
         {
           faqData.map((faq) => (
             <details class="my-4 cursor-pointer">
