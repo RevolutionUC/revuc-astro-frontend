@@ -13,8 +13,8 @@ import QuickLinks from "../components/QuickLinks.astro";
   <ResponsiveNav current="home" />
   <main>
     <Hero siteState="live.countdown" />
-    <div class="mt-6 grid grid-cols-1 content-center p-8 2xl:grid-cols-5">
-      <div class="mb-12 flex h-max mt-14 justify-center 2xl:col-span-1">
+    <div class="mt-6 grid grid-cols-1 content-center 2xl:grid-cols-5">
+      <div class="mb-12 mt-14 flex h-max justify-center 2xl:col-span-1">
         <QuickLinks />
       </div>
       <div class="flex flex-col items-center justify-center 2xl:col-span-3">
@@ -139,7 +139,8 @@ import QuickLinks from "../components/QuickLinks.astro";
         <script async src="//www.instagram.com/embed.js"></script>
       </div>
     </div>
-    <div class="2xl:col-2 flex flex-col items-center justify-center py-8 2xl:row-start-2">
+
+    <div class="flex flex-col items-center justify-center py-8 2xl:row-start-2">
       <h2 class="mb-4 text-center text-5xl font-bold">Shuttle Schedule</h2>
       <ScheduleTable schedule={shuttleData.scheduleDayOne} label="February 24th" />
       <ScheduleTable schedule={shuttleData.scheduleDayTwo} label="February 25th" />
