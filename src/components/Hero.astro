@@ -75,8 +75,9 @@ const ctaText = ctaTextBySiteState[siteState];
       <a
         id="register-button"
         class="col-span-10 col-start-7 py-3 flex cursor-pointer items-center justify-center border-2 text-xl font-extrabold uppercase tracking-widest shadow-2xl backdrop-blur-sm transition-all hover:scale-[1.01] hover:bg-white hover:text-[#f75c03] hover:backdrop-blur-[6px] active:scale-[0.99] active:shadow-lg xl:text-4xl"
-        href={siteState === "registration" ? "/registration" : siteState === "live" ? "/live" : "#"}
-      >
+        href={siteState === "registration" ? "/registration" : siteState === "live" ? "/live" : siteState === "post-registration" ? "https://revolutionuc2024.devpost.com/project-gallery" : "#"}
+        target={siteState === "post-registration" ? "_blank" : undefined}
+        >
         <span>{ctaText}</span>
       </a>
     </div>
