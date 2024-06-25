@@ -6,7 +6,7 @@ interface Props {
 const { siteState } = Astro.props; // for updating content depending on the stage of the hackathon
 
 const heading = "Revolution";
-const date = "    February 24-25    "; // Keep the space in order to match with the RevolutionUC Text
+const date = "    February 22-23    "; // Keep the space in order to match with the RevolutionUC Text
 const liveCountdownSubheading = "   Hacking ends in:   ";
 const subheading = siteState !== "live.countdown" ? date : liveCountdownSubheading;
 const ctaTextBySiteState: Record<typeof siteState, string> = {
