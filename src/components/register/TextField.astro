@@ -12,6 +12,7 @@ const { label, type, placeholder, name, required } = Astro.props;
       type={type}
       placeholder={placeholder}
       required={required}
+      min={name === "age" && type === "number" ? "13": undefined}
     />
   </div>
 </div>
