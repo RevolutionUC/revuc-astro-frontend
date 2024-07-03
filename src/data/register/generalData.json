@@ -1,44 +1,16 @@
 {
   "educationData": [
     {
-      "value": "LessThanSecondary",
-      "option": "Less than Secondary / High School"
-    },
-    {
       "value": "HighSchool",
       "option": "High School (16+)"
     },
     {
-      "value": "Undergraduate2Year",
-      "option": "Undergraduate University (2 year - community college or similar)"
-    },
-    {
-      "value": "Undergraduate3Year",
-      "option": "Undergraduate University (3+ year)"
+      "value": "Undergraduate",
+      "option": "Undergraduate"
     },
     {
       "value": "Graduate",
-      "option": "Graduate University (Masters, Professional, Doctoral, etc)"
-    },
-    {
-      "value": "CodeSchool",
-      "option": "Code School / Bootcamp"
-    },
-    {
-      "value": "Vocational",
-      "option": "Other Vocational / Trade Program or Apprenticeship"
-    }, 
-    {
-      "value": "PostDoctorate",
-      "option": "Post Doctorate"
-    }, 
-    {
-      "value": "Other",
-      "option": "Other"
-    },
-    {
-      "value": "PreferNotToAnswer",
-      "option": "Prefer not to answer"
+      "option": "Graduate"
     }
   ],
   "genderData": [

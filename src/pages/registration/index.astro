@@ -92,8 +92,8 @@ import CountryField from "../../components/register/CountryField.astro";
             />
           </div>
 
-          <!-- age -->
-          <TextField label="Age*" type="number" placeholder="Age" name="age" required={true} />
+          <!-- dob -->
+          <TextField label="Date of Birth*" type="date" placeholder="mm/dd/yyyy" name="dateOfBirth" required={true} />
 
           <!-- gender -->
           <DropDownField
@@ -239,7 +239,8 @@ import CountryField from "../../components/register/CountryField.astro";
           >
           <br />
           <small
-            ><sup id="agree-4">4 </sup>I authorize MLH to send me occasional emails about relevant events, career opportunities, and community announcements.</small
+            ><sup id="agree-4">4 </sup>I authorize MLH to send me pre- and post-event informational emails, which
+            contain free credit and opportunities from their partners.</small
           >
         </p>
       </section>
@@ -249,25 +250,6 @@ import CountryField from "../../components/register/CountryField.astro";
 </HTMLWrapper>
 
 <script>
-  const emailField = document.getElementById("email") as HTMLInputElement | null;
-  const confirmEmailField = document.getElementById("emailConfirmed") as HTMLInputElement | null;
-
-  function validateEmails() {
-    const email = emailField?.value;
-    const confirmedEmail = confirmEmailField?.value;
-
-    if (email !== confirmedEmail) {
-      confirmEmailField?.setCustomValidity("Email and Confirm Email do not match.");
-    } else {
-      confirmEmailField?.setCustomValidity("");
-    }
-  } 
-
-  if (emailField && confirmEmailField) {
-    emailField.addEventListener("input", validateEmails);
-    confirmEmailField.addEventListener("input", validateEmails)
-  }
-
   const registrationForm = document.getElementById("registrationForm") as HTMLFormElement | null;
   const notification = document.getElementById("notification")!;
 
