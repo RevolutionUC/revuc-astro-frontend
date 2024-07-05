@@ -29,7 +29,7 @@ export const POST: APIRoute = async ({ request }) => {
     hackathons: parseInt(data.get("hackathons") as string),
     shirtSize: data.get("shirtSize") as string,
     githubUsername: data.get("githubUsername") as string,
-    dateOfBirth: new Date(data.get("dateOfBirth") as string).toISOString(),
+    age: parseInt(data.get("age") as string),
     acceptedWaiver: acceptedWaiverBool,
     allergens: /* data.getAll("allergens") as string[] */ [],
     otherAllergens: /* data.get("otherAllergens") as string */ "",
