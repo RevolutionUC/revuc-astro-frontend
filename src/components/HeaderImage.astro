@@ -13,4 +13,5 @@ const { imgSrc, imgAlt }: Props = Astro.props;
   class="h-[500px] w-11/12 object-cover pb-8 max-md:h-[300px] md:max-w-3xl"
   decoding="async"
   loading="eager"
+  onerror="this.style.display='none'"
 />

@@ -16,6 +16,7 @@ import Footer from "../components/Footer.astro";
           class="w-full"
           decoding="async"
           loading="eager"
+          onerror="this.style.display='none'"
         />
 
         <div class="absolute bottom-0 left-0 p-4 text-white">
@@ -32,7 +33,7 @@ import Footer from "../components/Footer.astro";
                 id={`open-${index}`}
                 class="flex grid h-36 max-w-xs place-items-center items-center justify-center rounded-lg shadow-lg"
               >
-                <img src={idea.image} alt="hack ideas image" class="w-1/2" decoding="async" loading="eager" />
+                <img src={idea.image} alt="hack ideas image" class="w-1/2" decoding="async" loading="eager" onerror="this.style.display='none'"/>
 
                 <div class="font-bold text-gray-800">{idea.topic}</div>
               </button>
@@ -56,6 +57,7 @@ import Footer from "../components/Footer.astro";
                       decoding="async"
                       loading="eager"
                       class="h-full w-auto object-cover"
+                      onerror="this.style.display='none'"
                     />
                   </div>
 
