@@ -5,3 +5,5 @@ Chau Nguyen
 Uyen Duong
 
 Eirlys Vo
+
+Krish Kalathiya
