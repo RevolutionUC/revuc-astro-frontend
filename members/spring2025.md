@@ -6,4 +6,6 @@ Uyen Duong
 
 Eirlys Vo
 
+Krish Kalathiya
+
 Karthikeya Rachamolla
