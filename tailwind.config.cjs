@@ -17,6 +17,13 @@ module.exports = {
 			gridTemplateColumns: {
 				'22': 'repeat(22, minmax(0, 1fr))',
 			},
+			colors: {
+				'theme-teal': '#1BAFAF',
+				'theme-dark-blue': '#20385E',
+				'theme-coral': '#E48279',
+				'theme-pastel-green': '9DD9BD',
+				'theme-cream': '#FDF9F6',
+			},
 		},
 	},
 	plugins: [],
