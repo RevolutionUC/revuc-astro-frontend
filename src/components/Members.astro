@@ -1,0 +1,13 @@
+---
+import membersData from '../data/members.json';
+
+const { greetings } = Astro.props; 
+---
+
+<h2>{greetings} Our Members</h2>
+
+{
+    membersData.map(member => (
+        <p>Name: {member.name} - Team: {member.team}</p>
+    ))
+}
