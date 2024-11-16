@@ -23,6 +23,8 @@ module.exports = {
 				'theme-coral': '#E48279',
 				'theme-pastel-green': '9DD9BD',
 				'theme-cream': '#FDF9F6',
+				'theme-light-teal': '#CAF1F1',
+				'theme-light-coral': '#F8DBD8',
 			},
 		},
 	},
