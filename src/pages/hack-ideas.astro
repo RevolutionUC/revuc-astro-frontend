@@ -11,7 +11,7 @@ import Footer from "../components/Footer.astro";
     <div class="mb-8 ml-8 mr-8 w-full lg:w-3/5 xl:w-2/5">
       <div class="relative">
         <img
-          src="https://assets.revolutionuc.com/website-images/2021/photos/2x/hack-ideas.jpg"
+          src = "../../public/sample_image.jpg"
           alt="hack ideas image"
           class="w-full"
           decoding="async"
@@ -19,9 +19,8 @@ import Footer from "../components/Footer.astro";
           onerror="this.style.display='none'"
         />
 
-        <div class="absolute bottom-0 left-0 p-4 text-white">
-          <h2 class="text-2xl font-bold">Hack Ideas</h2>
-          <p class="text-lg">Don't have a project idea? Use those Hack Ideas to help guide you.</p>
+        <div class="bottom-0 left-0 p-4 text-white">
+          <h2 class="text-2xl font-bold font-poppins text-black text-center text-customDarkBlue">Hack Ideas</h2>
         </div>
       </div>
 
@@ -29,28 +28,32 @@ import Footer from "../components/Footer.astro";
         {
           hackIdeas.map((idea, index) => (
             <div>
+
               <button
                 id={`open-${index}`}
-                class="flex grid h-36 max-w-xs place-items-center items-center justify-center rounded-lg shadow-lg"
+                class={`flex grid h-36 max-w-xs place-items-center items-center justify-center rounded-lg shadow-lg ${index % 2 === 0 ? 'bg-customGreen' : 'bg-customPink'}`}
               >
-                <img src={idea.image} alt="hack ideas image" class="w-1/2" decoding="async" loading="eager" onerror="this.style.display='none'"/>
+                <div class="font-bold font-poppins text-white">{idea.topic}</div>
 
-                <div class="font-bold text-gray-800">{idea.topic}</div>
+                <img src="../../public/sample_image.jpg" alt="hack ideas image" class="w-1/2" decoding="async" loading="eager" onerror="this.style.display='none'"/>
+                {/* <img src={idea.image} alt="hack ideas image" class="w-1/2" decoding="async" loading="eager" onerror="this.style.display='none'"/>  // Will uncomment this when having the image*/} 
               </button>
 
               <div
                 id={`modal-${index}`}
                 class="modal fixed inset-0 flex hidden items-center justify-center bg-gray-900 bg-opacity-50"
               >
-                <div class="relative flex grid h-2/3 w-2/3 place-items-center items-center justify-center rounded-lg bg-white shadow-lg">
+                <div class={`relative flex grid h-2/3 w-2/3 place-items-center items-center justify-center rounded-lg shadow-lg ${index % 2 === 0 ? 'bg-green-200' : 'bg-pink-200'}`} >
                   <div
                     id={`close-${index}`}
                     class="absolute right-4 top-4 h-16 w-auto cursor-pointer rounded-full p-2 text-2xl hover:text-4xl"
                   >
                     &times;
                   </div>
-                  <h3 class="my-8 text-2xl font-bold">{idea.topic}</h3>
-                  <div class="grid h-full max-w-xs place-items-center items-center justify-center">
+                  <h3 class={`my-8 text-2xl font-bold font-poppins ${index % 2 === 0 ? 'text-customGreen' : 'text-customPink'}`}>{idea.topic}</h3>
+
+
+                  {/* <div class="grid h-full max-w-xs place-items-center items-center justify-center">
                     <img
                       src={idea.image}
                       alt="hack ideas image"
@@ -59,11 +62,33 @@ import Footer from "../components/Footer.astro";
                       class="h-full w-auto object-cover"
                       onerror="this.style.display='none'"
                     />
-                  </div>
+                  </div> */}
 
-                  <p class="m-8">{idea.idea}</p>
+                {/* Top-right image */}
+                  <img
+                    src="../../public/sample_image.jpg"
+                    alt="hack ideas image"
+                    decoding="async"
+                    loading="eager"
+                    class="absolute top-4 right-4 h-16 w-16 object-cover"
+                    onerror="this.style.display='none'"
+                  />
+                  
+
+                  <p class="m-8 font-nunito">{idea.idea}</p>
+                  
+                  {/* Bottom-left image */}
+                  <img
+                    src="../../public/sample_image.jpg"
+                    alt="hack ideas image"
+                    decoding="async"
+                    loading="eager"
+                    class="absolute bottom-4 left-4 h-16 w-16 object-cover"
+                    onerror="this.style.display='none'"
+                  />
                 </div>
               </div>
+
             </div>
           ))
         }
