@@ -20,7 +20,7 @@ import Footer from "../components/Footer.astro";
         />
 
         <div class="bottom-0 left-0 p-4 text-white">
-          <h2 class="text-2xl font-bold font-poppins text-black text-center text-customDarkBlue">Hack Ideas</h2>
+          <h2 class="text-2xl font-bold font-poppins text-black text-center text-theme-dark-blue">Hack Ideas</h2>
         </div>
       </div>
 
@@ -31,9 +31,9 @@ import Footer from "../components/Footer.astro";
 
               <button
                 id={`open-${index}`}
-                class={`flex grid h-36 max-w-xs place-items-center items-center justify-center rounded-lg shadow-lg ${index % 2 === 0 ? 'bg-customGreen' : 'bg-customPink'}`}
+                class={`flex grid h-36 max-w-xs place-items-center items-center justify-center rounded-lg shadow-lg ${index % 2 === 0 ? 'bg-theme-teal' : 'bg-theme-coral'}`}
               >
-                <div class="font-bold font-poppins text-white">{idea.topic}</div>
+                <div class="font-semibold text-xs font-poppins text-white">{idea.topic}</div>
 
                 <img src="../../public/sample_image.jpg" alt="hack ideas image" class="w-1/2" decoding="async" loading="eager" onerror="this.style.display='none'"/>
                 {/* <img src={idea.image} alt="hack ideas image" class="w-1/2" decoding="async" loading="eager" onerror="this.style.display='none'"/>  // Will uncomment this when having the image*/} 
@@ -43,14 +43,14 @@ import Footer from "../components/Footer.astro";
                 id={`modal-${index}`}
                 class="modal fixed inset-0 flex hidden items-center justify-center bg-gray-900 bg-opacity-50"
               >
-                <div class={`relative flex grid h-2/3 w-2/3 place-items-center items-center justify-center rounded-lg shadow-lg ${index % 2 === 0 ? 'bg-green-200' : 'bg-pink-200'}`} >
+                <div class={`relative flex flex-col h-2/3 w-2/3 place-items-center items-center justify-center rounded-lg shadow-lg ${index % 2 === 0 ? 'bg-theme-light-teal' : 'bg-theme-light-coral'}`} >
                   <div
                     id={`close-${index}`}
                     class="absolute right-4 top-4 h-16 w-auto cursor-pointer rounded-full p-2 text-2xl hover:text-4xl"
                   >
                     &times;
                   </div>
-                  <h3 class={`my-8 text-2xl font-bold font-poppins ${index % 2 === 0 ? 'text-customGreen' : 'text-customPink'}`}>{idea.topic}</h3>
+                  <h3 class={`my-8 text-2xl font-bold font-poppins ${index % 2 === 0 ? 'text-theme-teal' : 'text-theme-coral'}`}>{idea.topic}</h3>
 
 
                   {/* <div class="grid h-full max-w-xs place-items-center items-center justify-center">
