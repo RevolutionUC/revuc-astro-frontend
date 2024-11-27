@@ -6,7 +6,7 @@ interface Props {
 const { siteState } = Astro.props; // for updating content depending on the stage of the hackathon
 
 const heading = "Revolution";
-const date = "    February 22-23    "; // Keep the space in order to match with the RevolutionUC Text
+const date = "      March 1-2       "; // Keep the space in order to match with the RevolutionUC Text
 const liveCountdownSubheading = "   Hacking ends in:   ";
 const subheading = siteState !== "live.countdown" ? date : liveCountdownSubheading;
 const ctaTextBySiteState: Record<typeof siteState, string> = {
@@ -80,6 +80,24 @@ const ctaText = ctaTextBySiteState[siteState];
         >
         <span>{ctaText}</span>
       </a>
+      <div class="col-span-12 h-[3vw]"></div>
+      <a 
+        class="col-span-6 col-start-5 border-2 py-2 flex items-center text-center justify-center transition-all hover:scale-[1.01] hover:bg-white hover:text-[#f75c03] hover:backdrop-blur-[6px]"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSc66bz0eHWnrpunWdDdIOy84b9Vm6_YQhxLftZUci1VcTeLcA/viewform?usp=sf_link"
+        target="_blank"
+        rel="noopener noreferrer"
+        >
+        Sponsor Interest Form
+      </a>
+      <a 
+        class="col-span-6 col-start-13 border-2 py-2 flex items-center text-center justify-center transition-all hover:scale-[1.01] hover:bg-white hover:text-[#f75c03] hover:backdrop-blur-[6px]"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSeJ4gZb1ENQzPS0RP3mNLmUt9NJ7kDgi_M4oOlhCVZKol1gPw/viewform?usp=sf_link"
+        target="_blank"
+        rel="noopener noreferrer"
+        >
+        Judge/Mentor Interest Form
+      </a>
+
     </div>
   </div>
 </div>
