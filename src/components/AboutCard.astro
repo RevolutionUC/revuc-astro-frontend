@@ -10,9 +10,9 @@ interface Props {
 const { title, description, imgSrc, imgAlt, color }: Props = Astro.props;
 ---
 
-<div class="flex flex-col">
+<div class="flex flex-col ">
   <img src={imgSrc} alt={imgAlt} class="h-96 w-96 object-cover" onerror="this.style.display='none'"/>
-  <div class="flex flex-col items-center justify-center space-y-2 p-4" style={`background-color: ${color};`}>
+  <div class="flex flex-col items-center justify-center space-y-2 p-4 rounded-xl " style={`background-color: ${color};`}>
     <h3 class="text-2xl font-bold">{title}</h3>
     <p class="text-lg">{description}</p>
   </div>
