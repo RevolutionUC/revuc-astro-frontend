@@ -7,36 +7,37 @@ import Footer from "../components/Footer.astro";
 
 <HTMLWrapper title="Hack Ideas">
   <ResponsiveNav current="hack-ideas" />
-  <main class="mt-24 flex h-full justify-center">
+  <main class="mt-20 flex h-full justify-center">
     <div class="mb-8 ml-8 mr-8 w-full lg:w-3/5 xl:w-2/5">
       <div class="relative">
         <img
-          src = "../../public/sample_image.jpg"
+          src = "/sample_image.jpg"
           alt="hack ideas image"
-          class="w-full opacity-60"
+          class="w-full h-60 opacity-60"
           decoding="async"
           loading="eager"
           onerror="this.style.display='none'"
         />
 
         <div class="bottom-0 left-0 p-4 text-white">
-          <h2 class="text-2xl font-bold font-poppins text-black text-center text-theme-dark-blue">Hack Ideas</h2>
+          <h2 class="text-5xl font-bold font-poppins text-black text-center text-theme-dark-blue mt-20">Hack Ideas</h2>
         </div>
       </div>
 
-      <div class="mt-8 grid grid-cols-3 gap-4">
+      <div class="mt-8 mb-20 grid grid-cols-3 gap-10">
         {
           hackIdeas.map((idea, index) => (
             <div>
 
               <button
                 id={`open-${index}`}
-                class={`flex grid h-36 max-w-xs place-items-center items-center justify-center rounded-lg shadow-lg ${index % 2 === 0 ? 'bg-theme-teal' : 'bg-theme-coral'}`}
+                class={`flex flex-col h-56 w-48 justify-between items-center rounded-lg shadow-lg ${
+    index % 2 === 0 ? 'bg-theme-teal' : 'bg-theme-coral'
+  } px-4 py-2`}
               >
-                <div class="font-semibold text-xs font-poppins text-white">{idea.topic}</div>
+                <div class="font-semibold font-poppins text-sm text-white">{idea.topic}</div>
 
-                <img src="../../public/sample_image.jpg" alt="hack ideas image" class="w-1/2" decoding="async" loading="eager" onerror="this.style.display='none'"/>
-                {/* <img src={idea.image} alt="hack ideas image" class="w-1/2" decoding="async" loading="eager" onerror="this.style.display='none'"/>  // Will uncomment this when having the image*/} 
+                <img src="/sample_image.jpg" alt="hack ideas image" class="w-20 h-20 object-contain mb-0" decoding="async" loading="eager" onerror="this.style.display='none'"/>
               </button>
 
               <div
@@ -48,44 +49,34 @@ import Footer from "../components/Footer.astro";
                     id={`close-${index}`}
                     class="absolute right-4 top-4 h-16 w-auto cursor-pointer rounded-full p-2 text-2xl hover:text-4xl"
                   >
-                    &times;
+                    &times; {/* Close button */}
                   </div>
-                  <h3 class={`my-8 text-2xl font-bold font-poppins ${index % 2 === 0 ? 'text-theme-teal' : 'text-theme-coral'}`}>{idea.topic}</h3>
 
 
-                  {/* <div class="grid h-full max-w-xs place-items-center items-center justify-center">
-                    <img
-                      src={idea.image}
-                      alt="hack ideas image"
-                      decoding="async"
-                      loading="eager"
-                      class="h-full w-auto object-cover"
-                      onerror="this.style.display='none'"
-                    />
-                  </div> */}
+                <div class="flex items-center justify-center w-full relative">
+                  <h3 class={`text-5xl font-bold font-poppins ${index % 2 === 0 ? 'text-theme-teal' : 'text-theme-coral'}`}>{idea.topic}</h3>
+                </div>
 
-                {/* Top-right image */}
-                  <img
-                    src="../../public/sample_image.jpg"
-                    alt="hack ideas image"
-                    decoding="async"
-                    loading="eager"
-                    class="absolute top-4 right-4 h-16 w-16 object-cover"
-                    onerror="this.style.display='none'"
-                  />
-                  
+                <img
+                  src="/sample_image.jpg"
+                  alt="hack ideas image"
+                  decoding="async"
+                  loading="eager"
+                  class="absolute top-4 right-4 h-16 w-16 object-cover"
+                  onerror="this.style.display='none'"
+                />
 
-                  <p class="m-8 font-nunito">{idea.idea}</p>
-                  
-                  {/* Bottom-left image */}
-                  <img
-                    src="../../public/sample_image.jpg"
-                    alt="hack ideas image"
-                    decoding="async"
-                    loading="eager"
-                    class="absolute bottom-4 left-4 h-16 w-16 object-cover"
-                    onerror="this.style.display='none'"
-                  />
+                <p class="m-4 p-5 text-xl font-nunito font-light">{idea.idea}</p>
+                
+                <img
+                  src="/sample_image.jpg"
+                  alt="hack ideas image"
+                  decoding="async"
+                  loading="eager"
+                  class="absolute bottom-4 left-4 h-16 w-16 object-cover"
+                  onerror="this.style.display='none'"
+                />
+
                 </div>
               </div>
 
