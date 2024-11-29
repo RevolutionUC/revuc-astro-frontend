@@ -31,11 +31,8 @@ import Footer from "../components/Footer.astro";
 
               <button
                 id={`open-${index}`}
-                class={`flex flex-col h-56 w-48 justify-between items-center rounded-lg shadow-lg ${
-    index % 2 === 0 ? 'bg-theme-teal' : 'bg-theme-coral'
-  } px-4 py-2`}
-              >
-                <div class="font-semibold font-poppins text-sm text-white">{idea.topic}</div>
+                class={`flex flex-col h-52 w-48 justify-between items-center rounded-lg shadow-lg ${index % 2 === 0 ? 'bg-theme-teal' : 'bg-theme-coral'} px-4 py-2`}>
+                <div class="font-semibold font-poppins text-base text-white">{idea.topic}</div>
 
                 <img src="/sample_image.jpg" alt="hack ideas image" class="w-20 h-20 object-contain mb-0" decoding="async" loading="eager" onerror="this.style.display='none'"/>
               </button>
@@ -44,38 +41,43 @@ import Footer from "../components/Footer.astro";
                 id={`modal-${index}`}
                 class="modal fixed inset-0 flex hidden items-center justify-center bg-gray-900 bg-opacity-50"
               >
-                <div class={`relative flex flex-col h-2/3 w-2/3 place-items-center items-center justify-center rounded-lg shadow-lg ${index % 2 === 0 ? 'bg-theme-light-teal' : 'bg-theme-light-coral'}`} >
+                <div class={`relative flex flex-col h-2/3 w-2/3 place-items-center items-center justify-center rounded-3xl shadow-lg ${index % 2 === 0 ? 'bg-theme-light-teal' : 'bg-theme-light-coral'}`}>
+                  
                   <div
                     id={`close-${index}`}
-                    class="absolute right-4 top-4 h-16 w-auto cursor-pointer rounded-full p-2 text-2xl hover:text-4xl"
+                    class="absolute right-1 top-1 h-16 w-auto pr-1 cursor-pointer rounded-full text-2xl hover:text-4xl"
                   >
-                    &times; {/* Close button */}
+                    &times;
+                  </div>
+
+                  {/* Top right img */}
+                  <div class="absolute right-8 top-8 w-full flex items-center justify-center">
+                    <img
+                      src="/sample_image.jpg"
+                      alt="top right image"
+                      decoding="async"
+                      loading="eager"
+                      class="absolute right-2 top-1 h-16 w-16 object-cover " 
+                      onerror="this.style.display='none'"
+                    />
+                    
+                    <h3 class={`absolute top-6 text-4xl font-bold font-poppins ${index % 2 === 0 ? 'text-theme-teal' : 'text-theme-coral'}`}>
+                      {idea.topic}
+                    </h3>
                   </div>
 
 
-                <div class="flex items-center justify-center w-full relative">
-                  <h3 class={`text-5xl font-bold font-poppins ${index % 2 === 0 ? 'text-theme-teal' : 'text-theme-coral'}`}>{idea.topic}</h3>
-                </div>
-
-                <img
-                  src="/sample_image.jpg"
-                  alt="hack ideas image"
-                  decoding="async"
-                  loading="eager"
-                  class="absolute top-4 right-4 h-16 w-16 object-cover"
-                  onerror="this.style.display='none'"
-                />
-
-                <p class="m-4 p-5 text-xl font-nunito font-light">{idea.idea}</p>
+                  <p class="m-4 p-5 text-xl font-nunito font-light">{idea.idea}</p>
                 
-                <img
-                  src="/sample_image.jpg"
-                  alt="hack ideas image"
-                  decoding="async"
-                  loading="eager"
-                  class="absolute bottom-4 left-4 h-16 w-16 object-cover"
-                  onerror="this.style.display='none'"
-                />
+                  {/* Bottom left img */}
+                  <img
+                    src="/sample_image.jpg"
+                    alt="bottom left image"
+                    decoding="async"
+                    loading="eager"
+                    class="absolute bottom-9 left-9 h-16 w-16 object-cover" 
+                    onerror="this.style.display='none'"
+                  />
 
                 </div>
               </div>
