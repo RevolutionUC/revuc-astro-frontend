@@ -45,27 +45,14 @@ import Footer from "../components/Footer.astro";
                   
                   <div
                     id={`close-${index}`}
-                    class="absolute right-1 top-1 h-16 w-auto pr-1 cursor-pointer rounded-full text-2xl hover:text-4xl"
+                    class="absolute right-5 top-5 h-16 w-auto pr-1 cursor-pointer rounded-full text-2xl hover:text-4xl"
                   >
-                    &times;
-                  </div>
+                    &times; {/* Close button */}
+                  </div> 
 
-                  {/* Top right img */}
-                  <div class="absolute right-8 top-8 w-full flex items-center justify-center">
-                    <img
-                      src="/sample_image.jpg"
-                      alt="top right image"
-                      decoding="async"
-                      loading="eager"
-                      class="absolute right-2 top-1 h-16 w-16 object-cover " 
-                      onerror="this.style.display='none'"
-                    />
-                    
-                    <h3 class={`absolute top-6 text-4xl font-bold font-poppins ${index % 2 === 0 ? 'text-theme-teal' : 'text-theme-coral'}`}>
-                      {idea.topic}
-                    </h3>
-                  </div>
-
+                  <h3 class={`text-5xl font-bold font-poppins ${index % 2 === 0 ? 'text-theme-teal' : 'text-theme-coral'}`}>
+                    {idea.topic}
+                  </h3>
 
                   <p class="m-4 p-5 text-xl font-nunito font-light">{idea.idea}</p>
                 
@@ -75,7 +62,7 @@ import Footer from "../components/Footer.astro";
                     alt="bottom left image"
                     decoding="async"
                     loading="eager"
-                    class="absolute bottom-9 left-9 h-16 w-16 object-cover" 
+                    class="absolute bottom-5 left-5 h-16 w-16 object-cover" 
                     onerror="this.style.display='none'"
                   />
 
