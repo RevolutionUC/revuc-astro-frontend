@@ -10,8 +10,14 @@ import Footer from "../components/Footer.astro";
   <ResponsiveNav current="about" />
   <main class="mb-24 mt-24 flex w-full flex-col items-center justify-center space-y-8">
     <HeaderImage imgSrc="/images/about-1.jpg" imgAlt="About" />
-    <section class="flex w-1/2 flex-col items-center justify-center space-y-8">
-      <h1 class="text-4xl">Build. Learn. Grow.</h1>
+
+    <section class="flex w-1/4  flex-row items-center justify-center space-y-08">
+      <p class="text-4xl text-theme-teal font-extrabold">Build. &nbsp;</p>
+      <p class="text-4xl text-theme-dark-blue font-extrabold"> Learn. &nbsp;</p>
+      <p class="text-4xl text-theme-coral font-extrabold"> Grow. </p>
+    </section>
+
+    <section class="flex w-1/2  items-center justify-center space-y-8">
       <p class="text-lg">
         RevolutionUC is a student hackathon in which we invite students from across the midwest to partake in a weekend
         of code, community, and self-improvement. You don’t have to attend the University of Cincinnati and you don’t
@@ -25,21 +31,21 @@ import Footer from "../components/Footer.astro";
         imgAlt="About"
         title="Build."
         description="Hack something awesome!"
-        color="#f75c03"
+        color="#1BAFAF"
       />
       <AboutCard
         imgSrc="https://assets.revolutionuc.com/website-images/2021/photos/1x/learn.jpg"
         imgAlt="About"
         title="Learn."
         description="Hack something new!"
-        color="#f0c40f"
+        color="#20385E"
       />
       <AboutCard
         imgSrc="https://assets.revolutionuc.com/website-images/2021/photos/1x/grow.jpg"
         imgAlt="About"
         title="Grow."
         description="Share your hack!"
-        color="#2274a5"
+        color="#E48279"
       />
     </section>
     <section class="flex w-1/2 flex-col items-center justify-center space-y-4">
@@ -74,7 +80,7 @@ import Footer from "../components/Footer.astro";
         an all-inclusive community that acts as an outlet in which we can join our peers and share our passion for all
         the incredible things that can be done through programming. That’s why we follow the <a
           href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
-          class="text-[#f75c03] underline"
+          class="text-theme-teal underline"
           target="_blank">Major League Hacking code of conduct</a
         >. We’re excited to share this ethos with all of our attendees and come together to grow the hacker community
         here in Cincinnati.
@@ -83,8 +89,8 @@ import Footer from "../components/Footer.astro";
     <section class="flex w-1/2 flex-col items-center justify-center space-y-4">
       <h1 class="text-4xl">Contact Us</h1>
       <p class="text-lg">
-        Have a question not in <a href="/faq/" class="text-[#f75c03] underline">our FAQ</a>? Want to get in contact
-        about sponsorship? Send us a message at <a href="mailto:info@revolutionuc.com" class="text-[#f75c03] underline"
+        Have a question not in our<a href="/faq/" class="text-theme-teal underline">FAQ</a>? Want to get in contact
+        about sponsorship? Send us a message at <a href="mailto:info@revolutionuc.com" class="text-theme-teal underline"
           >info@revolutionuc.com</a
         >.
       </p>
