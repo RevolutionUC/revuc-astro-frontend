@@ -3,7 +3,6 @@ import ResponsiveNav from "../components/ResponsiveNav.astro";
 import HTMLWrapper from "../layouts/HTMLWrapper.astro";
 import faqData from "../data/faqData.json";
 import Footer from "../components/Footer.astro";
-import "../styles/faq.styles.css";
 ---
 
 <HTMLWrapper title="FAQ">
@@ -18,7 +17,7 @@ import "../styles/faq.styles.css";
         loading="eager"
         onerror="this.style.display='none'"
       />
-      <h1 class="faq-title">FAQ</h1>
+      <h1 class="text-center font-poppins text-2xl font-bold leading-[45px] text-theme-dark-blue mt-5">FAQ</h1>
       <p class="mt-4 text-lg underline">
         <small>
           <a href="#" class="expand-all">Expand all</a> | <a href="#" class="collapse-all">Collapse all</a>
@@ -40,38 +39,38 @@ import "../styles/faq.styles.css";
         });
       </script>
 
-      <div class="faq-container">
-        <div class="faq-section">
-          <h2 class="faq-section-title">General Information</h2>
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div class="p-5 rounded-lg">
+          <h2 class="font-poppins text-lg font-bold leading-6 text-theme-teal mt-5">General Information</h2>
           {
             faqData.slice(0, 5).map((faq) => (
               <details class="my-4 cursor-pointer">
-                <summary class="my-2 font-black">{faq.q}</summary>
-                <div set:html={faq.a} />
+                <summary class="my-2 font-nunito text-sm font-normal leading-[16.37px]">{faq.q}</summary>
+                <div class="font-nunito text-sm font-normal leading-[16.37px]" set:html={faq.a} />
               </details>
             ))
           }
         </div>
 
-        <div class="faq-section">
-          <h2 class="faq-section-title">Participation and Preparation</h2>
+        <div class="p-5 rounded-lg">
+          <h2 class="font-poppins text-lg font-bold leading-6 text-theme-teal mt-5">Participation and Preparation</h2>
           {
             faqData.slice(5, 11).map((faq) => (
               <details class="my-4 cursor-pointer">
-                <summary class="my-2 font-black">{faq.q}</summary>
-                <div set:html={faq.a} />
+                <summary class="my-2 font-nunito text-sm font-normal leading-[16.37px]">{faq.q}</summary>
+                <div class="font-nunito text-sm font-normal leading-[16.37px]" set:html={faq.a} />
               </details>
             ))
           }
         </div>
 
-        <div class="faq-section">
-          <h2 class="faq-section-title">Policies and Support</h2>
+        <div class="p-5 rounded-lg md:col-span-2">
+          <h2 class="font-poppins text-lg font-bold leading-6 text-theme-teal mt-5">Policies and Support</h2>
           {
             faqData.slice(11, 14).map((faq) => (
               <details class="my-4 cursor-pointer">
-                <summary class="my-2 font-black">{faq.q}</summary>
-                <div set:html={faq.a} />
+                <summary class="my-2 font-nunito text-sm font-normal leading-[16.37px]">{faq.q}</summary>
+                <div class="font-nunito text-sm font-normal leading-[16.37px]" set:html={faq.a} />
               </details>
             ))
           }
