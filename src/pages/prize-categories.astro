@@ -2,7 +2,7 @@
 import ResponsiveNav from "../components/ResponsiveNav.astro";
 import HTMLWrapper from "../layouts/HTMLWrapper.astro";
 import Footer from "../components/Footer.astro";
-import prizeData from "../data/prizeCategories.json";
+import PrizeCategoryCard from "../components/PrizeCategoryCard.astro";
 ---
 
 <HTMLWrapper title="Prize Categories">
@@ -10,15 +10,26 @@ import prizeData from "../data/prizeCategories.json";
   <main class="mb-24 mt-24 flex w-full flex-col items-center justify-center space-y-8">
     <h1 class="text-4xl font-bold text-theme-dark-blue font-poppins pt-14">Prize Categories</h1>
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-x-8 gap-y-12 p-8 w-5/6 lg:w-11/12">
-        {
-            prizeData.map((item) => (
-                <div class={`bg-${item.background} py-4 px-5 rounded-3xl shadow-md hover:shadow-xl`}>
-                    <img src="/revuc_white.png" alt="prize images" class="w-3/4 justify-self-center py-4" />
-                    <h2 class="text-theme-dark-blue sm:text-lg text-2xl font-bold">{item.prize}</h2>
-                    <p class="italic py-2.5">{item.description}</p>
-                </div>
-            ))
-        }
+      <PrizeCategoryCard 
+        title="Best Business Plan" 
+        description="Awarded to the project with the most well-thought-out and feasible business strategy. Judges will evaluate the potential for real-world implementation, scalability, and market impact."
+        background="bg-theme-light-teal"
+      />
+      <PrizeCategoryCard
+        title="Most Technically Impressive"
+        description="Recognizes the project demonstrating exceptional technical innovation, complexity, and skill. This prize celebrates engineering excellence and cutting-edge technology."
+        background="bg-theme-light-coral"
+      />
+      <PrizeCategoryCard
+        title="Best Social Impact"
+        description="Given to the project that makes the greatest positive impact on society. Judges will look for solutions addressing pressing social, environmental, or humanitarian challenges."
+        background="bg-theme-coral"
+      />
+      <PrizeCategoryCard
+        title="People's Choice"
+        description="This prize is decided by participant votes and celebrates the most popular project among attendees. A great opportunity to showcase creativity and make an impression on the hackathon community."
+        background="bg-theme-pastel-green"
+      />
     </div>
     <p class="text-center p-8 text-lg">More information about the sponsored prize categories will be announced shortly before the event.</p>
   </main>
