@@ -28,6 +28,7 @@ module.exports = {
 				'theme-cream': '#FDF9F6',
 				'theme-light-teal': '#CAF1F1',
 				'theme-light-coral': '#F8DBD8',
+				'theme-sand': '#F6D5B1'
 			},
 		},
 	},
