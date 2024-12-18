@@ -1,0 +1,108 @@
+---
+import '@splidejs/splide/css';
+
+const slides1 = [
+  "/carousels/carousel-1/car1-1.jpg",
+  "/carousels/carousel-1/car1-2.jpg",
+  "/carousels/carousel-1/car1-3.jpg",
+  "/carousels/carousel-1/car1-4.jpg",
+  "/carousels/carousel-1/car1-5.jpg",
+  "/carousels/carousel-1/car1-6.jpg",
+  "/carousels/carousel-1/car1-7.jpg",
+  "/carousels/carousel-1/car1-8.jpg",
+];
+
+const slides2 = [
+  "/carousels/carousel-2/car2-1.jpg",
+  "/carousels/carousel-2/car2-2.jpg",
+  "/carousels/carousel-2/car2-3.jpg",
+  "/carousels/carousel-2/car2-4.jpg",
+  "/carousels/carousel-2/car2-5.jpg",
+  "/carousels/carousel-2/car2-6.jpg",
+  "/carousels/carousel-2/car2-7.jpg",
+  "/carousels/carousel-2/car2-8.jpg", 
+];
+
+const slides3 = [
+  "/carousels/carousel-3/car3-1.jpg",
+  "/carousels/carousel-3/car3-2.jpg",
+  "/carousels/carousel-3/car3-3.jpg",
+  "/carousels/carousel-3/car3-4.jpg",
+  "/carousels/carousel-3/car3-5.jpg",
+  "/carousels/carousel-3/car3-6.jpg",
+  "/carousels/carousel-3/car3-7.jpg",
+  "/carousels/carousel-3/car3-8.jpg",
+];
+
+---
+
+<div class="pb-20 space-y-3" id="carousel">
+  <h1 class="text-2xl pl-32 max-md:pl-10 pb-4 text-theme-dark-blue font-poppins font-bold">GALLERY</h1>
+  <section id="splide-1" class="splide" role="group" aria-label="Carousel 1">
+    <div class="splide__track">
+      <ul class="splide__list">
+        {slides1.map((slide) => (
+          <li class="splide__slide overflow-hidden">
+            <img src={slide} alt="Executive" class="w-auto h-44 rounded-xl"/>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+  <section id="splide-2" class="splide" role="group" aria-label="Carousel 2">
+    <div class="splide__track">
+      <ul class="splide__list">
+        {slides2.map((slide) => (
+          <li class="splide__slide">
+            <img src={slide} alt="Executive" class="w-auto h-44 rounded-xl"/>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+  <section id="splide-3" class="splide" role="group" aria-label="Carousel 3">
+    <div class="splide__track">
+      <ul class="splide__list">
+        {slides3.map((slide) => (
+          <li class="splide__slide">
+            <img src={slide} alt="Executive" class="w-auto h-44 rounded-xl"/>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</div>
+
+<script>
+  import Splide from '@splidejs/splide';
+  import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
+
+  const splideOptions = {
+    autoWidth: true,
+    type: 'loop',
+    pagination: false,
+    arrows: false,
+    autoScroll: {
+      speed: 1,
+    },
+    gap: 10,
+  };
+
+  const carousels = [
+    { id: '#splide-1', direction: 'ltr' as 'ltr' | 'rtl' | 'ttb' | undefined },
+    { id: '#splide-2', direction: 'rtl' as 'ltr' | 'rtl' | 'ttb' | undefined },
+    { id: '#splide-3', direction: 'ltr' as 'ltr' | 'rtl' | 'ttb' | undefined },
+  ]
+
+  document.addEventListener('DOMContentLoaded', () => {
+      for (let i = 0; i < carousels.length; i++) {
+        const carousel = new Splide(carousels[i].id, {
+          ...splideOptions,
+          direction: carousels[i].direction,
+        })
+        
+        carousel.mount( { AutoScroll } );
+      }
+  });
+  
+</script>
