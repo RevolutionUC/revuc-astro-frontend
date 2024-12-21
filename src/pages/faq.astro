@@ -9,10 +9,12 @@ import HeaderImage from "../components/HeaderImage.astro";
 <HTMLWrapper title="FAQ">
   <ResponsiveNav current="faq" />
   <main class="mb-24 mt-24 flex w-full flex-col items-center justify-center space-y-8">
-    <HeaderImage imgSrc="/images/faq-1.jpg" imgAlt="FAQ" />
+    <video autoplay muted class="h-64 pointer-events-none">
+      <source src="/general/faq.mp4" type="video/mp4" />
+    </video>
 
     <h1 class="text-4xl font-bold text-theme-dark-blue font-poppins">FAQ</h1>
-    
+
     <div class="grid gap-5 sm:gap-10 sm:grid-cols-2 w-5/6 md:max-w-3xl">
       <div>
         <h2 class="font-poppins text-xl font-bold text-theme-teal mt-5">General Information</h2>

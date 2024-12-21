@@ -11,13 +11,13 @@ import Footer from "../components/Footer.astro";
   <main class="mb-24 mt-24 flex w-full flex-col items-center justify-center space-y-8">
     <HeaderImage imgSrc="/images/about-1.jpg" imgAlt="About" />
 
-    <section class="flex w-1/4  flex-row items-center justify-center space-y-08">
-      <p class="text-4xl text-theme-teal font-extrabold">Build. &nbsp;</p>
-      <p class="text-4xl text-theme-dark-blue font-extrabold"> Learn. &nbsp;</p>
-      <p class="text-4xl text-theme-coral font-extrabold"> Grow. </p>
-    </section>
+    <section class="flex w-2/3 md:max-w-3xl flex-col items-center justify-center space-y-8">
+      <h1 class="font-poppins text-4xl font-bold inline-flex gap-4 pt-6">
+        <span class="text-theme-teal">Build.</span>
+        <span class="text-theme-dark-blue">Learn.</span>
+        <span class="text-theme-coral">Grow.</span>
+      </h1>
 
-    <section class="flex w-1/2  items-center justify-center space-y-8">
       <p class="text-lg">
         RevolutionUC is a student hackathon in which we invite students from across the midwest to partake in a weekend
         of code, community, and self-improvement. You don’t have to attend the University of Cincinnati and you don’t
@@ -25,31 +25,32 @@ import Footer from "../components/Footer.astro";
         awesome things with technology.
       </p>
     </section>
-    <section class="item-center flex justify-center space-x-8">
+    <section class="w-2/3 md:max-w-3xl grid sm:grid-cols-3 gap-6 pb-2">
       <AboutCard
-        imgSrc="https://assets.revolutionuc.com/website-images/2021/photos/1x/build.jpg"
+        imgSrc="/general/cat-build.png"
         imgAlt="About"
         title="Build."
         description="Hack something awesome!"
         color="#1BAFAF"
       />
       <AboutCard
-        imgSrc="https://assets.revolutionuc.com/website-images/2021/photos/1x/learn.jpg"
+        imgSrc="/general/cat-learn.png"
         imgAlt="About"
         title="Learn."
         description="Hack something new!"
         color="#20385E"
       />
       <AboutCard
-        imgSrc="https://assets.revolutionuc.com/website-images/2021/photos/1x/grow.jpg"
+        imgSrc="/general/cat-grow.png"
         imgAlt="About"
         title="Grow."
         description="Share your hack!"
         color="#E48279"
       />
     </section>
-    <section class="flex w-1/2 flex-col items-center justify-center space-y-4">
-      <h1 class="text-4xl">Our Mission</h1>
+
+    <section class="flex w-2/3 md:max-w-3xl flex-col items-center justify-center space-y-4">
+      <h1 class="text-3xl font-poppins text-theme-dark-blue">Our Mission</h1>
       <p class="text-lg">
         At the core of RevolutionUC are three key concepts: building, learning, and growing. There’s nothing we love
         more than helping our hackers learn something new while they build something cool. RevolutionUC strives to be an
@@ -60,16 +61,6 @@ import Footer from "../components/Footer.astro";
         better place to start than RevolutionUC! With experienced and industry mentors, you’ll be hacking away in no
         time!
       </p>
-      <img
-        src="https://assets.revolutionuc.com/website-images/2023/photos/4x/about-2.png"
-        srcset="https://assets.revolutionuc.com/website-images/2023/photos/1x/about-2.png,
-      https://assets.revolutionuc.com/website-images/2023/photos/2x/about-2.png 2x,
-      https://assets.revolutionuc.com/website-images/2023/photos/3x/about-2.png 3x,
-      https://assets.revolutionuc.com/website-images/2023/photos/4x/about-2.png 4x"
-        alt="Mission"
-        class="w-full"
-        onerror="this.style.display='none'"
-      />
       <p class="text-lg">
         Over the course of 24 hours you’ll work together with friends, new or old, to create something you can be proud
         of from scratch. With tech talks and industry partnerships for inspiration, the sky is the limit. We’ve seen
@@ -86,10 +77,10 @@ import Footer from "../components/Footer.astro";
         here in Cincinnati.
       </p>
     </section>
-    <section class="flex w-1/2 flex-col items-center justify-center space-y-4">
-      <h1 class="text-4xl">Contact Us</h1>
+    <section class="flex w-2/3 md:max-w-3xl flex-col items-center justify-center space-y-4">
+      <h1 class="text-3xl font-poppins text-theme-dark-blue">Contact Us</h1>
       <p class="text-lg">
-        Have a question not in our<a href="/faq/" class="text-theme-teal underline">FAQ</a>? Want to get in contact
+        Have a question not in our <a href="/faq/" class="text-theme-teal underline">FAQ</a>? Want to get in contact
         about sponsorship? Send us a message at <a href="mailto:info@revolutionuc.com" class="text-theme-teal underline"
           >info@revolutionuc.com</a
         >.

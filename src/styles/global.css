@@ -1,5 +1,6 @@
 html {
   scroll-padding-top: 8rem;
+  background-color: #FDF6ED;
 }
 
 .remove-calendar-dropdown::-webkit-calendar-picker-indicator {

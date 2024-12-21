@@ -8,30 +8,36 @@ import PrizeCategoryCard from "../components/PrizeCategoryCard.astro";
 <HTMLWrapper title="Prize Categories">
   <ResponsiveNav current="prize categories" />
   <main class="mb-24 mt-24 flex w-full flex-col items-center justify-center space-y-8">
-    <h1 class="text-4xl font-bold text-theme-dark-blue font-poppins pt-14">Prize Categories</h1>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-x-8 gap-y-12 p-8 w-5/6 lg:w-11/12">
+    <video autoplay src="/general/prize.mp4" class="h-64 pointer-events-none" muted />
+
+    <h1 class="text-4xl font-bold text-theme-dark-blue font-poppins">Prize Categories</h1>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-x-8 gap-y-12 p-6 w-5/6 lg:w-11/12">
       <PrizeCategoryCard 
         title="Best Business Plan" 
         description="Awarded to the project with the most well-thought-out and feasible business strategy. Judges will evaluate the potential for real-world implementation, scalability, and market impact."
         background="bg-theme-light-teal"
+        image="/general/prize-categories/best-business-plan.png"
       />
       <PrizeCategoryCard
         title="Most Technically Impressive"
         description="Recognizes the project demonstrating exceptional technical innovation, complexity, and skill. This prize celebrates engineering excellence and cutting-edge technology."
         background="bg-theme-light-coral"
+        image="/general/prize-categories/most-tech-impressive.png"
       />
       <PrizeCategoryCard
         title="Best Social Impact"
         description="Given to the project that makes the greatest positive impact on society. Judges will look for solutions addressing pressing social, environmental, or humanitarian challenges."
-        background="bg-theme-coral"
+        background="bg-theme-pastel-green"
+        image="/general/prize-categories/best-social-impact.png"
       />
       <PrizeCategoryCard
         title="People's Choice"
         description="This prize is decided by participant votes and celebrates the most popular project among attendees. A great opportunity to showcase creativity and make an impression on the hackathon community."
-        background="bg-theme-pastel-green"
+        background="bg-theme-coral"
+        image="/general/prize-categories/peoples-choice.png"
       />
     </div>
-    <p class="text-center p-8 text-lg">More information about the sponsored prize categories will be announced shortly before the event.</p>
+    <p class="text-center p-4 text-xl font-semibold">More information about the sponsored prize categories will be announced shortly before the event.</p>
   </main>
 </HTMLWrapper>
 <Footer />
