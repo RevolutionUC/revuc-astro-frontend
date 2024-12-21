@@ -10,11 +10,11 @@ interface Props {
 const { title, description, imgSrc, imgAlt, color }: Props = Astro.props;
 ---
 
-<div class="flex flex-col items-center space-y-2 p-4 rounded-3xl text-white justify-between transition-transform duration-200 hover:scale-[1.01]" style={`background-color: ${color};`}>
+<div class="flex flex-col items-center space-y-2 p-4 rounded-3xl text-white justify-between transition-transform duration-200 hover:scale-[1.01] drop-shadow-md" style={`background-color: ${color};`}>
   <div class="flex flex-col items-center text-center space-y-2">
     <h3 class="text-2xl font-bold">{title}</h3>
     <p>{description}</p>
   </div>
-  <img src={imgSrc} alt={imgAlt} class="h-auto w-3/5 sm:w-3/5 object-cover drop-shadow-md" onerror="this.style.display='none'"/>
+  <img src={imgSrc} alt={imgAlt} class="h-auto w-3/5 sm:w-3/5 object-cover" onerror="this.style.display='none'"/>
 </div>
 

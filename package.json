@@ -10,11 +10,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/netlify": "^5.1.2",
-    "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.3.7",
+    "@astrojs/netlify": "^5.5.4",
+    "@astrojs/tailwind": "^5.1.2",
+    "@splidejs/splide": "^4.1.4",
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
+    "astro": "^4.16.16",
     "awesomplete": "^1.1.5",
     "intl-tel-input": "^18.3.3",
+    "swiper": "^11.1.15",
     "tailwindcss": "^3.3.3"
   },
   "devDependencies": {
