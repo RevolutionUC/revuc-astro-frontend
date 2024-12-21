@@ -7,11 +7,13 @@ interface Props {
 const { imgSrc, imgAlt }: Props = Astro.props;
 ---
 
-<img
-  src={imgSrc}
-  alt={imgAlt}
-  class="h-[500px] w-11/12 object-cover pb-8 max-md:h-[300px] md:max-w-3xl"
-  decoding="async"
-  loading="eager"
-  onerror="this.style.display='none'"
-/>
+<div class="overflow-hidden rounded-lg w-11/12 md:max-w-3xl md:h-[450px] h-[300px]">
+  <img
+    src={imgSrc}
+    alt={imgAlt}
+    class="object-cover"
+    decoding="async"
+    loading="eager"
+    onerror="this.style.display='none'"
+  />
+</div>
