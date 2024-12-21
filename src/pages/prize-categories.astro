@@ -8,9 +8,9 @@ import PrizeCategoryCard from "../components/PrizeCategoryCard.astro";
 <HTMLWrapper title="Prize Categories">
   <ResponsiveNav current="prize categories" />
   <main class="mb-24 mt-24 flex w-full flex-col items-center justify-center space-y-8">
-    <!-- <video autoplay src="/general/prize.mp4" class="h-64 pointer-events-none" muted /> -->
+    <img src="/general/prize.gif" alt="Prize Gif" class="h-auto w-64" onerror="this.style.display='none'"/>
 
-    <h1 class="text-4xl font-bold text-theme-dark-blue font-poppins pt-10">Prize Categories</h1>
+    <h1 class="text-4xl font-bold text-theme-dark-blue font-poppins pt-5">Prize Categories</h1>
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-x-8 gap-y-12 p-6 w-5/6 lg:w-11/12">
       <PrizeCategoryCard 
         title="Best Business Plan" 
