@@ -11,11 +11,24 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['Noto Sans', ...defaultTheme.fontFamily.sans],
-				mono: ['"Space Mono"', ...defaultTheme.fontFamily.mono]
+				sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+				mono: ['"Roboto Mono"', ...defaultTheme.fontFamily.mono],
+				exo2: ['"Exo 2"', ...defaultTheme.fontFamily.sans],
+				poppins: ['Poppins', ...defaultTheme.fontFamily.sans],
+				nunito: ['Nunito', ...defaultTheme.fontFamily.sans],
 			},
 			gridTemplateColumns: {
 				'22': 'repeat(22, minmax(0, 1fr))',
+			},
+			colors: {
+				'theme-teal': '#1BAFAF',
+				'theme-dark-blue': '#20385E',
+				'theme-coral': '#E48279',
+				'theme-pastel-green': '#9DD9BD',
+				'theme-cream': '#FDF9F6',
+				'theme-light-teal': '#CAF1F1',
+				'theme-light-coral': '#F8DBD8',
+				'theme-sand': '#F6D5B1'
 			},
 		},
 	},

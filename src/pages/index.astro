@@ -4,6 +4,7 @@ import ResponsiveNav from "../components/ResponsiveNav.astro";
 import Hero from "../components/Hero.astro";
 import Description from "../components/Description.astro";
 import PastHacks from "../components/PastHacks.astro";
+import Gallery from "../components/Gallery.astro";
 import Footer from "../components/Footer.astro";
 
 const siteState = "registration";
@@ -17,8 +18,11 @@ const siteState = "registration";
   <ResponsiveNav current="home" />
   <main>
     <Hero siteState={siteState} />
-    <Description />
-    <PastHacks />
+    <div class="bg-gradient-to-b from-theme-sand to-transparent">
+      <Description />
+      <PastHacks />
+      <Gallery />
+    </div>
   </main>
   <Footer />
 </HTMLWrapper>

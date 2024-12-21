@@ -1,0 +1,16 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    background: string;
+    image: string;
+}
+
+const { title, description, background, image } = Astro.props;
+---
+
+<div class={`${background} py-4 px-5 rounded-3xl shadow-md hover:shadow-xl transition-transform duration-200 hover:scale-[1.01]`}>
+    <img src={image} alt="prize images" class="w-3/4 justify-self-center py-2 drop-shadow-md" />
+    <h2 class="text-theme-dark-blue sm:text-lg text-2xl font-bold">{title}</h2>
+    <p class="italic py-2.5">{description}</p>
+</div>

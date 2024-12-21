@@ -6,64 +6,64 @@ import Footer from "../components/Footer.astro";
 ---
 
 <HTMLWrapper title="Hack Ideas">
-  <ResponsiveNav current="hack-ideas" />
+  <ResponsiveNav current="hack ideas" />
   <main class="mt-24 flex h-full justify-center">
     <div class="mb-8 ml-8 mr-8 w-full lg:w-3/5 xl:w-2/5">
-      <div class="relative">
-        <img
-          src="/images/hack-ideas-1.jpg"
-          alt="hack ideas image"
-          class="w-full opacity-60"
-          decoding="async"
-          loading="eager"
-          onerror="this.style.display='none'"
-        />
+      <img
+        src = "/images/hack-ideas-1.jpg"
+        alt="hack ideas image"
+        class="w-full"
+        decoding="async"
+        loading="eager"
+        onerror="this.style.display='none'"
+      />
 
-        <div class="absolute bottom-0 left-0 p-4 text-black">
-          <h2 class="text-2xl font-bold">Hack Ideas</h2>
-          <p class="text-lg">Don't have a project idea? Use those Hack Ideas to help guide you.</p>
-        </div>
-      </div>
+      <h1 class="text-4xl font-bold font-poppins text-center text-theme-dark-blue mt-20">Hack Ideas</h2>
 
-      <div class="mt-8 grid grid-cols-3 gap-4">
+      <div class="mt-8 mb-20 grid grid-cols-3 gap-6">
         {
           hackIdeas.map((idea, index) => (
             <div>
               <button
                 id={`open-${index}`}
-                class="flex grid h-36 max-w-xs place-items-center items-center justify-center rounded-lg shadow-lg"
-              >
-                <img src={idea.image} alt="hack ideas image" class="w-1/2" decoding="async" loading="eager" onerror="this.style.display='none'"/>
+                class={`flex flex-col h-52 max-sm:col-span-3 justify-between items-center rounded-lg shadow-lg ${index % 2 === 0 ? 'bg-theme-teal' : 'bg-theme-coral'} px-4 py-2`}>
+                <div class="font-poppins text-base text-white">{idea.topic}</div>
 
-                <div class="font-bold text-gray-800">{idea.topic}</div>
+                <img src="/favicon.png" alt="hack ideas image" class="w-2/3" decoding="async" loading="eager" onerror="this.style.display='none'"/>
               </button>
 
               <div
                 id={`modal-${index}`}
                 class="modal fixed inset-0 flex hidden items-center justify-center bg-gray-900 bg-opacity-50"
               >
-                <div class="relative flex grid h-2/3 w-2/3 place-items-center items-center justify-center rounded-lg bg-white shadow-lg">
+                <div class={`relative flex flex-col h-2/3 w-2/3 place-items-center items-center rounded-3xl shadow-lg ${index % 2 === 0 ? 'bg-theme-light-teal' : 'bg-theme-light-coral'}`}>
+                  
                   <div
                     id={`close-${index}`}
-                    class="absolute right-4 top-4 h-16 w-auto cursor-pointer rounded-full p-2 text-2xl hover:text-4xl"
+                    class="absolute right-5 top-5 h-16 w-auto pr-1 cursor-pointer rounded-full text-2xl hover:text-4xl"
                   >
-                    &times;
-                  </div>
-                  <h3 class="my-8 text-2xl font-bold">{idea.topic}</h3>
-                  <div class="grid h-full max-w-xs place-items-center items-center justify-center">
-                    <img
-                      src={idea.image}
-                      alt="hack ideas image"
-                      decoding="async"
-                      loading="eager"
-                      class="h-full w-auto object-cover"
-                      onerror="this.style.display='none'"
-                    />
-                  </div>
+                    &times; {/* Close button */}
+                  </div> 
 
-                  <p class="m-8">{idea.idea}</p>
+                  <h3 class={`py-10 text-2xl font-bold font-poppins ${index % 2 === 0 ? 'text-theme-teal' : 'text-theme-coral'}`}>
+                    {idea.topic}
+                  </h3>
+
+                  <p class="m-4 px-10 text-lg font-light max-md:text-sm">{idea.idea}</p>
+                
+                  {/* Bottom left img */}
+                  <img
+                    src="/sample_image.jpg"
+                    alt="bottom left image"
+                    decoding="async"
+                    loading="eager"
+                    class="absolute bottom-5 left-5 h-16 w-16 object-cover" 
+                    onerror="this.style.display='none'"
+                  />
+
                 </div>
               </div>
+
             </div>
           ))
         }
