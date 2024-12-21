@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-"@astrojs/netlify": "^5.1.2",
+    "@astrojs/netlify": "^5.1.2",
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.3.7",
     "@splidejs/splide": "^4.1.4",
@@ -27,5 +27,8 @@
     "prettier-plugin-astro": "^0.13.0",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "typescript": "^5.3.3"
+  },
+  "resolutions": {
+    "string-width": "4.2.3"
   }
 }
