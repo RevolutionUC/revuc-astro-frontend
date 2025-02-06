@@ -1,119 +1,42 @@
 {
   "scheduleDayOne": [
-    {
-      "time": "10:00 AM",
-      "event": "Check-in Opens",
-      "location": ""
-    },
-    {
-      "time": "10:00 AM",
-      "event": "Sponsor Expo Opens",
-      "location": ""
-    },
+
+
     {
       "time": "11:00 AM",
       "event": "Opening Ceremony",
-      "location": ""
+      "location": "Room 230"
     },
-    {
-      "time": "12:00 PM",
-      "event": "Saturday Lunch",
-      "location": ""
-    },
+
     {
       "time": "12:00 PM",
       "event": "Hacking Begins",
-      "location": ""
+      "location": "2nd floor Common Place"
     },
+
     {
-      "time": "2:00 PM - 2:30 PM",
-      "event": "Workshop 1: Github Copilot by MLH",
-      "location": "Room 210A"
-    },
-    {
-      "time": "3:00 PM - 3:30 PM",
-      "event": "Workshop 2: Design Thinking",
-      "location": "Room 210A"
-    },
-    {
-      "time": "4:00 PM - 4:30 PM",
-      "event": "Workshop 3: Introduction to Tabnine by Tabnine",
-      "location": "Room 210A"
-    },
-    {
-      "time": "5:00 PM - 5:30 PM",
-      "event": "Workshop 4: Soroban by MLH",
-      "location": "Room 210A"
-    },
-    {
-      "time": "6:00 PM",
-      "event": "Dinner",
-      "location": "2nd floor"
-    },
-    {
-      "time": "7:00 PM",
-      "event": "Workshop 5: Throwing out the Rule Book by Nishil",
-      "location": "Room 210A"
-    },
-    {
-      "time": "8:00 PM",
-      "event": "Bob Ross MS Paint",
-      "location": "Room 210A"
-    },
-    {
-      "time": "9:00 PM",
-      "event": "Table Tennis and Basket Ball Showdown",
-      "location": "4th floor"
-    },
-    {
-      "time": "10:00 PM",
-      "event": "LAN Party @Esports Lab",
-      "location": "Esports Lab"
-    },
-    {
-      "time": "11:00 PM",
-      "event": "Nintendo Switch Games",
-      "location": "Esports Lab"
+      "time":"2:00 PM",
+      "event": "Workshops Begin",
+      "location" : "2nd floor"
+
     }
+
+
   ],
   "scheduleDayTwo": [
-    {
-      "time": "12:00 AM",
-      "event": "Midnight Snack: Potbelly Shakes",
-      "location": ""
-    },
-    {
-      "time": "1:00 AM",
-      "event": "Wikipedia Race",
-      "location": "Room 210A"
-    },
-    {
-      "time": "2:00 AM",
-      "event": "Lightning Talks",
-      "location": "4th floor"
-    },
-    {
-      "time": "8:00 AM",
-      "event": "Breakfast",
-      "location": "2nd floor"
-    },
     {
       "time": "12:00 PM",
       "event": "Hacking Ends - Prep for presentation",
       "location": ""
     },
     {
-      "time": "1:00 PM - 2:30 PM",
+      "time": "12:30 PM - 3:00 PM",
       "event": "Judging In Process",
       "location": ""
     },
+
     {
-      "time": "2:30PM",
-      "event": "Sunday Lunch",
-      "location": "2nd floor"
-    },
-    {
-      "time": "3:30 PM",
+      "time": "4:00 PM",
       "event": "Closing Ceremony & Winners announcements",
       "location": "Room 230"
     }
