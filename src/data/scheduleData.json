@@ -1,6 +1,18 @@
 {
   "scheduleDayOne": [
 
+    {
+      "time":"10:00 AM",
+      "event":"Check-in Begins",
+      "location":"First Floor"
+    },
+
+    
+    {
+      "time":"10:00 AM",
+      "event":"Sponsor Expo Beigns",
+      "location":"2nd floor Common Place"
+    },
 
     {
       "time": "11:00 AM",
