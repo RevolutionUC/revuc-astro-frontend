@@ -4,38 +4,55 @@
     {
       "time":"10:00 AM",
       "event":"Check-in Begins",
-      "location":"First Floor"
+      "location":"1st floor"
     },
-
-    
     {
       "time":"10:00 AM",
-      "event":"Sponsor Expo Beigns",
-      "location":"2nd floor Common Place"
+      "event":"Sponsor Expo Begins",
+      "location":"2nd floor"
     },
-
     {
       "time": "11:00 AM",
       "event": "Opening Ceremony",
       "location": "Room 230"
     },
-
+    {
+      "time": "12:00 PM",
+      "event": "Saturday Lunch",
+      "location": "2nd floor"
+    },
     {
       "time": "12:00 PM",
       "event": "Hacking Begins",
-      "location": "2nd floor Common Place"
+      "location": ""
     },
-
     {
       "time":"2:00 PM",
       "event": "Workshops Begin",
-      "location" : "2nd floor"
-
+      "location" : ""
+    },
+    {
+      "time": "6:00 PM",
+      "event": "Dinner",
+      "location": "2nd floor"
     }
-
-
   ],
   "scheduleDayTwo": [
+    {
+      "time": "12:00 AM",
+      "event": "Midnight Snack: Potbelly Shakes",
+      "location": "2nd floor"
+    },
+    {
+      "time": "8:00 AM",
+      "event": "Breakfast",
+      "location": "2nd floor"
+    },
+    {
+      "time": "12:00 PM",
+      "event": "Sunday Lunch",
+      "location": "2nd floor"
+    },
     {
       "time": "12:00 PM",
       "event": "Hacking Ends - Prep for presentation",
@@ -46,9 +63,8 @@
       "event": "Judging In Process",
       "location": ""
     },
-
     {
-      "time": "4:00 PM",
+      "time": "3:30 PM",
       "event": "Closing Ceremony & Winners announcements",
       "location": "Room 230"
     }
