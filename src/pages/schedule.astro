@@ -9,22 +9,16 @@ import shuttleData from "../data/scheduleShuttle.json";
 
 <HTMLWrapper title="Schedule">
   <ResponsiveNav current="schedule" />
-  <main class="mt-24 flex justify-center">
+  <main class="mb-24 mt-24 flex justify-center">
     <div class="flex flex-col items-center justify-center">
-      <img
-        src="/images/schedule.jpg"
-        alt="RevolutionUC's Schedule"
-        class="h-[500px] w-[760px] object-cover pb-8 max-md:h-[300px] max-md:w-11/12"
-        decoding="async"
-        loading="eager"
-      />
-      <h1 class="text-3xl font-bold">Schedule</h1>
-      <ScheduleTable schedule={scheduleData.scheduleDayOne} label="February 24th" />
-      <ScheduleTable schedule={scheduleData.scheduleDayTwo} label="February 25th" />
-      <h1 class="text-3xl font-bold">Shuttle Schedule</h1>
-      <ScheduleTable schedule={shuttleData.scheduleDayOne} label="February 24th" />
-      <ScheduleTable schedule={shuttleData.scheduleDayTwo} label="February 25th" />
-      <p class="pb-8">Register for RevolutionUC to receive updates!</p>
+      <img src="/general/schedule.gif" alt="RevolutionUC's Schedule" class="h-auto w-72 drop-shadow-md" />
+      <h1 class="text-4xl font-bold text-theme-dark-blue font-poppins pt-8 pb-4">Schedule</h1>
+      <ScheduleTable schedule={scheduleData.scheduleDayOne} label="March 1st" background="bg-theme-light-teal"/>
+      <ScheduleTable schedule={scheduleData.scheduleDayTwo} label="March 2nd" background="bg-theme-light-coral"/>
+      <h1 class="text-4xl font-bold text-theme-dark-blue font-poppins pt-8 pb-4">Shuttle Schedule</h1>
+      <ScheduleTable schedule={shuttleData.scheduleDayOne} label="March 1st" background="bg-theme-light-teal"/>
+      <ScheduleTable schedule={shuttleData.scheduleDayTwo} label="March 2nd" background="bg-theme-light-coral"/>
+      <p class="p-4 text-lg text-center font-semibold">Register for RevolutionUC to receive updates!</p>
     </div>
   </main>
   <Footer />

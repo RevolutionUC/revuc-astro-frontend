@@ -5,18 +5,18 @@ interface ScheduleItem {
   location: string;
 }
 
-const { schedule, label } = Astro.props;
+const { schedule, label, background } = Astro.props;
 ---
 
-<div class="m-4 w-[760px] border-2 p-8 shadow-lg max-md:w-11/12">
-  <h2 class="mb-4 text-xl font-bold">{label}</h2>
+<div class=`${background} m-4 w-[768px] rounded-3xl p-8 shadow-lg max-lg:w-11/12`>
+  <h2 class="mb-4 text-xl font-bold text-theme-dark-blue">{label}</h2>
 
   <table class="mb-8 w-full">
     {
       schedule.map((item: ScheduleItem) => (
         <tr class="border-b border-zinc-600">
           <td class="py-2.5 text-left">{item.time}</td>
-          <td class="py-2.5 text-left">{item.event}</td>
+          <td class="py-2.5 px-1 text-left">{item.event}</td>
           <td class="py-2.5 text-right">{item.location}</td>
         </tr>
       ))
