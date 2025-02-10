@@ -16,7 +16,7 @@ const navLinks = {
 ---
 
 <nav id="nav-bar" class="fixed top-0 z-50 w-full transition-colors duration-300">
-  <ul class="flex flex-row justify-center space-x-16 p-6 text-xl text-white max-md:hidden font-exo2">
+  <ul class="flex flex-row justify-center space-x-7 lg:space-x-14 p-6 lg:text-xl text-white max-md:hidden font-exo2">
     {
       /* map over the navLinks object and create a link for each key */
       Object.keys(navLinks).map((key) => {
@@ -45,7 +45,7 @@ const navLinks = {
     <!-- MLH Badge -->
     <a 
       id="mlh-trust-badge" 
-      style="display:block;max-width:100px;min-width:60px;position:fixed;right:50px;top:0;width:10%;z-index:10000" 
+      style="display:block;max-width:100px;min-width:60px;position:fixed;right:35px;top:0;width:10%;z-index:10000" 
       href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=blue" 
       target="_blank"
     >

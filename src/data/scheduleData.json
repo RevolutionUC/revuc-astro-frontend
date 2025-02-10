@@ -2,14 +2,14 @@
   "scheduleDayOne": [
 
     {
-      "time":"10:00 AM",
-      "event":"Check-in Begins",
-      "location":"1st floor"
+      "time": "10:00 AM",
+      "event": "Check-in Begins",
+      "location": "1st floor"
     },
     {
-      "time":"10:00 AM",
-      "event":"Sponsor Expo Begins",
-      "location":"2nd floor"
+      "time": "10:00 AM",
+      "event": "Sponsor Expo Begins",
+      "location": "2nd floor"
     },
     {
       "time": "11:00 AM",
@@ -27,9 +27,9 @@
       "location": ""
     },
     {
-      "time":"2:00 PM",
+      "time": "2:00 PM",
       "event": "Workshops Begin",
-      "location" : ""
+      "location": ""
     },
     {
       "time": "6:00 PM",
