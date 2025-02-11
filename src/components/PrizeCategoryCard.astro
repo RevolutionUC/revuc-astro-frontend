@@ -9,8 +9,8 @@ interface Props {
 const { title, description, customClass, image } = Astro.props;
 ---
 
-<div class={`${customClass} py-4 px-5 rounded-3xl shadow-md transition-transform duration-200 hover:scale-[1.01]`}>
+<div class={`${customClass} py-4 px-4 rounded-3xl shadow-md transition-transform duration-200 hover:scale-[1.01]`}>
     <img src={image} alt="prize images" class="w-3/4 py-2 drop-shadow-md mx-auto" />
     <h2 class="text-theme-dark-blue sm:text-lg text-2xl font-bold">{title}</h2>
-    <p class="italic py-2.5">{description}</p>
+    <p class="italic py-1.5">{description}</p>
 </div>
