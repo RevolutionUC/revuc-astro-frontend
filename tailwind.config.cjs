@@ -23,7 +23,7 @@ module.exports = {
 			colors: {
 				'theme-teal': '#1BAFAF',
 				'theme-dark-blue': '#20385E',
-				'theme-coral': '#E48279',
+				'theme-coral': '#E88E80',
 				'theme-pastel-green': '#9DD9BD',
 				'theme-cream': '#FDF9F6',
 				'theme-light-teal': '#CAF1F1',
