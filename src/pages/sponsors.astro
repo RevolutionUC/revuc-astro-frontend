@@ -6,152 +6,84 @@ import Footer from "../components/Footer.astro";
 
 <HTMLWrapper title="Sponsors">
   <ResponsiveNav current="sponsors" />
-  <div class="mt-24 flex flex-col items-center justify-center">
-    <img
-      src="https://assets.revolutionuc.com/website-images/2023/photos/2x/sponsors.png"
-      alt="RevolutionUC's Schedule"
-      class="h-[500px] w-[760px] object-cover pb-8 max-md:h-[300px] max-md:w-11/12"
-      loading="eager"
-    />
-    <h1 class="text-3xl font-extrabold">Sponsors</h1>
-  </div>
+  <main class="mb-24 mt-24 flex flex-col items-center justify-center">
+    <h1 class="text-4xl font-bold font-poppins text-theme-dark-blue pt-8">Sponsors</h1>
 
-  <section class="mt-4">
-    <div class="sponsor-list flex flex-col flex-wrap items-center justify-center p-8">
-      <!-- TODO:
-                This is fine for now, but I want this to be dynamically rendered
-                Specifically, I want a json file in the /data folder
-                I want you to load the images as well as the corresponding website for sponsors
-                based solely on that json.
-            -->
-      <div class="m-4 flex flex-row flex-wrap items-center justify-center space-x-8">
-        <a href="https://innovation.uc.edu/" target="_blank noopenner">
-          <img
-            class="w-96"
-            src="/sponsors/1819 - Inno District.png"
-            alt="1819 and Cincinnati Innnovation District Logo"
-          />
+    <section class="mt-4">
+      <div class="sponsor-list flex flex-col flex-wrap items-center justify-center p-8">
+        <!-- TODO:
+                  This is fine for now, but I want this to be dynamically rendered
+                  Specifically, I want a json file in the /data folder
+                  I want you to load the images as well as the corresponding website for sponsors
+                  based solely on that json.
+              -->
+        <div class="m-4 flex flex-row flex-wrap items-center justify-center gap-8">
+          <a href="https://innovation.uc.edu/" target="_blank noopenner">
+            <img class="w-40" src="/sponsors/1819-inno-hub.png" alt="1819 and Cincinnati Innnovation District Logo" />
+          </a>
+          <a href="https://www.53.com/content/fifth-third/en.html" target="_blank noopenner">
+            <img class="w-80" src="/sponsors/fifth-third-bank.png" alt="Fifth Third Logo" />
+          </a>
+        </div>
+
+        <div class="m-4 flex flex-row flex-wrap items-center justify-center gap-8">
+          <a href="https://www.medpace.com/" target="_blank noopenner">
+            <img class="w-[26rem]" src="/sponsors/medpace.png" alt="Medpace Logo" />
+          </a>
+        </div>
+
+        <div class="m-4 flex flex-row flex-wrap items-center justify-center gap-8">
+          <a href="https://kinetic-vision.com/" target="_blank noopenner">
+            <img class="w-80" src="/sponsors/kinetic-vision.png" alt="Kinetic Vision Logo" />
+          </a>
+          <a href="https://icr-team.com/" target="_blank noopenner">
+            <img class="w-40" src="/sponsors/icr-inc.png" alt="ICR Logo" />
+          </a>
+        </div>
+
+        <div class="m-4 flex flex-row flex-wrap items-center justify-center gap-8">
+          <a href="https://aws.amazon.com/" target="_blank noopenner">
+            <img class="w-32" src="/sponsors/aws.png" alt="AWS Logo" />
+          </a>
+          <a href="https://rarenetwork.io/" target="_blank noopenner">
+            <img class="w-52" src="/sponsors/rare-network.png" alt="Rare Network Logo" />
+          </a>
+        </div>
+
+        <div class="m-4 flex max-w-5xl flex-row flex-wrap items-center justify-center gap-x-9 gap-y-8">
+          <a href="https://saily.com/" target="_blank noopenner">
+            <img class="w-24" src="/sponsors/saily-black.png" alt="Saily Logo" />
+          </a>
+          <a href="https://nordvpn.com/" target="_blank noopenner">
+            <img class="w-40" src="/sponsors/nordvpn-black.png" alt="NordVPN Logo" />
+          </a>
+          <a href="https://nordpass.com/" target="_blank noopenner">
+            <img class="w-40" src="/sponsors/nordpass.png" alt="NordPass Logo" />
+          </a>
+          <a href="https://incogni.com/" target="_blank noopenner">
+            <img class="w-36" src="/sponsors/incogni.png" alt="Incogni Logo" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div>
+      <h2 class="text-center text-2xl font-semibold font-poppins text-theme-dark-blue pt-4">Organized By</h2>
+      <div class="m-4 flex flex-row flex-wrap items-center justify-center gap-8">
+        <a href="https://mlh.io/" target="_blank">
+          <img class="w-44" src="/sponsors/mlh-logo-color.png" alt="MLH logo" />
         </a>
-        <!-- Without the relative positioning the logo won't level -->
-        <a href="https://business.uc.edu/centers-partnerships/entrepreneurship.html" target="_blank noopenner">
-          <img
-            class="w-96 md:relative md:bottom-4"
-            src="/sponsors/UC Entre.webp"
-            alt="UC Center For Entrepreneurship Logo"
-          />
+        <a href="https://acmatuc.org/" target="_blank">
+          <img class="w-80" src="/sponsors/acmatuc.png" alt="ACM@UC logo" />
         </a>
       </div>
-
-      <div class="m-4 flex flex-row flex-wrap items-center justify-center space-x-8">
-        <a href="https://www.medpace.com/" target="_blank noopenner">
-          <img class="w-[26rem]" src="/sponsors/medpace.png" alt="Medpace Logo" />
-        </a>
-        <a href="https://icr-team.com/" target="_blank noopenner">
-          <img class="w-40" src="/sponsors/icr-inc.png" alt="ICR Logo" />
-        </a>
-      </div>
-
-      <div class="m-4 flex max-w-5xl flex-row flex-wrap items-center justify-center space-x-9 space-y-8">
-        <a href="https://tembo.io/" target="_blank noopenner">
-          <img class="w-64" src="/sponsors/tembo.png" alt="Tembo Logo" />
-        </a>
-        <a href="https://international.uc.edu/" target="_blank noopenner">
-          <img class="w-64" src="/sponsors/UCI & IPALS.png" alt="UCI & IPALs Logo" />
-        </a>
-        <a href="https://tribunal.uc.edu/" target="_blank noopenner">
-          <img class="w-64" src="/sponsors/ceas-tri-whitebg.jpg" alt="CEAS Tribunal Logo" />
-        </a>
-        <a href="https://cech.uc.edu/schools/it.html" target="_blank noopenner">
-          <img class="w-64" src="/sponsors/school-it.png" alt="UC School of IT Logo" />
-        </a>
-        <a href="https://www.uc.edu/about/ucit.html" target="_blank noopenner">
-          <img
-            class="w-40 md:relative md:bottom-4"
-            src="/sponsors/UC_DTS.jpg"
-            alt="UC Digital Technology Solutions Logo"
-          />
-        </a>
-      </div>
-
-      <div class="m-4 flex max-w-5xl flex-row flex-wrap items-center justify-center space-x-9 space-y-8">
-        <a href="https://aws.amazon.com/" target="_blank noopenner">
-          <img class="w-20" src="/sponsors/aws.jpg" alt="AWS Logo" />
-        </a>
-        <a href="https://www.tabnine.com/" target="_blank noopenner">
-          <img class="w-48" src="/sponsors/tabnine.png" alt="Tabnine Logo" />
-        </a>
-        <a href="https://www.cinfin.com/" target="_blank noopenner">
-          <img
-            class="w-40"
-            src="/sponsors/CIC (blue logo).png"
-            class="w-40"
-            src="/sponsors/CIC (blue logo).png"
-            alt="The Cincinnati Insurance Companies Logo"
-          />
-        </a>
-        <a href="https://parkinsonstogether.us/" target="_blank noopenner">
-          <img class="w-36" src="/sponsors/parkinson-together.jpg" alt="Parkinson's Together Logo" />
-        </a>
-        <a href="https://www.enableuc.org/" target="_blank noopenner">
-          <img class="w-24" src="/sponsors/enable.jpg" alt="EnableUC Logo" />
-        </a>
-        <a href="https://www.cincytechusa.com/" target="_blank noopenner">
-          <img class="w-36" src="/sponsors/CincyTech.png" alt="CincyTech Logo" />
-        </a>
-        <a href="https://www.netimpactuc.com/" target="_blank noopenner">
-          <img class="w-40" src="/sponsors/uc-net-impact.png" alt="UC Net Impact Logo" />
-        </a>
-        <a href="https://www.fortifieddata.com/" target="_blank noopenner">
-          <img class="w-48" src="/sponsors/Fortified.png" alt="Fortified Logo" />
-        </a>
-        <a href="https://incogni.com/" target="_blank noopenner">
-          <img class="w-36" src="/sponsors/incogni.png" alt="Incogni Logo" />
-        </a>
-        <a href="https://nordpass.com/" target="_blank noopenner">
-          <img class="w-40" src="/sponsors/nordpass.png" alt="NordPass Logo" />
-        </a>
-        <a href="https://nordvpn.com/" target="_blank noopenner">
-          <img class="w-40" src="/sponsors/NordVPN.png" alt="NordVPN Logo" />
-        </a>
-      </div>
-
-      <div class="m-4 flex max-w-5xl flex-row flex-wrap items-center justify-center space-x-9">
-        <a href="https://www.echo3d.com/" target="_blank noopenner">
-          <img class="w-36" src="/sponsors/echo3D.png" alt="echo3D Logo" />
-        </a>
-        <a href="https://mule.to/p5oe" target="_blank noopenner">
-          <img class="w-48" src="/sponsors/sticker-mule.svg" alt="stickermule Logo" />
-        </a>
-        <a href="https://www.standoutstickers.com/" target="_blank noopenner">
-          <img class="w-28" src="/sponsors/stand-out-sticker.png" alt="Standout Stickers Logo" />
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <div>
-    <h2 class="text-center text-xl font-bold">Organized By</h2>
-    <div class="m-4 flex flex-row flex-wrap items-center justify-center space-x-8">
-      <a href="https://mlh.io/" target="_blank">
-        <img class="w-36" src="/sponsors/mlh-logo-color.png" alt="MLH logo" />
-      </a>
-      <a href="https://acmatuc.org/" target="_blank">
-        <img class="w-64" src="/sponsors/acmatuclogo.png" alt="ACM@UC logo" />
-      </a>
-    </div>
-  </div>
-</HTMLWrapper>
-
-<section>
-  <div class="mb-10 mt-6 flex flex-col items-center justify-center">
-    <p class="m-8">
+    </div>  
+    <p class="pt-10 text-center text-lg w-3/4">
       Interested in sponsoring RevolutionUC? It's a great way to connect with talented and motivated students! Send us
-      an email at
-      <u>
-        <a href="mailto:sponsor@revolutionuc.com" class="text-blue-400"> sponsor@revolutionuc.com </a>
-      </u>
+      an email at 
+      <a href="mailto:sponsor@revolutionuc.com" class="text-theme-coral underline">sponsor@revolutionuc.com</a> 
       for information.
     </p>
-  </div>
-</section>
+  </main>
+</HTMLWrapper>
 <Footer />
