@@ -2,10 +2,14 @@
 import quickLinksData from "../data/quickLinks.json";
 ---
 
-<div class="w-80 border-2 p-3 shadow-lg">
-  <h2 class="text-center text-3xl mb-4 font-bold">Quick Links</h2>
-
-  <table class="w-full">
+<div class="px-12 py-8 shadow-lg rounded-3xl bg-theme-cream bg-opacity-40 border-theme-dark-blue border-2">
+  <div class="relative">
+    <h2 class="text-center text-3xl mb-4 font-poppins font-semibold">
+      <span class="relative z-10">Quick Links</span>
+      <span class="absolute right-5 top-6 h-3 w-[74%] bg-theme-coral"></span>
+    </h2>
+  </div>
+  <table class="w-full border-separate border-spacing-y-1.5">
     {
       quickLinksData.map((quickLink) => (
         <tr>
@@ -13,7 +17,7 @@ import quickLinksData from "../data/quickLinks.json";
             <img class="w-8" src={quickLink.icon} alt={quickLink.name} />
           </td>
           <td>
-            <a class="pl-2 text-blue-500 underline" href={quickLink.link} target="_blank" rel="noopener">
+            <a class="pl-2 text-theme-dark-blue text-lg" href={quickLink.link} target="_blank" rel="noopener">
               {quickLink.text}
             </a>
           </td>
