@@ -3,7 +3,7 @@ import ResponsiveNav from "../components/ResponsiveNav.astro";
 import HTMLWrapper from "../layouts/HTMLWrapper.astro";
 import Footer from "../components/Footer.astro";
 import PrizeCategoryCard from "../components/PrizeCategoryCard.astro";
-import prizesData from "../data/prizesData.json";
+import sponsorPrizes from "../data/sponsorPrizes.json";
 ---
 
 <HTMLWrapper title="Prize Categories">
@@ -49,7 +49,7 @@ import prizesData from "../data/prizesData.json";
     <div class="grid gap-5 sm:gap-10 sm:grid-cols-2 w-5/6 md:max-w-3xl">
       <div>
         {
-          prizesData.slice(4, 7).map((prize) => (
+          sponsorPrizes.slice(0, 3).map((prize) => (
             <details class="my-4 cursor-pointer">
               <summary class="my-2 leading-[16.37px]">{prize.title}</summary>
               <div class="leading-[16.37px]" set:html={prize.description} />
@@ -59,7 +59,7 @@ import prizesData from "../data/prizesData.json";
       </div>
       <div>
         {
-          prizesData.slice(7, 9).map((prize) => (
+          sponsorPrizes.slice(3, 5).map((prize) => (
             <details class="my-4 cursor-pointer">
               <summary class="my-2 leading-[16.37px]">{prize.title}</summary>
               <div class="leading-[16.37px]" set:html={prize.description} />
