@@ -9,8 +9,16 @@ import Footer from "../components/Footer.astro";
 <HTMLWrapper title="About">
   <ResponsiveNav current="about" />
   <main class="mb-24 mt-24 flex w-full flex-col items-center justify-center space-y-8">
-    <HeaderImage imgSrc="/images/about-1.jpg" imgAlt="About" />
-
+    <video 
+      class="rounded-xl w-11/12 max-w-full h-auto md:max-w-3xl" 
+      controls 
+      playsinline
+      poster="/general/revuc-promo-thumbnail.jpg"
+    >
+      <source src="/general/revuc-promo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    
     <section class="flex w-2/3 md:max-w-3xl flex-col items-center justify-center space-y-8">
       <h1 class="font-poppins text-4xl font-bold inline-flex gap-4 pt-6">
         <span class="text-theme-teal">Build.</span>
@@ -89,3 +97,6 @@ import Footer from "../components/Footer.astro";
   </main>
   <Footer />
 </HTMLWrapper>
+
+
+
