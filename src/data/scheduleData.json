@@ -45,14 +45,14 @@
       "time": "6:00 PM",
       "event": "Dinner",
       "location": "2nd floor"
+    },
+    {
+      "time": "10:00 PM",
+      "event": "Snack: Potbelly Shakes",
+      "location": "2nd floor"
     }
   ],
   "scheduleDayTwo": [
-    {
-      "time": "12:00 AM",
-      "event": "Midnight Snack: Potbelly Shakes",
-      "location": "2nd floor"
-    },
     {
       "time": "8:00 AM",
       "event": "Breakfast",
