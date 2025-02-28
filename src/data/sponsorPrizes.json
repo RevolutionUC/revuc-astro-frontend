@@ -5,10 +5,10 @@
     },
     {
       "title": "Kinetic Vision - API Integration",
-      "description": "Build a web application that plugs into existing APIs from one-or-more external tools to create a novel user experience!"
+      "description": "Build a web application that plugs into existing APIs from one-or-more external tools to create a novel user experience! View full challenge information <a href='https://drive.google.com/file/d/1U2libcbLEHqgkmzrptAgSlU163QhHyIQ/view?usp=sharing' target='_blank' class='text-theme-teal underline'>here</a>!"
     },
     {
-      "title": "Rare",
+      "title": "Rare EVO",
       "description": "<p class='pb-2'>Build a <a href='https://docs.farcaster.xyz/developers/frames/v2/' target='_blank' class='text-theme-teal underline'>Farcaster Frame</a> that could be utilized by our NFT tickets for <a href='https://rareevo.io/about-rare-evo' target='_blank' class='text-theme-teal underline'>Rare Evo 2025</a>, which are built on Base.</p><p class='pb-2'>Example: A Frame that allows for NFT tickets to be registered (asking for the user to put information like name/email/company name) and then claimed, updating the metadata indicating that it goes from unclaimed to claimed status, while generating a unique QR code for check in at the ticketed event.</p><p class='pb-2'>Here are our NFT tickets, but they could use any NFT to create a beta/test app.</p><a href='https://rareevo.io/rareperks' target='_blank' class='text-theme-teal underline'>https://rareevo.io/rareperks</a>"
     },
     {
