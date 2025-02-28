@@ -32,14 +32,14 @@
       "location": ""
     },
     {
-      "time": "2:00 PM",
-      "event": "Workshop: Ride the API Wave (Kinetic Vision)",
-      "location": "Room 220"
-    },
-    {
       "time": "2:00 PM - 4:00 PM",
       "event": "Ukulele Lessons",
       "location": "TBD"
+    },
+    {
+      "time": "2:00 PM",
+      "event": "Workshop: Ride the API Wave (Kinetic Vision)",
+      "location": "Room 220"
     },
     {
       "time": "3:00 PM",
@@ -58,7 +58,7 @@
     },
     {
       "time": "7:00 PM",
-      "event": "Workshop: Borders can’t stop builders: Starting a startup as international students (Nishil Faldu - 7 West)",
+      "event": "Workshop: Starting a startup as international students (7 West)",
       "location": "Room 220"
     },
     {

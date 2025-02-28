@@ -16,7 +16,7 @@ const { schedule, label, background } = Astro.props;
       schedule.map((item: ScheduleItem) => (
         <tr class="border-b border-zinc-600">
           <td class="py-2.5 text-left">{item.time}</td>
-          <td class="py-2.5 px-1 text-left">{item.event}</td>
+          <td class="py-2.5 px-1.5 text-left">{item.event}</td>
           <td class="py-2.5 text-right">{item.location}</td>
         </tr>
       ))
