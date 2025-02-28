@@ -45,14 +45,14 @@ import sponsorPrizes from "../data/sponsorPrizes.json";
     />
     </div>
     <!-- <p class="text-center p-4 text-xl font-semibold">More information about the sponsored prize categories will be announced shortly before the event.</p> -->
-      <h2 class="font-poppins text-xl font-bold text-theme-teal mt-5">Sponsor Prizes</h2>
-    <div class="grid gap-5 sm:gap-10 sm:grid-cols-2 w-5/6 md:max-w-3xl">
+    <h2 class="text-3xl font-semibold text-theme-dark-blue pt-14 text-start font-poppins">Sponsor Prizes</h2>
+    <div class="grid sm:gap-20 sm:grid-cols-2 w-5/6 xl:w-2/3 px-6 pt-4">
       <div>
         {
           sponsorPrizes.slice(0, 3).map((prize) => (
-            <details class="my-4 cursor-pointer">
-              <summary class="my-2 leading-[16.37px]">{prize.title}</summary>
-              <div class="leading-[16.37px]" set:html={prize.description} />
+            <details class="mb-4 cursor-pointer">
+              <summary class="mb-2 leading-5 text-lg">{prize.title}</summary>
+              <div class="leading-4" set:html={prize.description} />
             </details>
           ))
         }
@@ -60,9 +60,9 @@ import sponsorPrizes from "../data/sponsorPrizes.json";
       <div>
         {
           sponsorPrizes.slice(3, 5).map((prize) => (
-            <details class="my-4 cursor-pointer">
-              <summary class="my-2 leading-[16.37px]">{prize.title}</summary>
-              <div class="leading-[16.37px]" set:html={prize.description} />
+            <details class="mb-4 cursor-pointer">
+              <summary class="mb-2 leading-5 text-lg">{prize.title}</summary>
+              <div class="leading-4" set:html={prize.description} />
             </details>
           ))
         }
