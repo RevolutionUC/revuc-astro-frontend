@@ -34,7 +34,7 @@
     {
       "time": "2:00 PM",
       "event": "Workshop: Ride the API Wave (Kinetic Vision)",
-      "location": "TBD"
+      "location": "Room 220"
     },
     {
       "time": "2:00 PM - 4:00 PM",
@@ -42,9 +42,24 @@
       "location": "TBD"
     },
     {
+      "time": "3:00 PM",
+      "event": "Workshop: MLH Copilot",
+      "location": "Room 220"
+    },
+    {
+      "time": "5:00 PM",
+      "event": "Workshop: MLH Figma",
+      "location": "Room 220"
+    },
+    {
       "time": "6:00 PM",
       "event": "Dinner",
       "location": "2nd floor"
+    },
+    {
+      "time": "7:00 PM",
+      "event": "Workshop: Borders can’t stop builders: Starting a startup as international students (Nishil Faldu - 7 West)",
+      "location": "Room 220"
     },
     {
       "time": "10:00 PM",
