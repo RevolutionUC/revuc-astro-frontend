@@ -3,6 +3,7 @@ import ResponsiveNav from "../components/ResponsiveNav.astro";
 import HTMLWrapper from "../layouts/HTMLWrapper.astro";
 import Footer from "../components/Footer.astro";
 import PrizeCategoryCard from "../components/PrizeCategoryCard.astro";
+import sponsorPrizes from "../data/sponsorPrizes.json";
 ---
 
 <HTMLWrapper title="Prize Categories">
@@ -43,7 +44,30 @@ import PrizeCategoryCard from "../components/PrizeCategoryCard.astro";
         image="/general/prize-categories/most-useless.png"
     />
     </div>
-    <p class="text-center p-4 text-xl font-semibold">More information about the sponsored prize categories will be announced shortly before the event.</p>
+    <!-- <p class="text-center p-4 text-xl font-semibold">More information about the sponsored prize categories will be announced shortly before the event.</p> -->
+    <h2 class="text-3xl font-semibold text-theme-dark-blue pt-14 text-start font-poppins">Sponsor Prizes</h2>
+    <div class="grid sm:gap-24 sm:grid-cols-2 w-5/6 xl:w-3/4 px-6 pt-4">
+      <div>
+        {
+          sponsorPrizes.slice(0, 4).map((prize) => (
+            <details class="mb-4 cursor-pointer">
+              <summary class="mb-2 leading-5 text-lg">{prize.title}</summary>
+              <div class="leading-4" set:html={prize.description} />
+            </details>
+          ))
+        }
+      </div>
+      <div>
+        {
+          sponsorPrizes.slice(4, 7).map((prize) => (
+            <details class="mb-4 cursor-pointer">
+              <summary class="mb-2 leading-5 text-lg">{prize.title}</summary>
+              <div class="leading-4" set:html={prize.description} />
+            </details>
+          ))
+        }
+      </div>
+    </div>
   </main>
 </HTMLWrapper>
 <Footer />
