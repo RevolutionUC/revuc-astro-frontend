@@ -29,6 +29,7 @@ export const POST: APIRoute = async ({ request }) => {
     hackathons: parseInt(data.get("hackathons") as string),
     shirtSize: data.get("shirtSize") as string,
     githubUsername: data.get("githubUsername") as string,
+    linkedInURL: data.get("linkedInURL") as string,
     age: parseInt(data.get("age") as string),
     acceptedWaiver: acceptedWaiverBool,
     researchConsent: (data.get("researchConsent") === "on") as boolean,
