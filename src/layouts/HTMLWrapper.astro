@@ -21,83 +21,11 @@ import "/src/styles/global.css";
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.7/awesomplete.css" integrity="sha512-GEMEzu9K8wXXaW527IHfGIOaTQ0hXxZPJXZOwGDIO+nrR9Z0ttJih1ZehiEoWY8xPtqzzD7pxAEnQInTZwn3MQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>{title}</title>
-    <script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script is:inline src="/scripts/mgGlitch.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.css"
-      integrity="sha512-JcmylNmvdZJ8UcYcSDFWhvE6DwI8bKcnPKvBlwU2w/aRJ6qiZErv1Ixq99ykZgy3cCSp+QJp9su5buNLQjytng=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.js"
-      integrity="sha512-t3zV/oAkSZUrvb/7p1q1+uh/i56JinQ+bmiulnHhbHZc7dq09CxJ1BByyi7A4+lF76+CcJtSVFtb7na7Oe7Cgg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.3.3/css/intlTelInput.css"
-      integrity="sha512-0MvDK6EKxNTNdRSbB3hF2+1kLkJgC9yHVDf//8hPfEI2cDfy/Mezjw9BsSyA61uX2Vkk9iDOJAHoBToust2lsw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.3.3/js/intlTelInput.min.js"
-      integrity="sha512-HoBrREvUEj0mAjZNIMKua+9AKiZgtISopFgQlpnGxZIqSaJIxJPHBVAu2DCk7aCpzHcVappgoZalXr9V8RR7Vg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"></script>
   </head>
   <body>
     <slot />
-    <script defer>
-      $("#landscape-grid").mgGlitch({
-        // set 'true' to stop the plugin
-        destroy: false,
-
-        // set 'false' to stop glitching
-        glitch: true,
-
-        // set 'false' to stop scaling
-        scale: false,
-
-        // set 'false' to stop glitch blending
-        blend: false,
-
-        // CSS blend-mode property
-        // normal
-        // multiply
-        // screen
-        // overlay
-        // darken
-        // lighten
-        // color-dodge
-        // color-burn
-        // difference
-        // exclusion
-        // hue
-        // saturation
-        // color
-        // luminosity
-        blendModeType: "overlay",
-
-        // set min time for glitch 1 elem
-        glitch1TimeMin: 600,
-
-        // set max time for glitch 1 elem
-        glitch1TimeMax: 900,
-
-        // set min time for glitch 2 elem
-        glitch2TimeMin: 400,
-
-        // set max time for glitch 2 elem
-        glitch2TimeMax: 600,
-
-        // z-index
-        zIndexStart: 5,
-      });
-    </script>
   </body>
 </html>
