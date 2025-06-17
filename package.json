@@ -10,23 +10,24 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/netlify": "^5.1.2",
-    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/netlify": "^6.3.4",
+    "@astrojs/tailwind": "^6.0.2",
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
-    "astro": "^5.4.0",
-    "awesomplete": "^1.1.5",
-    "intl-tel-input": "^18.3.3",
-    "swiper": "^11.1.15",
-    "tailwindcss": "^3.3.3"
+    "astro": "^5.9.3",
+    "awesomplete": "^1.1.7",
+    "intl-tel-input": "^25.3.1",
+    "swiper": "^11.2.8",
+    "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
-    "@types/awesomplete": "^1.1.15",
+    "@astrojs/ts-plugin": "^1.10.4",
+    "@types/awesomplete": "^1.1.16",
     "@types/intl-tel-input": "^18.1.4",
-    "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0",
-    "prettier-plugin-tailwindcss": "^0.5.11",
-    "typescript": "^5.3.3"
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.12",
+    "typescript": "^5.8.3"
   },
   "resolutions": {
     "string-width": "4.2.3"
