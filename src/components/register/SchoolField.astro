@@ -25,9 +25,6 @@ import schools from "../../data/register/schools.json";
       <datalist class="w-full" id="school-list">
           {schools.map(school => <option>{school}</option>)}
       </datalist>
-      <div id="school-dropdown-btn" class="flex cursor-pointer pl-4 pr-1 text-sm text-[#9ca3af]">
-        <span class="self-center justify-self-center">&#9013;</span>
-      </div>
     </div>
 
     <div class="pt-2">
@@ -43,20 +40,8 @@ import schools from "../../data/register/schools.json";
   const schoolComplete = new Awesomplete(document.querySelector("#school-input")!, {
     list: "#school-list",
     minChars: 5,
-    maxItems: 1000000,
+    maxItems: 100,
     sort: false
-  });
-
-  document.querySelector("#school-dropdown-btn")!.addEventListener("click", function () {
-    if (schoolComplete.ul.childNodes.length === 0) {
-      // @ts-expect-error: The type def is not caught up with AwesomeComplete implementation
-      schoolComplete.minChars = 0;
-      schoolComplete.evaluate();
-    } else if (schoolComplete.ul.hasAttribute("hidden")) {
-      schoolComplete.open();
-    } else {
-      schoolComplete.close();
-    }
   });
 
   const schoolOtherCheckbox = document.querySelector<HTMLInputElement>("#school-other-checkbox")!;
