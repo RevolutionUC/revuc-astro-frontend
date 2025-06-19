@@ -1,5 +1,5 @@
 ---
-
+import schools from "../../data/register/schools.json";
 ---
 
 <div>
@@ -7,7 +7,8 @@
 
   <div class="pt-2">
     <input
-      class="input--school-other hidden w-full rounded-xl border border-gray-500 p-3 placeholder-gray-400"
+      id="school-other-input"
+      class="hidden w-full rounded-xl border border-gray-500 p-3 placeholder-gray-400"
       type="text"
       placeholder="Enter your school"
     />
@@ -16,63 +17,55 @@
       <input
         class="remove-calendar-dropdown w-full rounded-xl p-3 outline-none"
         name="school"
-        id="school"
+        id="school-input"
         list="school-list"
         placeholder="Search your school"
         required
       />
-      <datalist class="w-full" id="school-list"></datalist>
+      <datalist class="w-full" id="school-list">
+          {schools.map(school => <option>{school}</option>)}
+      </datalist>
       <div id="school-dropdown-btn" class="flex cursor-pointer pl-4 pr-1 text-sm text-[#9ca3af]">
         <span class="self-center justify-self-center">&#9013;</span>
       </div>
     </div>
 
     <div class="pt-2">
-      <input name="schoolOther" id="schoolOther" type="checkbox" class="button" />
-      <label for="schoolOther"><small>I can't find my school</small></label>
+      <input name="schoolOther" id="school-other-checkbox" type="checkbox" class="button" />
+      <label for="school-other-checkbox"><small>I can't find my school</small></label>
     </div>
   </div>
 </div>
 
-<script defer>
-  const schools$ = fetch("https://raw.githubusercontent.com/MLH/mlh-policies/master/schools.csv");
-  schools$
-    .then((response) => response.text())
-    .then((schools) => {
-      let arraySchools = schools.split("\n");
-      arraySchools.shift();
-      for (school of arraySchools) {
-        let newOption = document.createElement("option");
+<script>
+  import Awesomplete from "awesomplete";
 
-        newOption.value = school;
-        newOption.innerText = school;
-        if (school == "The University of Cincinnati") newOption.setAttribute("selected", "");
-        document.querySelector("datalist#school-list").append(newOption);
-      }
-      var schoolComplete = new Awesomplete(document.getElementById("school"), {
-        list: "#school-list",
-        minChars: 0,
-        maxItems: 1000000,
-      });
-      Awesomplete.$("#school-dropdown-btn").addEventListener("click", function () {
-        if (schoolComplete.ul.childNodes.length === 0) {
-          schoolComplete.minChars = 0;
-          schoolComplete.evaluate();
-        } else if (schoolComplete.ul.hasAttribute("hidden")) {
-          schoolComplete.open();
-        } else {
-          schoolComplete.close();
-        }
-      });
-    });
+  const schoolComplete = new Awesomplete(document.querySelector("#school-input")!, {
+    list: "#school-list",
+    minChars: 5,
+    maxItems: 1000000,
+    sort: false
+  });
 
-  const schoolOtherButton = document.getElementById("schoolOther");
-  const searchSchoolContainer = document.getElementById("searchSchoolContainer");
-  const schoolNormalInput = document.getElementById("school");
-  const schoolOtherInput = document.getElementsByClassName("input--school-other")[0];
+  document.querySelector("#school-dropdown-btn")!.addEventListener("click", function () {
+    if (schoolComplete.ul.childNodes.length === 0) {
+      // @ts-expect-error: The type def is not caught up with AwesomeComplete implementation
+      schoolComplete.minChars = 0;
+      schoolComplete.evaluate();
+    } else if (schoolComplete.ul.hasAttribute("hidden")) {
+      schoolComplete.open();
+    } else {
+      schoolComplete.close();
+    }
+  });
 
-  schoolOtherButton.addEventListener("change", function () {
-    if (schoolOtherButton.checked) {
+  const schoolOtherCheckbox = document.querySelector<HTMLInputElement>("#school-other-checkbox")!;
+  const searchSchoolContainer = document.querySelector<HTMLDivElement>("#searchSchoolContainer")!;
+  const schoolNormalInput = document.querySelector<HTMLInputElement>("#school-input")!;
+  const schoolOtherInput = document.querySelector<HTMLInputElement>("#school-other-input")!;
+
+  schoolOtherCheckbox.addEventListener("change", function () {
+    if (schoolOtherCheckbox.checked) {
       searchSchoolContainer.classList.add("hidden");
       // Remove the `required` field from the normal input, since it is hidden away
       schoolNormalInput.required = false;
