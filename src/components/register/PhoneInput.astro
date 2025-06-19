@@ -37,9 +37,10 @@ import 'intl-tel-input/build/css/intlTelInput.css'
   import intlTelInput from 'intl-tel-input';
 
   const input = document.querySelector<HTMLInputElement>("#phoneNumber")!;
-  intlTelInput(input, {
+  const iti = intlTelInput(input, {
     initialCountry: "US",
     loadUtils: () => import("intl-tel-input/utils"),
   });
+  window.iti = iti
 </script>
 
