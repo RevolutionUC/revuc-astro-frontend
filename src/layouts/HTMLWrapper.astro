@@ -25,7 +25,9 @@ import "/src/styles/global.css";
 
     <title>{title}</title>
   </head>
-  <body>
-    <slot />
+  <body class="min-h-screen flex flex-col">
+    <main class="flex-grow">
+      <slot />
+    </main>
   </body>
 </html>
