@@ -28,6 +28,7 @@ import CountryField from "../../components/register/CountryField.astro";
 //   hackathons: number;
 //   shirtSize: string;
 //   githubUsername?: string;
+//   linkedinURL?: string;
 //   dateOfBirth: string;
 //   acceptedWaiver: boolean;
 //   allergens: string[];
@@ -110,7 +111,9 @@ import CountryField from "../../components/register/CountryField.astro";
           <!-- github -->
           <TextField label="GitHub" type="text" placeholder="GitHub Username" name="githubUsername" required={false} />
 
-          <div class="col-span-2">
+          
+
+          <div class="col-span-1">
             <DropDownField
               label="Shirt Size*"
               name="shirtSize"
@@ -119,6 +122,9 @@ import CountryField from "../../components/register/CountryField.astro";
               required={true}
             />
           </div>
+
+          <!-- linkedin -->
+           <TextField label="LinkedIn" type="url" placeholder="LinkedIn Profile" name="linkedInURL" required={false} />
 
           <!-- resume -->
           <div class="col-span-2">
