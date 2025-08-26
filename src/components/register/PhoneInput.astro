@@ -1,5 +1,5 @@
 ---
-
+import 'intl-tel-input/build/css/intlTelInput.css'
 ---
 
 <div class="relative">
@@ -24,15 +24,23 @@
   </div>
 </div>
 
-<script>
-  const input = document.querySelector("#phoneNumber");
-  if (input) {
-    import("intl-tel-input").then(({ default: intlTelInput }) => {
-      const iti = intlTelInput(input, {
-        initialCountry: "US",
-        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.3.3/js/utils.js",
-      });
-      window.iti = iti;
-    });
+<style is:global>
+  .iti {
+    --iti-path-flags-1x: url('intl-tel-input/build/img/flags.png');
+    --iti-path-flags-2x: url('intl-tel-input/build/img/flags@2x.png');
+    --iti-path-globe-1x: url('intl-tel-input/build/img/globe.webp');
+    --iti-path-globe-2x: url('intl-tel-input/build/img/globe@2x.webp');
   }
+</style>
+
+<script>
+  import intlTelInput from 'intl-tel-input';
+
+  const input = document.querySelector<HTMLInputElement>("#phoneNumber")!;
+  const iti = intlTelInput(input, {
+    initialCountry: "US",
+    loadUtils: () => import("intl-tel-input/utils"),
+  });
+  window.iti = iti
 </script>
+

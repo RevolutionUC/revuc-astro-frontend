@@ -6,7 +6,7 @@ interface Props {
 const { siteState } = Astro.props; // for updating content depending on the stage of the hackathon
 
 const heading = "RevolutionUC";
-const date = "Coming in February 2026";
+const date = "Coming in March 2026";
 const liveCountdownSubheading = "Hacking ends in:";
 const subheading = siteState !== "live.countdown" ? date : liveCountdownSubheading;
 const ctaTextBySiteState: Record<typeof siteState, string> = {
@@ -19,13 +19,13 @@ const ctaText = ctaTextBySiteState[siteState];
 ---
 
 <div id="hero" class="flex flex-col min-h-screen justify-center items-center space-y-2">
-    <img class="mt-12 w-56 justify-self-start" id="logo" src="/favicon.png" alt="RevolutionUC 2025 logo" />
+            <img class="mt-12 w-56 justify-self-start" id="logo" src="/favicon.png" alt="RevolutionUC 2026 logo" />
     <h2 class="text-theme-dark-blue font-exo2 font-bold text-5xl md:text-8xl">{heading}</h2>
     <h3 class="text-theme-dark-blue font-exo2 font-semibold text-3xl md:text-6xl pb-10">{subheading}</h3>
     <a
         id="register-button"
         class="px-10 py-2 font-poppins font-bold text-2xl md:text-3xl uppercase rounded-full text-theme-dark-blue bg-white bg-opacity-50 border-theme-dark-blue border-2 transition-transform transform hover:scale-[1.03] active:scale-[0.99] hover:bg-theme-dark-blue hover:text-white"
-        href={siteState === "registration" ? "/registration" : siteState === "live" ? "/live" : siteState === "post-registration" ? "https://revolutionuc-2025.devpost.com/project-gallery" : "#"}
+        href={siteState === "registration" ? "/registration" : siteState === "live" ? "/live" : siteState === "post-registration" ? "https://revolutionuc-2026.devpost.com/project-gallery" : "#"}
         target={siteState === "post-registration" ? "_blank" : undefined}
         >
         <span>{ctaText}</span>
@@ -66,13 +66,13 @@ const ctaText = ctaTextBySiteState[siteState];
             }
         }, 1000);
     }
-    // if siteState is live.countdown, start countdown until march 2nd 2025 12pm EST -5
+    // if siteState is live.countdown, start countdown until march 2nd 2026 12pm EST -5
     if (siteState === "live.countdown") {
         const countdown = document.querySelector("#register-button");
 
         const interval = setInterval(() => {
             const now = new Date();
-            const revolution = new Date("2025-03-02T12:00:00-05:00");
+            const revolution = new Date("2026-03-02T12:00:00-05:00");
             const diff = revolution - now;
             // make sure the countdown always has two digits
             const hours = `${Math.floor(diff / (1000 * 60 * 60))}`.padStart(2, "0");
