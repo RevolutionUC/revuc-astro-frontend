@@ -9,25 +9,26 @@ const confirm = Astro.url.searchParams.get("confirm");
 
 <HTMLWrapper title="Attendance">
   <ResponsiveNav current="Attendance" />
-  <main
+  <div
+    id="confirm-container"
     class="mt-24 flex h-[60vh] w-full flex-col items-center justify-center space-y-8"
     data-confirm={confirm}
     data-id={id}
   >
-    <h1 class="text-6xl"></h1>
+    <h1 class="text-6xl" id="confirm-heading"></h1>
     <div class="text-lg" id="textValue"></div>
-  </main>
+  </div>
   <Footer />
 </HTMLWrapper>
 
 <script>
-  const confirm = document.getElementsByTagName("main")[0].dataset.confirm;
-  const id = document.getElementsByTagName("main")[0].dataset.id;
+  const confirm = document.getElementById('confirm-container')!.dataset.confirm;
+  const id = document.getElementById('confirm-container')!.dataset.id;
 
-  const h1 = document.getElementsByTagName("h1")[0];
+  const h1 = document.getElementById("confirm-heading");
   const content = document.getElementById("textValue");
 
-  if (confirm && id && content) {
+  if (confirm && id && content && h1) {
     document.title = "Please wait...";
     h1.textContent = "Please wait...";
     content.textContent = "";

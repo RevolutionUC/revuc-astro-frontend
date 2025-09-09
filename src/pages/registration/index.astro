@@ -42,9 +42,7 @@ import CountryField from "../../components/register/CountryField.astro";
     <div class="flex w-[760px] flex-col max-md:w-11/12">
       <div id="notification" class="invisible rounded-md p-2 md:p-4"></div>
       <h1 class="py-8 text-4xl font-bold">Register</h1>
-      <p class="text-theme-dark-blue font-exo2 font-semibold text-lg md:text-xl pb-20">We are working on some technical difficulties. We will return soon. Thanks for your patience!</p>
 
-      {/* 
       <div class="pb-20">
         <form class="grid grid-cols-2 gap-4 gap-y-8" method="POST" enctype="multipart/form-data" id="registrationForm">
           <!-- firstName -->
@@ -137,12 +135,12 @@ import CountryField from "../../components/register/CountryField.astro";
             </div>
           </div>
 
-          <div class="col-span-2">
+          <!-- <div class="col-span-2">
             <label for="researchConsent">
               <input name="researchConsent" type="checkbox" id="researchConsent" required={false} />
               I agree to allow my resume to be used for research purposes.
             </label>
-          </div>
+          </div> -->
 
           <!-- hackathons -->
           <div class="col-span-2">
@@ -258,12 +256,11 @@ import CountryField from "../../components/register/CountryField.astro";
             ><sup id="agree-4">4 </sup>I authorize MLH to send me occasional emails about relevant events, career opportunities, and community announcements.</small
           >
         </p>
-      </section>*/}
-      
+      </section>
     </div>
   </main>
+  <Footer />
 </HTMLWrapper>
-<Footer />
 
 <script>
   const emailField = document.getElementById("email") as HTMLInputElement | null;
