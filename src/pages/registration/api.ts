@@ -32,7 +32,7 @@ export const POST: APIRoute = async ({ request }) => {
     linkedInURL: data.get("linkedInURL") as string,
     age: parseInt(data.get("age") as string),
     acceptedWaiver: acceptedWaiverBool,
-    researchConsent: (data.get("researchConsent") === "on") as boolean,
+    researchConsent: false,
     allergens: /* data.getAll("allergens") as string[] */ [],
     otherAllergens: /* data.get("otherAllergens") as string */ "",
   };
@@ -56,7 +56,7 @@ export const POST: APIRoute = async ({ request }) => {
   let form = new FormData();
   const resumeFile = data.get("resume") as File;
   if (resumeFile) {
-    form.append("researchConsent", data.get("researchConsent") as string);
+    form.append("researchConsent", "false");
     form.append("resume", resumeFile);
 
     const submitResumeResponse = await fetch(`${import.meta.env.PUBLIC_API}/api/uploadResume/${uploadKey}`, {
