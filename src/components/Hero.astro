@@ -6,7 +6,7 @@ interface Props {
 const { siteState } = Astro.props; // for updating content depending on the stage of the hackathon
 
 const heading = "RevolutionUC";
-const date = "Coming in March 2026";
+const date = "March 28-29";
 const liveCountdownSubheading = "Hacking ends in:";
 const subheading = siteState !== "live.countdown" ? date : liveCountdownSubheading;
 const ctaTextBySiteState: Record<typeof siteState, string> = {
