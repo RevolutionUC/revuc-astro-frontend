@@ -11,11 +11,10 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['Nunito', ...defaultTheme.fontFamily.sans],
-				mono: ['"Roboto Mono"', ...defaultTheme.fontFamily.mono],
-				exo2: ['"Exo 2"', ...defaultTheme.fontFamily.sans],
-				poppins: ['Poppins', ...defaultTheme.fontFamily.sans],
-				nunito: ['Nunito', ...defaultTheme.fontFamily.sans],
+				sans: ['Poppins', ...defaultTheme.fontFamily.sans],
+				larken: ['"Larken"', ...defaultTheme.fontFamily.sans],
+				open: ['"Open Sans"', ...defaultTheme.fontFamily.sans],
+				fira: ['"Fira Code"', ...defaultTheme.fontFamily.mono],
 			},
 			gridTemplateColumns: {
 				'22': 'repeat(22, minmax(0, 1fr))',
@@ -29,7 +28,18 @@ module.exports = {
 				'theme-cream': '#FDF9F6',
 				'theme-light-teal': '#CAF1F1',
 				'theme-light-coral': '#F8DBD8',
-				'theme-sand': '#F6D5B1'
+				'theme-sand': '#F6D5B1',
+				'brand-bg': '#1B1B1B',
+				'accent-lime': '#d1ff48',
+				'offwhite': '#eef8ce',
+				
+				//New theme colors
+				'theme-red': '#DF4242',
+				'theme-navy': '#2F485D',
+				'theme-yellow': '#FFBF3E',
+				'theme-orange': '#E9732A',
+				'theme-white': '#FFECBD',
+				'theme-blue': '#84CAED',
 			},
 		},
 	},
