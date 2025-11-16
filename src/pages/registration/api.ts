@@ -14,6 +14,12 @@ export const POST: APIRoute = async ({ request }) => {
     return new Response(JSON.stringify({ message: "Please select at least one ethnicity" }), { status: 400 });
   }
 
+  // Age validation - must be 18 or above
+  const age = parseInt(data.get("age") as string);
+  if (isNaN(age) || age < 18) {
+    return new Response(JSON.stringify({ message: "You must be 18 years or older to register" }), { status: 400 });
+  }
+
   const jsonData = {
     firstName: data.get("firstName") as string,
     lastName: data.get("lastName") as string,
@@ -30,7 +36,7 @@ export const POST: APIRoute = async ({ request }) => {
     shirtSize: data.get("shirtSize") as string,
     githubUsername: data.get("githubUsername") as string,
     linkedInURL: data.get("linkedInURL") as string,
-    age: parseInt(data.get("age") as string),
+    age: age,
     acceptedWaiver: acceptedWaiverBool,
     researchConsent: false,
     allergens: /* data.getAll("allergens") as string[] */ [],
