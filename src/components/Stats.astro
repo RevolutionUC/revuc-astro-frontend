@@ -1,0 +1,43 @@
+---
+const stats = [
+    { id: "count-hours", target: 24, suffix: "", label: "hours" },
+    { id: "count-participants", target: 300, suffix: "+", label: "participants" },
+    { id: "count-projects", target: 60, suffix: "+", label: "projects" },
+    { id: "count-registrants", target: 870, suffix: "+", label: "registrants" },
+];
+---
+<section class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 space-x-0 md:space-x-20 xl:space-x-40 pt-20">
+    {stats.map(({ id, target, suffix, label }) => (
+        <div class="flex flex-col items-center">
+            <h2
+                data-count
+                id={id}
+                data-target={target}
+                data-suffix={suffix}
+                class="text-3xl sm:text-4xl font-bold text-theme-dark-blue font-poppins"
+            >
+                0
+            </h2>
+            <p class="mt-1 sm:mt-2 text-xl sm:text-2xl text-theme-dark-blue font-poppins">{label}</p>
+        </div>
+    ))}
+</section>
+
+<script>
+    import { CountUp } from "countup.js";
+
+    const counters = document.querySelectorAll("[data-count]");
+
+    counters.forEach(el => {
+        const element = el as HTMLElement;
+
+        const target = Number(element.dataset.target);
+        const suffix = element.dataset.suffix || "";
+
+        new CountUp(element, target, {
+            suffix,
+            enableScrollSpy: true,
+            scrollSpyOnce: true,
+        });
+    });
+</script>
