@@ -6,6 +6,7 @@ import Description from "../components/Description.astro";
 import PastHacks from "../components/PastHacks.astro";
 import Gallery from "../components/Gallery.astro";
 import Footer from "../components/Footer.astro";
+import Stats from "../components/Stats.astro";
 
 const siteState = "registration";
 
@@ -19,6 +20,7 @@ const siteState = "registration";
   <main>
     <Hero siteState={siteState} />
     <div class="bg-gradient-to-b from-theme-sand to-transparent">
+      <Stats />
       <Description />
       <PastHacks />
       <Gallery />
