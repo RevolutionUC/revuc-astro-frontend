@@ -29,6 +29,9 @@ importers:
       awesomplete:
         specifier: ^1.1.7
         version: 1.1.7
+      countup.js:
+        specifier: ^2.9.0
+        version: 2.9.0
       intl-tel-input:
         specifier: ^25.3.1
         version: 25.3.1
@@ -1058,6 +1061,9 @@ packages:
 
   core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
+
+  countup.js@2.9.0:
+    resolution: {integrity: sha512-llqrvyXztRFPp6+i8jx25phHWcVWhrHO4Nlt0uAOSKHB8778zzQswa4MU3qKBvkXfJKftRYFJuVHez67lyKdHg==}
 
   crc-32@1.2.2:
     resolution: {integrity: sha512-ROmzCKrTnOwybPcJApAA6WBWij23HVfGVNKqqrZpuyZOHqK2CwHSvpGuyt/UNNvaIjEd8X5IFGp4Mh+Ie1IHJQ==}
@@ -4028,6 +4034,8 @@ snapshots:
       p-event: 6.0.1
 
   core-util-is@1.0.3: {}
+
+  countup.js@2.9.0: {}
 
   crc-32@1.2.2: {}
 
